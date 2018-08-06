@@ -1,0 +1,7 @@
+<import src="../tabbar/tabbar.wxml"/>
+<template is="tabbar" data="{{tabbar}}"/>
+
+<view class = "project_top">
+  <text class = "project_all" >全部</text>
+  <text class = "project_folow">关注</text>
+</view>

@@ -16,9 +16,16 @@ Page({
     //delQuery:'',
     showChangeCss: false,
     showSearchInput: true,
+    classStyle: ''
     //reg: ''
   },
   onLoad() {
+    getApp().editTabBar(); 
+    wx.setStorageSync('classStyle', 1);
+    this.setData({
+      classStyle: wx.getStorageSync('classStyle')
+    });
+    console.log(this.data.classStyle)
     wx.request({
       url: 'https://api.piionee.com/piionee/transfer/industry/getHotWord', //仅为示例，并非真实的接口地址
       data: {},

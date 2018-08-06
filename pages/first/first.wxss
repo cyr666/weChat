@@ -1,3 +1,4 @@
+@import './tab.wxss';
 page{
   background: #f4f4f4;
 }

@@ -245,10 +245,10 @@
   </view>
    <view style="height: 20px"></view>
   <!-- </scroll-view>   -->
-  <modal hidden="{{hidden}}" title="简介" confirm-text="确定"  bindconfirm="confirm" no-cancel="true" catchtouchmove="preventTouchMove">
+  <modal hidden="{{hidden}}" title="简介" confirm-text="确定"  bindconfirm="confirm" no-cancel="true" catchtouchmove='true'>
     {{introduction}}
 </modal>
-<view class = "bigCharts_con" wx:if="{{showCharts}}" catchtouchmove="preventTouchMove">
+<view class = "bigCharts_con" wx:if="{{showCharts}}" catchtouchmove="preventTouchMove" catchtouchmove='true'>
   <view class="test" >
     <view class="canvas_view"></view>
     <text class="confirm" bindtap='closeBigChart'>确定</text>
@@ -264,7 +264,7 @@
     <text class="y_2018">2018</text>
     <text class="time_chinese">时间</text>
     <text class="notice">{{initValue}}</text>
-    <canvas style="width: 540rpx; height: 182rpx;; position: absolute; left: 81rpx; top: 128rpx;" canvas-id="firstCanvas" bindtouchstart="touchStartCanvas"></canvas>
+    <canvas style="width: 540rpx; height: 182rpx;; position: absolute; left: 81rpx; top: 128rpx;" canvas-id="firstCanvas" catchtouchmove='true'></canvas>
   </view>
 </view>
 <cover-view class = "zhezhao" wx:if="{{showZhezhao}}"></cover-view> 

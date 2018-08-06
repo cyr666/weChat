@@ -11,10 +11,10 @@ Page({
     text: "没有滑动",
   },
   onLoad(option){
-    console.log(option)
     this.setData({
       comId: option.id
     })
+    app.globalData.id = option.id;
   },
   handletouchmove: function (event) {
     // console.log(event)
