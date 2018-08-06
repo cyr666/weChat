@@ -1,0 +1,43 @@
+<import src="../wxParse/wxParse.wxml"/>
+<!-- <view class="top">
+  <image art="Logo" class="tsh" src="{{schoolLogo}}"></image>
+  <text class="school">{{name}}</text>
+  <text class="time">{{date}}</text>
+  <!--<image class="focus" src="{{topDate.focus}}"></image>
+</view> -->
+<view class = "head_con">
+    <view class = "headImg_con">
+      <image src="{{schoolLogo}}" class = "headLogo"></image>
+    </view>
+    <view class = "name_con">
+      <view class = "jigou_name">{{name}}</view>
+      <view class = "jigou_time">
+        <text class="time">{{date}}</text>
+      </view>
+    </view>
+  </view>
+<view class="content_title">
+  <template is="wxParse" data="{{wxParseData:subTitle.nodes}}"/>
+</view>
+
+<image class="patent_sel_img" src="../../resource/patent_sel.png"></image>
+<view>
+  <view class="list_item" wx:for="{{subTitles}}" wx:if="{{item.rank>1}}">
+    <image class="patent_sel_logo" src="../../resource/titleBg.png"></image>
+    <text class="order" wx:if="{{item.rank<10}}">0{{item.rank-1}}</text>
+    <text class="order" wx:else>{{item.rank-1}}</text>
+    <text class = "letter">专利精选</text>
+    <text class="text_title">{{item.title}}</text>
+    <view class="ip_info">
+      <image class="ip_icon" src="../../resource/ip.png"></image>
+      <text class="code">专利（申请）号：{{item.code}}</text>
+    </view>
+    <view class="ip_info less_margin_top">
+     <image class="person_icon" src="../../resource/person.png"></image>
+      <text class="person">发明人：{{item.inventor}}</text>
+    </view>
+    <view class="preview">
+      <text class="bold">摘要：</text><text>{{item.content}}</text>
+    </view>
+  </view>
+</view>

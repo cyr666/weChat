@@ -1,0 +1,5 @@
+<view class="container" bindtouchstart="handletouchtart" bindtouchmove="handletouchmove"> 
+  <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec_relation }}"></ec-canvas>
+</view>
+<view class = "clickMorecooper" bindtap='clickMorecooper'>点击查看更多合作详情></view>
+<!-- <view>{{text}}</view> -->

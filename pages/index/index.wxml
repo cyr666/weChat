@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="container">
+<!-- <view class = "navBarTile">
+  <view class="clickRouter" bindtap='goBack'>
+    <image src="../../resource/left.png" class="left_jiantou"></image>
+  </view>
+  <view class = "navBar_word">科创时代</view>
+</view> -->
+  <view class = "index_header">
+    <input class = "index_input" name="searchQuery" bindinput="userNameInput" value="{{value}}"/>
+    <view class = "search_btn" bindtap='handleSearch'>搜索</view>
+  </view>
+  <view class = "search_result">共搜索到<text class = "num">{{companyNum}}</text>家公司
+  </view>
+  <view class = "list_con">
+    <view class = "list_item" wx:for="{{companyList}}" bindtap='handleCompantDel' data-index="{{item.id}}" data-name="{{item.name}}">
+      <view class = "list_header">
+        <view class = "logo_con">
+          <text class = "list_symbol" style="background:{{colorList[item.i]}}">{{item.firstWord}}</text>
+           <text wx:for="{{item.nameObjArr}}" class="{{item.sym == 1?'red':''}}">{{item.title}}</text>
+           
+        </view>
+        <view class = "list_fen">
+          <text class = "fen">{{item.score}}</text>分
+        </view>
+      </view>
+      <view class = "chan_con">
+        <text class = "chan_title">产业领域</text>  
+        <view class = "chanItem_con">
+          <text class = "chan_item" wx:for="{{item.industry}}" wx:for-item="obj">{{obj.name}}<text class = "symbol" wx:if="{{index<item.F_term.length-1}}"></text></text>
+        </view>
+      </view>
+      <view class = "chan_con">
+        <text class = "chan_title">技术领域</text>  
+        <view class = "chanItem_con">
+          <text class = "chan_item" wx:for="{{item.F_term}}"  wx:for-item="obj">{{obj}}<text class = "symbol" wx:if="{{index<item.F_term.length-1}}"></text></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='footer' wx:if="{{refresh}}">上拉加载更多</view>
+  <view class='footer' wx:else>没有更多数据了</view>
+</view>

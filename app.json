@@ -1,0 +1,24 @@
+{
+  "pages":[
+    
+    "pages/first/first",
+    "pages/search/search",
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/achievement/achievement",
+    "pages/achievementDel/achievementDel",
+    "pages/patentSel/patentSel",
+    "pages/team/team",
+    "pages/abstract/abstract",
+    "pages/competitor/competitor", 
+    "pages/cooperate/cooperate", 
+    "pages/moreNet/moreNet",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#008EFF",
+    "navigationBarTextStyle":"#fff",
+    "navigationStyle":"default"
+  }
+}

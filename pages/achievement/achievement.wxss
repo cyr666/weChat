@@ -1,0 +1,112 @@
+page{
+  background:rgba(244,244,244,1);
+}
+.team_header{
+  box-sizing: border-box;
+  padding: 15px 15px 15px 15px;
+  background: #fff;
+}
+.team_keyword{
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 7px 10px;
+  margin: 0 10px 10px 0;
+  font-size: 28rpx;
+  color: #353535;
+  border-radius: 4px;
+  background: #F3F4F6;
+}
+.action{
+  background:rgba(0,142,255,0.15); 
+  color: #008EFF;
+}
+.team_searchWord{
+  box-sizing: border-box;
+  padding:10px 0 10px 15px;
+  font-size: 22rpx;
+  color: #888888
+}
+.people_num{
+  color: red;
+}
+.list_con{
+  margin: 0 15px;
+}
+.list_item{
+  box-sizing: border-box;
+  padding: 20px 0px 5px 0px;
+  background: #fff;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+.item_top{
+  box-sizing: border-box;
+  padding: 0px 20px 0px 20px;
+  overflow: hidden;
+  display: flex;
+}
+.itemTop_left{
+  float: left;
+  width: 100%;
+}
+.itemTop_right{
+  float: right;
+  display:-webkit-flex; 
+  width: 20%;
+  justify-content:center;
+  align-items:center; 
+  font-size: 20rpx;
+  color: #757575;
+}
+.right_child{
+  height: 18px;
+  margin-left: 30px;
+}
+.item_name{
+  font-size: 34rpx;
+  color: #000;
+  font-weight: bold;
+}
+.time_con{
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 15px;
+}
+.people_con{
+  margin-top: 10px;
+}
+.apply_time{
+  color: #666;
+}
+.fen{
+  font-size: 36rpx;
+  color: #F96060;
+}
+.item_bottom{
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 10px 0px 7px 20px;
+  margin-top: 15px;
+  border-top: 1px solid #E5E5E5;
+}
+.abstract{
+  float: left;
+  color: #008EFF;
+  font-size: 32rpx;
+}
+.footer{
+  font-size:22rpx;
+  color:rgba(136,136,136,1);
+  text-align: center;
+}
+.abstractDelImg_con{
+  float: right;
+  margin-right: 30rpx;
+  width: 11px;
+  height: 17px;
+  margin-top:2px;
+}
+.abstractDelImg{
+  width: 11px;
+  height: 17px;
+}

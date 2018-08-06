@@ -1,0 +1,301 @@
+.list_item{
+  box-sizing: border-box;
+  padding: 0 15px;
+  height: 49px;
+  background: #fff;
+  border-bottom: 1px solid #E5E5E5;
+  display: flex;
+}
+.list_item .trend_num,.trend_test,.trend_img_com{
+  float: left;
+  display:-webkit-flex; 
+  justify-content:center;
+  align-items:center;
+}
+.trend_key{
+  float: left;
+  display:-webkit-flex; 
+  align-items:center;
+}
+.trend_num{
+  width: 18px;
+  height: 18px;
+  margin: 16px 15px 0 5px;
+  border-radius: 9px;
+  font-size: 24rpx;
+  line-height: 18px;
+  text-align: center;
+  color: #B2B2B2;
+  border: 1px solid #B2B2B2;
+}
+.trend_key{
+  width: 46%;
+  font-size: 24rpx;
+  color: #353535;
+}
+.trend_test{
+  width: 25%;
+  font-size: 24rpx;
+  text-align: center;
+  color: #888888;
+}
+.trend_num1{
+  border: 1px solid #F96060;
+  color: #F96060;
+}
+.trend_num2{
+  border: 1px solid #FAA420;
+  color: #FAA420;
+}
+.trend_num3{
+  border: 1px solid #FFD400;
+  color: #FFD400;
+}
+.scr{
+  /* position: relative; */
+  height: 100%;
+  /* margin-top: 44px;  */
+}
+.trend_test1{
+  color: #F96060
+}
+.trend_test2{
+  color: #FAA420
+}
+.trend_test3{
+  color: #FFD400
+}
+.trend_img_com{
+  width:20%;
+  height: 49px;
+}
+.base64{
+  width: 100rpx;
+  height: 30px;
+}
+.five_title{
+  margin-top: 10px;
+}
+.table_con{
+  padding-top: 6px;
+  background: #fff;
+  overflow: hidden;
+}
+.triangle_border_nw{
+    width:0;
+    height:0;
+    border-width:52px 0px 0px 52px;
+    border-style:solid;
+    border-color:transparent transparent transparent #E8EAEB;
+}
+.tabletitle{
+  font-size: 18rpx;
+  position: absolute;
+  bottom: 0;
+  left:5px;
+  display: inline-block;
+  width: 25px;
+  color: #7B8185;
+}
+.triangle_border_sw{
+  width:0;
+  height:0;
+  border-width:0px 52px 100% 0px;
+  border-style:solid;
+  border-color:transparent #eee transparent transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.tableyear{
+  font-size: 18rpx;
+  position: absolute;
+  top: 12px;
+  left:20px;
+  display: inline-block;
+  width: 25px;
+  color: #7B8185;
+}
+.tabletitle_con{
+  position: relative;
+  width: 15%;
+  float: left;
+}
+.year{
+  float: left;
+  width: 85%;
+}
+.year_con{
+  width: 19.5%;
+  height: 50px;
+  background: #F9F9F9;
+  float: left;
+  border-right: 1px solid #E8EAEB;
+  font-size: 24rpx;
+  color: #7B8185;
+  display:-webkit-flex; 
+  justify-content:center;
+  align-items:center;
+}
+.fiveText_item{
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid #E8EAEB;
+}
+.fiveList_item{
+  float: left;
+  width: 16.88%;
+  height: 66px;
+  border-right: 1px solid #E8EAEB;
+  font-size: 24rpx;
+  color: #353535;
+  box-sizing: border-box; 
+  padding: 10px 6px 10px 6px;
+  background: #fff;
+}
+.fiveStyle1,.fiveStyle2,.fiveStyle3,.fiveStyle4,.fiveStyle5{
+  width: 15%;
+  display:-webkit-flex; 
+  justify-content:center;
+  align-items:center;
+  border-right: 2px solid #F96060;
+  color: #F96060;
+  background: #F9F9F9;
+}
+.fiveStyle2{
+  border-right: 2px solid #FAA420;
+  color: #FAA420;
+}
+.fiveStyle3{
+  border-right: 2px solid #FFD500;
+  color: #FFD500;
+}
+.fiveStyle4{
+  border-right: 2px solid #78CD49;
+  color: #78CD49;
+}
+.fiveStyle5{
+  border-right: 2px solid #05AAFF;
+  color: #05AAFF;
+}
+/*竞品推荐  */
+.list_con{
+  box-sizing: border-box;
+  background: #fff;
+  padding: 0 15px; 
+}
+.detail_list_item{
+  position: relative;
+  box-sizing: border-box;
+  padding: 20px 0 15px 0;
+  background: #fff;
+  border-bottom: 1px solid #E5E5E5;
+  /* margin-top: 15px; */
+  /* border-radius: 5px; */
+}
+.list_header{
+  overflow: hidden;
+}
+.logo_con{
+  float: left;
+  width: 85%;
+  font-size: 34rpx;
+}
+.list_symbol{
+  display: inline-block;
+  margin-right: 1px;
+  width: 24px;
+  height: 24px;
+  font-size: 32rpx;  
+  line-height: 24px;
+  text-align: center;
+  background: pink; 
+  color: #fff;
+}
+.list_fen{
+  float: right;
+  font-size: 24rpx;
+  color: #757575;
+}
+.fen{
+  font-size: 36rpx;
+  color: #F96060;
+}
+.detail_chan_con{
+  font-size: 28rpx;
+  color: #888;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.detail_chan_title{
+  float: left;
+  width: 165rpx;
+}
+.detail_chanItem_con{
+  float: left;
+  width: 390rpx; 
+}
+.detail_chan_item{
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 3px 5px;
+  margin: 0 5px 5px 0;
+  border: 1px solid #008EFF;
+  border-radius: 2px;
+  color: #008EFF;
+}
+.chan_right{
+  float: right;
+  overflow: hidden;
+  height: 45px;
+  display:-webkit-flex; 
+  justify-content:center;
+  align-items:center;
+
+}
+.chan_people{
+  display:inline-block;
+  margin-left:20rpx;
+  font-size:24rpx;
+  color:#888888;
+  line-height:52px;
+}
+.checkMore{
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 26rpx;
+  color: #008EFF;
+  line-height: 45px;
+}
+.right_jiantou,.right_jiantou2{
+  width: 10px;
+  height: 20px;
+  margin-right: 15px;
+}
+.right_jiantou2{
+  float: right;
+  margin-top: 15px;
+}
+.chickDetail_con{
+  position: absolute;
+  top: 48%;
+  right: 15px;
+  width: 10px;
+  height: 20px;
+}
+.right_gray_img{
+  width: 10px;
+  height: 20px;
+}
+.comImg{
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+.header{
+  background: #008EFF;
+}
+.base64{
+
+}

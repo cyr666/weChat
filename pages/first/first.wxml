@@ -1,0 +1,53 @@
+
+<view class = "header_con" wx:if="{{!showChangeCss}}">
+  <image src="../../resource/bg_.png" class = "bg_img" bindtap='focus' mode="widthFix"></image>
+  <!-- <image src="../../resource/LOGO@2x.png" class = "logoImg"></image>
+  <input class = "search_inp" placeholder='请输入公司名' name="Query" bindinput="getComInput" bindconfirm="confirm" bindfocus='focus'></input>
+  <image src="../../resource/search.png" class = "search_icon" placeholder-class="phcolor"></image> -->
+  <view class = "hot_view">
+    热搜 |<text class = "hot_word" bindtap='goComlist' wx:for="{{wordList}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap='goComDel'>{{item.name}}</text>
+  </view>
+</view>  
+ <view class = "header_con2" wx:else>
+  <view class = "input_con">
+    <input class = "{{showChangeCss?'changeInp':'search_inp'}}" placeholder='请输入公司名' name="Query" bindinput="getComInput" bindconfirm="confirm" bindfocus='focus'></input>
+    <image src="../../resource/search.png" class = "{{showChangeCss?'changeIcon':'search_icon'}} "placeholder-class="phcolor"></image>
+  </view>
+</view>
+<view style="position: relative;top:-8rpx">
+  <view class="list_item" wx:for="{{patList}}" data-id="{{item.id}}" data-type="{{item.type}}" bindtap='goAchievementDel'>
+    <!-- <view class="list_item_top">
+      <image class="tsh" src="{{item.public_logo}}"></image>
+      <view class = "list_item_topMid">
+        <view class="school">{{item.public_name}}</view>
+        <view class = "middle_bottom">
+          <text class="time">{{item.date}}</text>
+          <text class = "previw">阅读量 {{item.pageView}}</text>
+        </view>
+      </view>
+    </view> -->
+  <view class = "head_con">
+    <view class = "headImg_con">
+      <image src="{{item.public_logo}}" class = "headLogo"></image>
+    </view>
+    <view class = "name_con">
+      <view class = "jigou_name">{{item.public_name}}</view>
+      <view class = "jigou_time">
+        <text class="time">{{item.date}}</text>
+        <text class = "pv_word">阅读量 {{item.pageView}}</text>
+      </view>
+    </view>
+  </view>
+    <image class="item_img" src="{{item.cover}}" mode='widthFix'/>
+    <view class="title_type_view" wx:if="{{item.type=='成果发布'}}">
+      <view class="text_title">
+        {{item.title}}
+        <image class="text_type" src="../../resource/cgfb.png"></image>
+      </view>
+    </view>
+    <text class="text_detail" wx:if="{{item.type=='成果发布'}}">{{item.brief}}</text>
+  </view>
+</view>
+<view class='footer' wx:if="{{refresh}}">上拉加载更多</view>
+<view class='footer' wx:else>没有更多数据了</view>
+<view style = "height:40rpx;"></view>

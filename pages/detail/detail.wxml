@@ -1,0 +1,270 @@
+ <!-- <cover-view class = "detail_con"> -->
+  <!-- <scroll-view scroll-x scroll-left="{{scrollLeft}}" class = "detail_nav {{showAll?'showAll':''}}">
+    <view class="detail_title {{tabClick==index?'onlystyle':''}}" bindtap='changTab' wx:for="{{tabList}}" data-index="{{index}}" data-opt="list{{index}}">{{item}}</view>
+  </scroll-view> -->
+  <!-- <view class="img_con" wx:if="{{!showAll}}" bindtap='showAllTab'>
+   <image src="../../resource/nav_bottom.png" class = "nav_img" />
+  </view> -->
+<!-- </cover-view> -->
+  <!-- <scroll-view scroll-y="true" scroll-with-animation="true" scroll-into-view="{{toView}}" class="scr">   -->
+  <view class = "company_info" >
+    <view class = "company_top">
+      <view class = "company_left">
+        <view class = "logo_symbol" wx:if="{{companyDel.logo}}">
+          <image src="{{companyDel.logo}}" class = "comImg"></image>
+        </view>
+        <view class = "logo_symbol" style="background:{{colorList[0]}}" wx:else>{{companyDel.firstWord}}</view>
+        <view class = "lookNum_word">浏览量</view>
+        <view class = "look_num">{{companyDel.pageView}}</view>
+      </view>
+      <view class = "company_right">
+        <view class = "right_top">{{companyDel.name}}</view>
+        <view class = "clickDel_con" wx:if="{{companyDel.introduction}}" bindtap='chickintroduction'>
+          <view class = "right_bottom" >简介:{{companyDel.introduction}}</view>
+          <text class = "clickDel">详情></text>
+        </view>
+        <view class = "right_bottom" wx:else>暂无简介</view>
+      </view>
+    </view>
+    <view class = "company_bottom">
+      <view class = "item item1">
+        <view class = "item_title">注册资本</view>
+        <view class = "item_num">{{companyDel.register_money}}</view>
+      </view>
+      <view class = "line line1"></view>
+      <view>
+        <view class = "item item2">
+          <view class = "item_title">注册时间</view>
+          <view class = "item_num">{{companyDel.register_time}}</view>
+        </view>
+      </view>
+      <view class = "line line2"></view>
+      <view>
+        <view class = "item item3">
+          <view class = "item_title">评分</view>
+          <view class = "item_num">
+            <text class = "score_con">{{companyDel.score}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view> 
+  <view class = "line3"></view>
+  <view class = "address_con">
+    <image src = "../../resource/address.png" class = "address_img"></image>
+    <text class = "address" wx:if="{{companyDel.address}}">{{companyDel.address}}</text>
+    <text class = "address" wx:else>暂无地址</text>
+  </view>
+  <view class = "line3"></view>
+  <view class = "echarts_title">企业综合能力概览</view>
+  <view class = "blue_line_con">
+    <view class = "blue_line"></view>
+  </view>
+  <view class="container" wx:if="{{canvasHidden}}">
+    <ec-canvas id="mychart-dom-graph" canvas-id="mychart-graph" ec="{{ ec }}"></ec-canvas>
+  </view>
+  <!-- 产业技术布局 -->
+  <view class = "chan" id="list1" data-rol="list1">
+    <text class = "chan_word">产业布局</text>
+  </view>
+  <view class = "chan_item">
+    <view class = "chanItem_con" wx:for="{{industryArray}}">
+      <view class = "chanItemTitle_con">
+        <text class = "chanNum {{index==1?'index1':''}} {{index==2?'index2':''}}">{{index+1}}</text>
+        <text class = "chanItem_title">{{item.name}}：</text>
+      </view>  
+      <view class = "child">
+        <text class = "child_item" wx:for="{{item.child}}">{{item}}</text>
+      </view>
+    </view>
+  </view>
+  <!--技术布局  -->
+  <view class = "chan" id = "list2" data-rol="list2">
+    <text class = "chan_word">技术布局</text>
+  </view>
+  <view class = "echarts_title">近10年发明专利申请数量</view>
+  <view class = "blue_line_con">
+    <view class = "blue_line"></view>
+  </view>
+  <view class="container1" wx:if="{{showTab}}">
+    <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ecBar }}"></ec-canvas>
+  </view>
+  <view class = "trend_con">
+    <view class = "echarts_title trend_title">企业重点技术发展趋势</view>
+    <view class = "blue_line_con trend_blue_line_con">
+      <view class = "blue_line trend_line"></view>
+    </view>
+    <view class = "trendList_title">
+      <text class = "title_item trendtitle1">序号</text>
+      <text class = "title_item trendtitle2">技术主题</text>
+      <text class = "title_item trendtitle3">申请专利数</text>
+      <text class = "title_item trendtitle4">趋势</text>
+    </view>
+    <view class = "list_item" wx:for = "{{techTrend}}">
+      <view class = "trend_num {{index==0?'trend_num1':''}} {{index==1?'trend_num2':''}} {{index==2?'trend_num3':''}}">{{index+1}}</view>
+      <view class = "trend_key">{{item.name}}</view>
+      <view class = "trend_test {{index==0?'trend_test1':''}} {{index==1?'trend_test2':''}} {{index==2?'trend_test3':''}}">{{item.num}}</view>
+      <view class = "trend_img_com">
+        <image src="data:image/gif;base64,{{item.trend}}" class="base64" bindtap='showBigCharts' data-ft="{{item.name}}"></image>
+      </view>
+    </view> 
+  </view>
+  <view class = "echarts_title five_title">企业近5年技术布局情况</view>
+  <view class = "blue_line_con">
+    <view class = "blue_line"></view>
+  </view>
+  <view class = "table_con">
+    <view class = "tabletitle_con">
+      <view class="triangle_border_nw"></view>
+      <view class="triangle_border_sw"></view>
+      <text class="tabletitle">主要技术</text>
+      <text class="tableyear">年份</text>
+    </view>
+    <view class = "year">
+      <view class = "year_con">2014及以前</view>
+      <view class = "year_con">2015</view>
+      <view class = "year_con">2016</view>
+      <view class = "year_con">2017</view>
+      <view class = "year_con">2018</view>
+    </view>
+    <view class = "fiveText_con">
+      <view class = "fiveText_item" >
+      <view class = "fiveList_item fiveStyle1}}" style="height:{{heagth1}}">top1</view>
+        <view class = "fiveList_item" wx:for="{{topF_term.top.top1}}" style="height:{{heagth1}};">{{item.F_term}}</view>
+      </view>
+      <view class = "fiveText_item">
+        <view class = "fiveList_item fiveStyle2}}" style="height:{{heagth2}}">top2</view>
+        <view class = "fiveList_item" style="height:{{heagth2}}" wx:for="{{topF_term.top.top2}}">{{item.F_term}}</view>
+      </view>
+      <view class = "fiveText_item">
+        <view class = "fiveList_item fiveStyle3}}" style="height:{{heagth3}}">top3</view>
+        <view class = "fiveList_item" wx:for="{{topF_term.top.top3}}" style="height:{{heagth3}}">{{item.F_term}}</view>
+      </view>
+      <view class = "fiveText_item">
+        <view class = "fiveList_item fiveStyle4}}" style="height:{{heagth4}}">top4</view>
+        <view class = "fiveList_item" wx:for="{{topF_term.top.top4}}" style="height:{{heagth4}}">{{item.F_term}}</view>
+      </view>
+      <view class = "fiveText_item">
+        <view class = "fiveList_item fiveStyle5}}" style="height:{{heagth5}}">top5</view>
+        <view class = "fiveList_item" wx:for="{{topF_term.top.top5}}" style="height:{{heagth5}}">{{item.F_term}}</view>
+      </view>
+    </view>
+  </view>
+<!-- 合作网络 -->
+<view class = "cooperateNet_con">
+  <view class = "cooperateNet_title_con">
+    <text class = "cooperateNet_title">合作网络</text>
+  </view>
+  <view class = "echartsNet_con" wx:if="{{companyRelationList.length>0}}">
+    <view class = "echartsRelation_con">
+      <view class = "relation_title" bindtap='checkMoreNet'>点击查看合作网络></view>
+    </view>
+    <view class = "echarts_relation">
+      <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec_relation }}"></ec-canvas>
+    </view>
+  </view>
+  <view class = "echartsNet_text" wx:else> 该公司暂无合作网络</view>
+  <view class = "cooperateTable_con" wx:if="{{companyRelationList.length>0}}">
+    <view class = "cooperateTable_head">
+      <view class = "cooperateTableHead_left">合作机构和企业</view>
+      <view class = "cooperateTableHead_right">合作技术点</view>
+    </view>
+    <view class = "cooperateTable_tr" wx:for="{{companyRelationList}}">
+      <view class = "cooperateTableTr_left" bindtap='gocomDel' data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+      <view class = "cooperateTableTr_right">
+        <view class = "cooperateTableTr_td {{index==item.cooplist.length-1?'borderNone':''}}" wx:for="{{item.cooplist}}" wx:for-item="obj">{{obj}}</view>
+      </view>
+    </view>
+    <view class = "clickMorecooper" bindtap='clickMorecooper'>点击查看更多合作详情></view>
+  </view>
+  
+</view>
+<!-- 创新团队 -->
+  <view class = "chan" id="list1" data-rol="list1" bindtap='handleComteam'>
+    <text class = "chan_word">创新团队</text>
+    <text class = "chan_people">共{{inventer_num}}人</text>
+    <view class = "chan_right" >
+      <text class = "checkMore">查看更多</text>
+      <image src = "../../resource/right_blue.png" class = "right_jiantou"></image>
+    </view>
+  </view>
+   <view class = "Tlist_con" wx:if="{{inventer.length>0}}"> 
+    <view class = "Tlist_item" wx:for="{{inventer}}" wx:if="{{index<2}}">
+      <view class = "Tlist_header">
+        <view class = "Tlogo_con">
+          <text class = "Tlist_symbol" style="background:{{colorList[item.i-1]}}">{{item.firstWord}}</text>
+           {{item.name}}
+        </view>
+        <view class = "Tlist_fen">
+          发明专利：<text class = "Tfen">{{item.num}}</text>项
+        </view>
+      </view>
+      <view class = "Tchan_con">
+        <text class = "Tchan_title">主要技术领域：</text>  
+        <view class = "TchanItem_con">
+          <text class = "Tchan_item" wx:for="{{item.keywordList}}">{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 创新成果 -->
+  <view class = "chan" id="list1" data-rol="list1" bindtap='handleComAchievement'>
+    <text class = "chan_word">创新成果</text>
+    <text class = "chan_people">共{{patent_num}}项</text>
+    <view class = "chan_right">
+      <text class = "checkMore">查看更多</text>
+      <image src = "../../resource/right_blue.png" class = "right_jiantou"></image>
+    </view>
+  </view>
+  <view class = "Alist_con">
+    <view class = "Alist_item" wx:for="{{patentArray}}" wx:if="{{index<2}}">
+      <view class = "Aitem_top">
+        <view class = "AitemTop_left">
+          <view class = "Aitem_name">{{item.title}}</view>
+          <view class = "Atime_con">
+            申请时间：<text class = "Aapply_time">{{item.date}}</text>
+          </view>
+        </view>
+        <view class = "Aitem_bottom" bindtap='getAbstract' data-abstract="{{item.abstract}}" data-title="{{item.title}}" data-code="{{item.id}}">
+          <text class = "Aabstract">摘要</text>
+        </view>
+        
+      </view>
+      <view class = "Apeople_con">
+          发明人：<text class = "Aapply_people" wx:for="{{item.inventer}}">{{item}}</text>
+        </view> 
+    </view>
+  </view>
+  <!-- 竞品推荐 -->
+  <view class = "chan" id="list1" data-rol="list1" bindtap='checkCompetitor'>
+    <text class = "chan_word">竞品推荐</text>
+    <view class = "chan_right">
+      <text class = "checkMore">查看</text>
+      <image src = "../../resource/right_blue.png" class = "right_jiantou"></image>
+    </view>
+  </view>
+   <view style="height: 20px"></view>
+  <!-- </scroll-view>   -->
+  <modal hidden="{{hidden}}" title="简介" confirm-text="确定"  bindconfirm="confirm" no-cancel="true" catchtouchmove="preventTouchMove">
+    {{introduction}}
+</modal>
+<view class = "bigCharts_con" wx:if="{{showCharts}}" catchtouchmove="preventTouchMove">
+  <view class="test" >
+    <view class="canvas_view"></view>
+    <text class="confirm" bindtap='closeBigChart'>确定</text>
+    <text class="left_1">专利</text>
+    <text class="left_2">数量</text>
+    <text class="left_3">{{chartDate.max1}}</text>
+    <text class="left_4">{{chartDate.max2}}</text>
+    <text class="left_5">{{chartDate.max3}}</text>
+    <text class="left_6">{{chartDate.max4}}</text>
+    <text class="y_2009">2009</text>
+    <text class="y_2012">2012</text>
+    <text class="y_2015">2015</text>
+    <text class="y_2018">2018</text>
+    <text class="time_chinese">时间</text>
+    <text class="notice">{{initValue}}</text>
+    <canvas style="width: 540rpx; height: 182rpx;; position: absolute; left: 81rpx; top: 128rpx;" canvas-id="firstCanvas" bindtouchstart="touchStartCanvas"></canvas>
+  </view>
+</view>
+<cover-view class = "zhezhao" wx:if="{{showZhezhao}}"></cover-view> 

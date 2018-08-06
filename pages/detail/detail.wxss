@@ -1,0 +1,397 @@
+@import './detail2.wxss';
+@import './detail3.wxss';
+@import './detail4.wxss';
+page{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #F4F4F4;
+}
+.detail_con{
+  width: 100%;
+  height: 44px;
+  background: #fff;
+}
+/* .clickRouter{
+  width: 35px;
+  height: 36px;
+  position: fixed;
+  left: 15px;
+  top: 50px;
+}
+.left_jiantou{
+  width: 14px;
+  height: 24px;
+}
+.navBarTile{
+  position: fixed;
+  top:0;
+  left:0;
+  box-sizing: border-box;
+  padding-top: 50px;
+  width: 100%;
+  height: 84px;
+  background: #008EFF;
+  font-size: 28rpx;
+  text-align: center;
+   z-index: 5; 
+  color: #fff;
+} */
+.detail_nav{
+  float: left;
+  width: 90%;
+  height: 44px;
+  background: #F4F4F4;
+  white-space: nowrap;
+  display: flex; 
+  overflow: hidden;
+  /* margin-top: 84px; */
+}
+.showAll{
+  width: 100%;
+  height: 88px;
+  white-space: pre-wrap;
+  position: relative;
+  top:0px;
+  left:0; 
+  z-index: 9; 
+}
+.detail_title{
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0 13px;  
+  /* width: 200px; */
+  height: 44px;
+  line-height: 44px;
+  font-size: 28rpx;
+  color: #353535;
+}
+.onlystyle{
+  border-bottom: 2px solid #008EFF;
+  color: #008EFF;
+}
+.img_con{
+  float: left;
+  width: 10%;
+  height: 44px;
+  display:-webkit-flex; 
+  justify-content:center;
+  align-items:center;
+  }
+.nav_img{
+  width: 14px;
+  height: 8px;
+}
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.zhezhao{
+  width: 100%;
+  height: 300%;
+  position: absolute;
+  top: 88px;
+  left: 0;
+  z-index: 2;
+  background: rgba(0,0,0,0.5)
+}
+.company_info{
+  box-sizing: border-box;
+  padding: 15px 0 13px 0;
+  overflow: hidden;
+  background: #fff;
+}
+.company_top{
+  box-sizing: border-box;
+  padding: 0 15rpx 40rpx 30rpx;
+  border-bottom: 1px solid #E5E5E5;
+  overflow: hidden;
+}
+.company_left,.company_right{
+  float: left;
+}
+.company_left{
+  width: 17%;
+}
+.company_right{
+  width: 82%;
+}
+.logo_symbol{
+  width: 40px;
+  height: 40px;
+  font-size: 48rpx;
+  line-height: 40px;
+  text-align: center;
+  color: #fff; 
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.comImg{
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+.lookNum_word,.look_num{
+  width: 100%;
+  font-size: 22rpx;
+  line-height: 11px;
+  margin: 9px 0 0 5px; 
+  color: #999999;
+}
+.look_num{
+  margin: 5px 0 0 8px; 
+  width: 49rpx;
+  height: 22rpx;
+  display: flex;
+  justify-content:center; 
+  align-items:center; 
+}
+.right_top{
+  height: 48px;
+  font-size: 34rpx;
+  font-weight: bold;
+  display:-webkit-flex; 
+  /* justify-content:center; */
+   align-items:center; 
+}
+.clickDel_con{
+  overflow: hidden;
+}
+.right_bottom{
+  float: left;
+  width: 86%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size: 28rpx;
+  color: #666666;
+  margin-top: 10px;
+  line-height: 20px;
+}
+.clickDel{
+  float: left;
+  color: #008EFF;
+  font-size: 28rpx;
+  margin-top: 10px;
+  line-height: 20px;
+}
+.company_bottom{
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin: 13px 0 0 0;
+}
+.company_bottom .item{
+  float: left;
+  /* width: 33.3%; */
+}
+.item1{
+  width: 50%;
+}
+.item2{
+  width: 30%;
+}
+.item3{
+  width: 20%;
+}
+.item_title{
+  font-size: 24rpx;
+  color: #999999;
+  text-align: center;
+}
+.item_num{
+  font-size: 28rpx;
+  color: #353535;
+  text-align: center;
+  line-height: 24px;
+}
+.line{
+  position: absolute;
+  top: 5px;
+  width: 1px;
+  height: 25px;
+  background: #E5E5E5;
+}
+.line1{
+  left: 50%;
+}
+.line2{
+  left: 81%;
+}
+.line3{
+  width: 100%;
+  height: 1px;
+  background: #E5E5E5;
+}
+.score_con{
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 15rpx;
+  color: #fff;
+  background: #F96060;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 2px;
+}
+.address_con{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 24rpx 24rpx 24rpx;
+  background: #fff;
+}
+.address_img{
+  width: 13px;
+  height: 18px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.address{
+  font-size: 28rpx;
+  color: #008EFF;
+}
+.echarts_title{
+  padding-top: 10px;
+  width: 100%;
+  text-align: center;
+  line-height: 32px;
+  font-size: 32rpx;
+  font-weight: bold;
+  background: #fff;
+}
+.blue_line_con{
+  width: 100%;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  background: #fff;
+  height: 31rpx;
+}
+.blue_line{
+  width: 25px;
+  height: 2px; 
+  background: #008EFF;
+} 
+.container {
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  width: 100%; 
+  height: 282px;
+  background: #fff;
+} 
+.container1 {
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  width: 100%; 
+  height: 180px;
+  background: #fff;
+   /* margin-top: -5px  */
+} 
+#mychart-dom-graph {
+  width: 100%;
+  height: 282px;
+}
+.chan{
+  margin-top: 10px;
+  box-sizing: border-box;
+  /* padding: 14px 0; */
+  height: 45px;
+  width: 100%;
+  background: #fff;
+  font-size: 32rpx;
+  border-bottom: 1px solid #E5E5E5;
+}
+.chan_word{
+  float: left;
+  margin-top: 14px;
+  box-sizing: border-box;
+  padding-left: 29rpx;
+  border-left: 3px solid #008EFF;
+}
+.chan_item{
+  background: #fff;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.chanItemTitle_con{
+  margin: 8px 0;
+}
+.chanNum{
+  display: inline-block;
+  margin-right: 3px;
+  width: 14px;
+  height: 14px;
+  background:rgba(249,96,96,1);
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 14px;
+  text-align: center;
+}
+.chanItem_title{
+  font-size: 28rpx;
+  color: #39454E;
+  /* font-family:PingFangSC-Medium; */
+}
+.child_item{
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 3px 10px;
+  font-size: 24rpx;
+  color: #828995;
+  background: #EEF2F3;
+  margin:0 10px 8px 0;
+  border-radius: 50px;
+  border: 1px solid #E3E3E3;
+}
+/* 排名背景色 */
+.index1{
+  background: #FAA420;
+}
+.index2{
+  background: #FFD500;
+}
+#mychart-dom-bar{
+  width: 100%;
+  height: 158px;
+}
+.trend_con{
+  box-sizing: border-box;
+  margin-top: 0px;
+}
+.trend_title{
+  margin-top: 10px;
+}
+.trend_line{
+  margin-bottom: 10px;
+}
+.trend_blue_line_con{
+  padding-bottom: 5px;
+}
+.trendList_title{
+  box-sizing: border-box;
+  padding: 0 15px;
+  width: 100%;
+  height: 29px;
+  background: #F9F9F9;
+}
+.title_item{
+  display: inline-block;
+  font-size: 24rpx;
+  color: #7B8185;
+  line-height: 29px;
+  text-align: center;
+}
+.trendtitle1{
+  width: 10%;
+}
+.trendtitle2{
+  width: 49%;
+}
+.trendtitle3{
+  width: 21%;
+}
+.trendtitle4{
+  width: 20%;
+}
+/*竞品推荐  */

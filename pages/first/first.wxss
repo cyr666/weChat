@@ -1,0 +1,262 @@
+page{
+  background: #f4f4f4;
+}
+/*************************/
+.header{
+  width: 750rpx;
+  height: 330rpx;
+  position: relative;
+}
+.bg_img{
+  width: 750rpx;
+  height: 330rpx;
+  position: relative;
+  top: -2rpx;
+}
+.logo_img{
+  position: absolute;
+  left: 50%;
+  top: 40rpx;
+  width: 310rpx;
+  height: 90rpx;
+  margin-left: -155rpx;
+}
+.input_view{
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+}
+.input_view_up{
+  opacity: 1;
+}
+.input_view_down{
+  opacity: 0;
+}
+.input_view, .input_view_2{
+  margin-left: -335rpx;
+  width: 650rpx;
+  height: 86rpx;
+  font-size: 30rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  padding-left: 20rpx;
+}
+.fix_input_view{
+  width: 750rpx;
+  height: 86rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding-bottom: 85rpx;
+  background: #008eff;
+  opacity: 1;
+  z-index: 100;
+}
+.input_view_2{
+  position: fixed;
+  left: 50%;
+  top: 50rpx;
+  opacity: 1;
+  z-index: 101;
+}
+.fix_input_view_down, .input_view_2_down{
+  opacity: 0;
+}
+.fix_input_view_up{
+  opacity: 1;
+}
+.input_view_2_up{
+  opacity: 1;
+}
+.search_btn, .header_input{
+  margin-top: 28rpx;
+}
+.search_btn{
+  width: 36rpx;
+  height: 36rpx;
+  float: left;
+}
+.header_input{
+  margin-top: 17rpx;
+  float: left;
+  width:530rpx;
+  height: 40rpx;
+  padding-left: 10rpx;
+  outline: none;
+  border: none;
+}
+.input-placeholder{
+  color: #b2b2b2;
+}
+.hot_view{
+  height: 76rpx;
+  line-height: 76rpx;
+  color: #fff;
+  font-size: 28rpx;
+  padding-left: 40rpx;
+  position: absolute;
+  top: 334rpx;
+}
+.hot_word{
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  color: #fff;
+}
+.hot_search_text{
+  font-size: 24rpx;
+  color: #fff;
+}
+/* 头部样式变化 */
+.header_con2{
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 160rpx;
+  background: #008EFF;
+  z-index: 2;
+}
+.logo_title{
+  width: 100%;
+  height: 64px;
+  text-align: center;
+  line-height: 80px;
+  color: #fff;
+  font-size: 37rpx;
+}
+.input_con{
+  position: relative;
+  height: 84rpx;
+}
+.changeInp{
+  position: absolute; 
+  height: 84rpx;
+  top: 10px;
+  left: 30rpx;
+}
+.change_com_con{
+  position: absolute;
+  top: 60px;
+  left: 30rpx;
+}
+.bottom{
+  box-sizing: border-box;
+  padding-right: 30rpx;
+  font-size: 22rpx;
+  color: #999999;
+  width: 100%;
+  text-align: right;
+  margin: 30rpx 0;
+}
+.changeInp{
+  box-sizing: border-box;
+  padding: 0 10rpx 0 60rpx;
+  position: absolute; 
+  top: 40rpx;
+  left: 30rpx;
+  width: 690rpx;
+  height: 44px;
+  background: #fff;
+  border-radius:5px; 
+  text-align: left;
+  font-size: 28rpx;
+  color: #B2B2B2;
+}
+.phcolor{
+  font-size: 28rpx;
+  color: #B2B2B2;
+}
+.changeIcon{
+  position: absolute;
+  left: 43rpx;
+  top: 68rpx;
+  width:35rpx;
+  height: 35rpx;
+  z-index: 2
+}
+.search_com_con,.change_com_con{
+  width: 100%;
+  position: absolute;
+  top: 241px;
+  left: 30rpx;
+  color: #fff;
+  font-size: 24rpx;
+}
+/*************************/
+.list_item{
+  width: 670rpx;
+  padding: 40rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.list_item_top{
+  /* overflow: hidden; */
+}
+.head_con{
+  box-sizing: border-box;
+  padding: 0rpx 0rpx 0 0rpx;
+  width: 100%;
+  overflow: hidden;
+}
+.headImg_con,.name_con{
+  float: left;
+  overflow: hidden;
+}
+.headImg_con{
+  width: 67rpx;
+  height: 68rpx;
+  margin-right: 20rpx;
+  margin-top: 4rpx;
+}
+.headLogo{
+  width: 67rpx;
+  height: 67rpx;
+}
+.jigou_name{
+  font-size: 30rpx;
+  color: #333333;
+}
+.jigou_time{
+  font-size: 24rpx;
+  color: #B2B2B2;
+}
+.pv_word{
+  display: inline-block;
+  margin-left: 30rpx;
+}
+.item_img{
+  width: 670rpx;
+  height: 280rpx;
+  display: block;
+  margin-top: 30rpx;
+}
+.title_type_view{
+  margin-top: 30rpx;
+  font-size: 36rpx;
+  color: #333;
+}
+.text_title, .text_type{
+  /* float: left; */
+}
+.text_title{
+  padding-right: 10rpx;
+}
+.text_type{
+  width: 115rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  /* margin: 10rpx 0 0 0rpx; */
+}
+.text_detail{
+  clear: left;
+  display: block;
+  padding-top: 30rpx;
+  font-size: 26rpx;
+  color: #808080;
+  text-align: justify;
+}
+.footer{
+  font-size:22rpx;
+  color:rgba(136,136,136,1);
+  text-align: center;
+}

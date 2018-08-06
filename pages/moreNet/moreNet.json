@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "合作网络",
+  "usingComponents": {
+    "ec-canvas": "../../echarts/ec-canvas/ec-canvas"
+  }
+}

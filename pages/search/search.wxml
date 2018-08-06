@@ -1,0 +1,13 @@
+<view class = "index_header">
+  <input class = "index_input" name="searchQuery" bindinput="getComInput" value="{{value}}" placeholder='请输入公司名' placeholder-class="phcolor" auto-focus/>
+  <view class = "search_btn" bindtap='handleSearch'>搜索</view>
+</view>
+<view class = "hotSearch_con">
+  <view class = "hotSearch_word">热门搜索</view>
+  <view class = "hotSearch_text">
+    <text class = "hotSearchText" bindtap='goComlist' wx:for="{{wordList}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap='goComDel'>{{item.name}}</text>
+  </view>
+</view>
+<view class = "search_meau" wx:if="{{companyArray.length>0}}">
+    <view class = "search_item" wx:for="{{companyArray}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap='goComDel'>{{item.name}}</view>
+</view> 

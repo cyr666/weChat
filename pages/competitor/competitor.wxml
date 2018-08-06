@@ -1,0 +1,35 @@
+<!-- <view class = "navBarTile">
+    <view class="clickRouter" bindtap='goBack'>
+      <image src="../../resource/left.png" class="left_jiantou"></image>
+    </view>
+    <view class = "navBar_word">竞品推荐</view>
+</view> -->
+<view class = "list_con">
+    <view class = "detail_list_item" wx:for="{{companyArray}}" bindtap='handleComDel' data-index="{{item.id}}" data-name="{{item.name}}">
+      <view class = "list_header">
+        <view class = "logo_con">
+          <image src="{{item.logo}}" wx:if="{{item.logo}}" class = "comImg"></image>
+          <text class = "list_symbol" style="background:{{colorList[index]}}" wx:else>{{item.firstWord}}</text>
+           {{item.name}}
+        </view>
+        <view class = "list_fen">
+          <text class = "fen">{{item.score}}</text>分
+        </view>
+      </view>
+      <view class = "detail_chan_con">
+        <text class = "detail_chan_title">产业领域：</text>  
+        <view class = "detail_chanItem_con">
+          <text class = "detail_chan_item" wx:for="{{item.industry}}">{{item}}</text>
+        </view>
+      </view>
+      <view class = "detail_chan_con">
+        <text class = "detail_chan_title">技术领域：</text>  
+        <view class = "detail_chanItem_con">
+          <text class = "detail_chan_item" wx:for="{{item.keyword}}">{{item}}</text>
+        </view>
+      </view>
+      <!-- <view class = "chickDetail_con">
+        <image src = "../../resource/right_gray.png" class = "right_gray_img"></image>
+      </view> -->
+    </view>
+  </view> 

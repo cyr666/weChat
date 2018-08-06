@@ -1,0 +1,136 @@
+ .Tlist_con{
+  /* margin: 0 15px; */
+  background: #fff;
+}
+.Tlist_item{
+  box-sizing: border-box;
+  padding: 20px 20px 15px 20px;
+  background: #fff;
+  border-bottom: 1px solid #E5E5E5;
+}
+.Tlist_header{
+  overflow: hidden;
+}
+.Tlogo_con{
+  float: left;
+  width: 60%;
+  font-size: 34rpx;
+  color: #000;
+  font-weight: bold;
+}
+.Tlist_symbol{
+  display: inline-block;
+  margin-right: 1px;
+  width: 24px;
+  height: 24px;
+  font-size: 32rpx;  
+  line-height: 24px;
+  text-align: center;
+  background: pink; 
+  color: #fff;
+}
+.Tlist_fen{
+  float: right;
+  margin-top: 3px;
+  font-size: 24rpx;
+  color: #757575;
+}
+.Tchan_con{
+  font-size: 28rpx;
+  color: #888;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.Tchan_title{
+  float: left;
+  width: 199rpx;
+}
+.TchanItem_con{
+  float: left;
+  width: 70%; 
+}
+.Tchan_item{
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 1px 5px;
+  margin: 0 5px 5px 0;
+  border: 1px solid #008EFF;
+  border-radius: 2px;
+  color: #008EFF;
+} 
+.Alist_con{
+}
+.Alist_item{
+  box-sizing: border-box;
+  padding: 20px 0px 15px 0px;
+  background: #fff;
+  border-bottom: 1px solid #E5E5E5;
+}
+.Aitem_top{
+  box-sizing: border-box;
+  padding: 0px 20px 0px 20px;
+  overflow: hidden;
+  display: flex;
+}
+.AitemTop_left{
+  float: left;
+  width: 80%;
+}
+.AitemTop_right{
+  float: right;
+  display:-webkit-flex; 
+  width: 20%;
+  justify-content:center;
+  align-items:center; 
+  font-size: 20rpx;
+  color: #757575;
+}
+.Aright_child{
+  height: 18px;
+  margin-left: 30px;
+}
+.Aitem_name{
+  font-size: 34rpx;
+  color: #000;
+  font-weight: bold;
+}
+.Atime_con{
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 28rpx;
+}
+.Apeople_con{
+  box-sizing: border-box;
+  padding: 0 30rpx 0 20px;
+  width: 100%;
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 11rpx;
+}
+.Aapply_time{
+  color: #666;
+}
+.Aapply_people{
+  display: inline-block;
+  margin-right: 13rpx;
+  color: #666;
+  font-size: 26rpx;
+
+}
+.Afen{
+  font-size: 36rpx;
+  color: #F96060;
+}
+.Aitem_bottom{
+  height: 60rpx;
+  margin-left: 30px;
+  width: 120rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius:6rpx;
+  border:1px solid rgba(0,142,255,1);
+}
+.Aabstract{
+  color: #008EFF;
+  font-size: 32rpx;
+}

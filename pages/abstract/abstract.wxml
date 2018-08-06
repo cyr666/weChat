@@ -1,0 +1,18 @@
+<view class = "abstract_con">
+  <!-- <view class = "navBarTile">
+    <view class="clickRouter" bindtap='goBack'>
+      <image src="../../resource/left.png" class="left_jiantou"></image>
+    </view>
+    <view class = "navBar_word">创新成果</view>
+  </view> -->
+  <view class = "abstract_top">
+    <view class = "abstract_title">{{title}}</view>
+    <view class = "applyNum">
+      申请号：{{code}}
+    </view>
+  </view>
+  <view class = "abstract_bottom">
+    <text class = "abstract_word">摘要：</text>
+    <text class = "abstract_text">{{abstracts}}</text>
+  </view>
+</view>

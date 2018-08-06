@@ -1,0 +1,35 @@
+<view class = "team_con">
+  <!-- <view class = "navBarTile">
+    <view class="clickRouter" bindtap='goBack'>
+      <image src="../../resource/left.png" class="left_jiantou"></image>
+    </view>
+    <view class = "navBar_word">创新团队</view>
+  </view> -->
+  <view class = "team_header">
+    <text class = "team_keyword {{count==index?'action':''}}" bindtap='getAreaSpecial' wx:for="{{industryList}}" data-index="{{index}}" data-id="{{item.id}}">{{item.name}}</text>
+  </view>
+  <view class = "team_searchWord">
+    该行业共有<text class = "people_num">{{numFound}}</text>个发明人
+  </view>
+  <view class = "list_con" wx:if="{{inventer.length>0}}">
+    <view class = "list_item" wx:for="{{inventer}}">
+      <view class = "list_header">
+        <view class = "logo_con">
+          <text class = "list_symbol" style="background:{{colorList[item.i-1]}}">{{item.firstWord}}</text>
+           {{item.name}}
+        </view>
+        <view class = "list_fen">
+          发明专利：<text class = "fen">{{item.num}}</text>项
+        </view>
+      </view>
+      <view class = "chan_con">
+        <text class = "chan_title">主要技术领域：</text>  
+        <view class = "chanItem_con">
+          <text class = "chan_item" wx:for="{{item.keywordList}}">{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='footer' wx:if="{{refresh}}">上拉加载更多</view>
+  <view class='footer' wx:else>没有更多数据了</view>
+</view>

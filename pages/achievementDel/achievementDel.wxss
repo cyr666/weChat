@@ -1,0 +1,96 @@
+/* pages/achievementDel/achievementDel.wxss */
+@import "../wxParse/wxParse.wxss";
+page{
+  width: 100%;
+  height: 100%;
+}
+.head_con{
+  box-sizing: border-box;
+  padding: 42rpx 30rpx 0 30rpx;
+  width: 100%;
+  height: 155rpx;
+  border-bottom: 1px solid #EEEEEE;
+  overflow: hidden;
+}
+.headImg_con,.name_con{
+  float: left;
+  overflow: hidden;
+}
+.headImg_con{
+  width: 67rpx;
+  height: 68rpx;
+  margin-right: 20rpx;
+  margin-top: 4rpx;
+}
+.headLogo{
+  width: 67rpx;
+  height: 67rpx;
+}
+.jigou_name{
+  font-size: 30rpx;
+  color: #333333;
+}
+.jigou_time{
+  font-size: 24rpx;
+  color: #B2B2B2;
+}
+.pv_word{
+  display: inline-block;
+  margin-left: 30rpx;
+}
+.achievement_box{
+  box-sizing: border-box;
+  padding: 40rpx 30rpx;
+}
+.achievement_title{
+  margin-bottom: 40rpx;
+  font-size:48rpx;
+  font-weight: bold;
+  color:rgba(35,35,35,1);
+}
+.title_bg_con{
+  position: relative;
+  overflow: hidden;
+  margin: 40rpx 0 20rpx 0;
+}
+.title_bg_con,.title_bg{
+  width: 690rpx;
+  height: 101rpx;
+}
+.num{
+  position: absolute;
+  top: 17rpx;
+  left: 26rpx;
+  font-size: 48rpx;
+  color: #fff;
+}
+.title{
+  position: absolute;
+  top: 31rpx;
+  left: 137rpx;
+  font-size:28rpx;
+  color: #fff;
+}
+.pv_con{
+  overflow: hidden;
+}
+.pv_left{
+  float: left;
+}
+.pv_right{
+  float: left;
+  /* margin-left: 30rpx; */
+}
+.collect_icon{
+  width:24rpx;
+  height:23rpx;
+  margin-right: 10rpx;
+}
+.collect_word{
+  font-size:26rpx;
+  color:rgba(0,142,255,1);
+}
+.pvRight_word{
+  font-size:24rpx;
+  color:rgba(178,178,178,1);
+}

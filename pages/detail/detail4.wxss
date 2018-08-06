@@ -1,0 +1,240 @@
+.cooperateNet_con{
+  box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  padding: 0rpx 0 30rpx 0;
+  margin-top: 20rpx;
+}
+.cooperateNet_title_con{
+  box-sizing: border-box;
+  padding: 21rpx 0;
+  height: 88rpx;
+  border-bottom: 1px solid #E5E5E5;
+}
+.cooperateNet_title{
+  display: inline-block;
+  padding-left: 29rpx;
+  font-size: 32rpx;
+  color: #000;
+  border-left: 6rpx solid #008EFF;
+}
+.echartsNet_con{
+  box-sizing: border-box;
+  padding: 30rpx;
+}
+.echartsRelation_con{
+  width: 690rpx;
+  /* height: 563rpx; */
+  /* border: 1px solid #CECECE; */
+  /* border-radius: 10px; */
+}
+.relation_title{
+  height: 68rpx;
+  font-size: 24rpx;
+  color: #008EFF;
+  line-height: 68rpx;
+  text-align: center;
+  border: 1px solid #dcdcdc;
+  background: #F9F9F9;
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  /* border-bottom: 1px solid #CECECE; */
+}
+.echarts_relation {
+  box-sizing: border-box;
+  width: 100%; 
+  height: 495rpx;
+  border: 1px solid #DCDCDC;
+  border-top: none;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+} 
+#mychart-dom-pie {
+  width: 100%;
+  height: 495rpx;
+}
+.cooperateTable_con,.cooperateTable_tr{
+  width: 100%;
+  overflow: hidden;
+}
+.cooperateTable_head{
+  width: 100%;
+  height: 58rpx;
+  border-bottom: 1px solid #DCDCDC;
+  border-top: 1px solid #DCDCDC;
+  background: #F9F9F9;
+}
+.cooperateTableHead_left,.cooperateTableHead_right{
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  float: left;
+  width: 305rpx;
+  font-size: 24rpx;
+  line-height: 58rpx;
+  color: #7B8185;
+}
+.cooperateTableHead_right{
+  float: left;
+  width: 444rpx;
+  border-left: 1px solid #DCDCDC;
+}
+.cooperateTable_tr{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #DCDCDC;
+}
+.cooperateTableTr_left,.cooperateTableTr_right{
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  float: left;
+  width: 305rpx;
+  background: #F9F9F9;
+  font-size: 24rpx;
+  color:#353535;
+}
+.cooperateTableTr_right{
+  padding-left: 0;
+  width: 444rpx;
+  border-left: 1px solid #DCDCDC;
+  background: #fff;
+}
+.cooperateTableTr_td{
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #E5E5E5;
+}
+.borderNone{
+  border-bottom: none;
+}
+.clickMorecooper{
+  width:750rpx;
+  height:88rpx;
+  background:#F9F9F9;
+  border:1px solid #DCDCDC;
+  border-left: none;
+  border-right: none;
+  color: #008EFF;
+  font-size: 28rpx;
+  line-height: 88rpx;
+  text-align: center;
+  margin-top: 40rpx;
+}
+.echartsNet_text{
+  box-sizing: border-box;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  font-size:28rpx;
+  color:rgba(136,136,136,1);
+  line-height:40rpx;
+}
+/** chart start ***********************/
+.bigCharts_con{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 101;
+}
+.test{
+  width: 700rpx; 
+  height: 500rpx; 
+  border-radius: 10rpx;
+  background: #fff; 
+  margin: 50rpx auto;
+  position: relative;
+  top: 20%;
+}
+.canvas_view{
+    width: 580rpx;
+    height: 250rpx;
+    position: absolute;
+    left: 80rpx;
+    top: 60rpx;
+    border-left: solid 1rpx #eaedf1;
+    border-bottom: solid 1rpx #eaedf1;
+}
+.notice{
+    width: 300rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 60rpx;
+    margin-left: -150rpx;
+    font-size: 30rpx;
+    color: #008eff;
+}
+.left_1, .left_2, .left_3, .left_4, .left_5, .left_6{
+    width: 50rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    text-align: center;
+    position: absolute;
+    left: 30rpx;
+    font-size: 20rpx;
+    color: #a7afb6;
+}
+.left_1{
+    top: 55rpx;
+}
+.left_2{
+    top: 80rpx;
+}
+.left_3{
+    top: 110rpx;
+}
+.left_4{
+    top: 170rpx;
+}
+.left_5{
+    top: 230rpx;
+}
+.left_6{
+    top: 290rpx;
+}
+.y_2009, .y_2012, .y_2015, .y_2018, .time_chinese{
+    width: 61rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    text-align: center;
+    position: absolute;
+    top: 320rpx;
+    font-size: 20rpx;
+    color: #a7afb6;
+}
+.y_2009{
+    left: 100rpx;
+}
+.y_2012{
+    left: 250rpx;
+}
+.y_2015{
+    left: 400rpx;
+}
+.y_2018{
+    left: 550rpx;
+}
+.time_chinese{
+    left: 612rpx;
+}
+.confirm{
+    display: block;
+    border-top: solid 1rpx #e5e5e5;
+    border-bottom-left-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+    width: 700rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    color: #008eff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 30rpx;
+}
+/** chart end *************************/

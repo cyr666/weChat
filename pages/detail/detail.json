@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "创新成果",
+  "usingComponents": {
+    "ec-canvas": "../../echarts/ec-canvas/ec-canvas"
+  }
+}

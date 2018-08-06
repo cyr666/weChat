@@ -1,0 +1,129 @@
+/**index.wxss**/
+page{
+  background:rgba(244,244,244,1);
+}
+
+.index_header{
+  box-sizing: border-box;
+  padding-top: 10px;
+  position: relative;
+  height:50px;
+  background:rgba(255,255,255,1);
+}
+.index_input{
+  box-sizing: border-box;
+  padding: 0 10px;
+  display: block;
+  background: #fff;
+  margin: 0px 88px 0px 30px;
+  height: 31px;
+  border: 1px solid #B2B2B2;
+  border-radius: 4px;
+}
+.search_btn{
+  box-sizing: border-box;
+  padding: 4.5px 10px; 
+  background: #008EFF;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  width: 60px;
+  font-size: 32rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+}
+.search_result{
+  margin: 18rpx 0 19rpx 30rpx;
+  font-size: 24rpx;
+  color: #888888;
+}
+.num{
+  color: #F96060;
+}
+.list_con{
+  margin: 0 15px;
+}
+.list_item{
+  box-sizing: border-box;
+  padding: 20px 20px 15px 20px;
+  background: #fff;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+.list_header{
+  overflow: hidden;
+}
+.logo_con{
+  float: left;
+  width: 85%;
+  font-size: 34rpx;
+}
+.list_symbol{
+  display: inline-block;
+  margin-right: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+  font-size: 24rpx;  
+  line-height: 40rpx;
+  text-align: center;
+  background: pink; 
+  color: #fff;
+  position:relative;
+  top:-2rpx;
+}
+.list_fen{
+  float: right;
+  font-size: 24rpx;
+  color: #757575;
+}
+.fen{
+  font-size: 36rpx;
+  color: #F96060;
+}
+.chan_con{
+  font-size: 28rpx;
+  color: #888;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.chan_title{
+  float: left;
+  box-sizing: border-box;
+  padding: 7rpx 10rpx;
+  background: #CCE8FF;
+  color: #008EFF;
+  margin-right: 20rpx;
+  /* width: 144rpx; */
+}
+.chanItem_con{
+  float: left;
+  width: 75%; 
+}
+.chan_item{
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 6rpx 10rpx;
+  border-radius:4rpx;
+  color: #888888;
+  font-size: 26rpx;
+  position: relative;
+}
+.symbol{
+  width:6rpx;
+  height:6rpx;
+  border-radius: 3rpx;
+  background:rgba(136,136,136,1);
+  position: absolute;
+  right: -5rpx;
+  top: 22rpx;
+}
+.footer{
+  font-size:22rpx;
+  color:rgba(136,136,136,1);
+   line-height:30px; 
+  text-align: center;
+}
+.red{
+  color: #FAA420;
+}

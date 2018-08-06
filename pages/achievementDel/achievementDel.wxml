@@ -1,0 +1,48 @@
+<import src="../wxParse/wxParse.wxml"/>
+<view class = "bigBox">
+  <view class = "head_con">
+    <view class = "headImg_con">
+      <image src="{{public.logo}}" class = "headLogo"></image>
+    </view>
+    <view class = "name_con">
+      <view class = "jigou_name">{{public.name}}</view>
+      <view class = "jigou_time">
+        <text class="time">{{date}}</text>
+        <text class = "pv_word">阅读量 {{pageView}}</text>
+      </view>
+    </view>
+  </view>
+  <view class = "achievement_box" >
+    <view class = "achievement_title">{{title}}</view>
+    <view class = "pv_con">
+      <!-- <view class = "pv_left">
+        <image src = "../../resource/collect_blue.png" class = "collect_icon"></image>
+        <text class = "collect_word">收藏</text>
+      </view> -->
+      <!-- <view class = "pv_right">
+        <text class = "pvRight_word">阅读量 {{pageView}}</text>
+      </view> -->
+    </view>
+    <view class = "text" wx:for="{{subTitles}}">
+      <view class = "title_bg_con">
+        <image class = "title_bg" src="../../resource/titleBg.png"></image>
+        <text class = "num" wx:if="{{item.rank<10}}">0{{item.rank}}</text>
+        <text class = "num" wx:if="{{item.rank>=10}}">{{item.rank}}</text>
+        <text class = "title">{{item.title}}</text>
+      </view>
+      <template is="wxParse" wx:if="{{index==0}}" data="{{wxParseData:subTitle0.nodes}}"/>
+      <template is="wxParse" wx:if="{{index==1}}" data="{{wxParseData:subTitle1.nodes}}"/>
+      <template is="wxParse" wx:if="{{index==2}}" data="{{wxParseData:subTitle2.nodes}}"/>
+      <template is="wxParse" wx:if="{{index==3}}" data="{{wxParseData:subTitle3.nodes}}"/>
+      <template is="wxParse" wx:if="{{index==4}}" data="{{wxParseData:subTitle4.nodes}}"/>
+      <template is="wxParse" wx:if="{{index==5}}" data="{{wxParseData:subTitle5.nodes}}"/>
+      <template is="wxParse" wx:if="{{index==6}}" data="{{wxParseData:subTitle6.nodes}}"/>
+      <template is="wxParse" wx:if="{{index==7}}" data="{{wxParseData:subTitle7.nodes}}"/>
+      <template is="wxParse" wx:if="{{index==8}}" data="{{wxParseData:subTitle8.nodes}}"/>
+      <template is="wxParse" wx:if="{{index==9}}" data="{{wxParseData:subTitle9.nodes}}"/>
+      <template is="wxParse" wx:if="{{index==10}}" data="{{wxParseData:subTitle10.nodes}}"/>
+    </view>
+    <!-- <view wx:if="{{subTitles.length==0}}">Loading</view> -->
+  </view>
+  <view style="height: 40rpx"></view>
+</view>

@@ -1,0 +1,42 @@
+<view class = "achievement_con">
+  <!-- <view class = "navBarTile">
+      <view class="clickRouter" bindtap='goBack'>
+        <image src="../../resource/left.png" class="left_jiantou"></image>
+      </view>
+      <view class = "navBar_word">创新成果</view>
+  </view> -->
+  <view class = "team_header">
+    <text class = "team_keyword {{count==index?'action':''}}" bindtap='getAreaSpecial' wx:for="{{industry}}" data-index="{{index}}" data-id="{{item.id}}">{{item.name}}</text>
+  </view>
+  <view class = "team_searchWord">
+    该行业共有<text class = "people_num">{{numFound}}</text>项发明专利
+  </view>
+  <view class = "list_con">
+    <view class = "list_item" wx:for="{{patentArray}}">
+      <view class = "item_top">
+        <view class = "itemTop_left">
+          <view class = "item_name">{{item.title}}</view>
+          <view class = "time_con">
+            申请时间：<text class = "apply_time">{{item.date}}</text>
+          </view>
+          <view class = "time_con people_con">
+            发明人：<text class = "apply_time">{{item.inventer}}</text>
+          </view>
+        </view>
+        <!-- <view class = "itemTop_right">
+          <view class = "right_child">
+            <text class = "fen">{{item.score}}</text>分
+          </view>
+        </view> -->
+      </view>
+      <view class = "item_bottom" bindtap='getAbstract' data-abstract="{{item.abstract}}" data-title="{{item.title}}" data-code="{{item.id}}">
+        <text class = "abstract">摘要</text>
+        <view class = "abstractDelImg_con">
+          <image src="../../resource/right_gray.png" class = "abstractDelImg"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='footer' wx:if="{{refresh}}">上拉加载更多</view>
+  <view class='footer' wx:else>没有更多数据了</view>
+</view>
