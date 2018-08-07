@@ -22,7 +22,7 @@ Page({
     })
     app.globalData.schoolId = option.id
     wx.request({  /* 获取专利精选信息 */
-      url: 'https://api.piionee.com/piionee/transfer/industry/getAchievementDetail',
+      url: app.globalData.serverUrl +'piionee/transfer/industry/getAchievementDetail',
       data: {
         "id": this.data.schoolId, 
         "type": "专利"

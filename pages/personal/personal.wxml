@@ -1,0 +1,17 @@
+<import src="../tabbar/tabbar.wxml"/>
+<template is="tabbar" data="{{tabbar}}"/>
+<!-- 引导用户登录小程序 -->
+<modal hidden="{{hidden}}"  confirm-text="" cancel-text=""  bindconfirm="confirm"  catchtouchmove='true'>
+  <view class = "instruction">您尚未登录科创时代小程序,是否登录？</view>
+  <view class = "btns">
+    <button class = "noBtn">否</button>
+    <button class = "yesBtn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleLogin" >是</button>
+  </view>
+</modal>
+<!-- 用户信息 -->
+<view class = "personal_con">
+  <view class = "avatarUrl_con">
+   <image src="{{avatarUrl}}" class = "avatarUrl_img"></image>
+  </view>
+  <view class = "nickName">{{nickName}}</view>
+</view>

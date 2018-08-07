@@ -21,7 +21,7 @@ Page({
   },
   firtAjax(){
     wx.request({
-      url: 'https://api.piionee.com/piionee/transfer/industry/getInnovationPerson', //仅为示例，并非真实的接口地址
+      url: app.globalData.serverUrl +'piionee/transfer/industry/getInnovationPerson', //仅为示例，并非真实的接口地址
       data: {
         id: this.data.comId,
         industry: this.data.keyWordId,

@@ -71,7 +71,7 @@ Page({
       })
     }
     wx.request({
-      url: 'https://api.piionee.com/piionee/transfer/industry/getCompanyDetail', //仅为示例，并非真实的接口地址
+      url: app.globalData.serverUrl+'piionee/transfer/industry/getCompanyDetail', //仅为示例，并非真实的接口地址
       data: {
         id: this.data.comId
         // id:'54462'
@@ -86,7 +86,7 @@ Page({
       }
     })
     wx.request({
-      url: 'https://api.piionee.com/piionee/transfer/industry/getCompanyChainAndTech', //仅为示例，并非真实的接口地址
+      url: app.globalData.serverUrl +'piionee/transfer/industry/getCompanyChainAndTech', //仅为示例，并非真实的接口地址
       data: {
         id: this.data.comId
         // id: '54462'
@@ -101,7 +101,7 @@ Page({
       }
     })
     wx.request({
-      url: 'https://api.piionee.com/piionee/transfer/industry/getSimilarCompany', //仅为示例，并非真实的接口地址
+      url: app.globalData.serverUrl +'piionee/transfer/industry/getSimilarCompany', //仅为示例，并非真实的接口地址
       data: {
         id: this.data.comId
         // id: '54462'
@@ -116,7 +116,7 @@ Page({
       }
     });
     wx.request({
-      url: 'https://api.piionee.com/piionee/transfer/industry/getCompanyRelation', //仅为示例，并非真实的接口地址
+      url: app.globalData.serverUrl +'piionee/transfer/industry/getCompanyRelation', //仅为示例，并非真实的接口地址
       data: {
         id: this.data.comId
         // id: '54462'
@@ -255,7 +255,7 @@ Page({
   },
   firtAjax1() {
     wx.request({
-      url: 'https://api.piionee.com/piionee/transfer/industry/getInnovationPerson', //仅为示例，并非真实的接口地址
+      url: app.globalData.serverUrl +'piionee/transfer/industry/getInnovationPerson', //仅为示例，并非真实的接口地址
       data: {
         id: this.data.comId,
       },
@@ -290,7 +290,7 @@ Page({
   },
   firtAjax2() {
     wx.request({
-      url: 'https://api.piionee.com/piionee/transfer/industry/getPatentAnalysis', //仅为示例，并非真实的接口地址
+      url: app.globalData.serverUrl +'piionee/transfer/industry/getPatentAnalysis', //仅为示例，并非真实的接口地址
       data: {
         id: this.data.comId,
       },
@@ -324,7 +324,7 @@ Page({
         WIDTH = res.windowWidth; /* 缓存屏幕宽 */
 
         wx.request({ /* 获取接口数据 */
-          url: 'https://api.piionee.com/piionee/transfer/industry/getCompanyFtermBigGraph',
+          url: app.globalData.serverUrl +'piionee/transfer/industry/getCompanyFtermBigGraph',
           data: {
             id: th.data.comId, /* 需要动态设置 */
             ft: th.data.ft /* 需要动态设置 */
@@ -507,7 +507,7 @@ function initChart(canvas, width, height) {
   });
   canvas.setChart(chart);
   wx.request({
-    url: 'https://api.piionee.com/piionee/transfer/industry/getCompanyDetail', //仅为示例，并非真实的接口地址
+    url: app.globalData.serverUrl +'piionee/transfer/industry/getCompanyDetail', //仅为示例，并非真实的接口地址
     data: {
       // id: obj.id
       id: app.globalData.id
@@ -585,7 +585,7 @@ function drowBar(canvas, width, height) {
   });
   canvas.setChart(chart);
   wx.request({
-    url: 'https://api.piionee.com/piionee/transfer/industry/getCompanyChainAndTech', //仅为示例，并非真实的接口地址
+    url: app.globalData.serverUrl +'piionee/transfer/industry/getCompanyChainAndTech', //仅为示例，并非真实的接口地址
     data: {
       id: app.globalData.id
       // id: '54462'
@@ -704,7 +704,7 @@ function drowRelation(canvas, width, height) {
   });
   canvas.setChart(chart);
   wx.request({
-    url: 'https://api.piionee.com/piionee/transfer/industry/getCompanyRelation',
+    url: app.globalData.serverUrl +'piionee/transfer/industry/getCompanyRelation',
     data: {
       id: app.globalData.id
     },

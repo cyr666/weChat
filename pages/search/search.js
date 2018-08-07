@@ -1,3 +1,4 @@
+var app = getApp();
 Page({
   data:{
     wordList:[],
@@ -6,7 +7,7 @@ Page({
   },
   onLoad(){
     wx.request({
-      url: 'https://api.piionee.com/piionee/transfer/industry/getHotWord', //仅为示例，并非真实的接口地址
+      url: app.globalData.serverUrl +'piionee/transfer/industry/getHotWord', //仅为示例，并非真实的接口地址
       data: {},
       header: {
         'content-type': 'application/json' // 默认值
@@ -38,7 +39,7 @@ Page({
       searchQuery: e.detail.value,
     })
     wx.request({
-      url: 'https://api.piionee.com/piionee/transfer/industry/getDropDownMenu', //仅为示例，并非真实的接口地址
+      url: app.globalData.serverUrl +'piionee/transfer/industry/getDropDownMenu', //仅为示例，并非真实的接口地址
       data: {
         query: e.detail.value
       },

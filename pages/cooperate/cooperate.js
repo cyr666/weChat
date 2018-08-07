@@ -1,3 +1,4 @@
+var app = getApp();
 Page({
   data:{
     comId:"",
@@ -13,7 +14,7 @@ Page({
   },
   sendAjax(){
     wx.request({
-      url: 'https://api.piionee.com/piionee/transfer/industry/getCompanyRelation',
+      url: app.globalData.serverUrl +'piionee/transfer/industry/getCompanyRelation',
       data: {
         id: this.data.comId,
         rows: this.data.rows

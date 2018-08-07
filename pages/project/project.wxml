@@ -2,6 +2,42 @@
 <template is="tabbar" data="{{tabbar}}"/>
 
 <view class = "project_top">
-  <text class = "project_all" >全部</text>
-  <text class = "project_folow">关注</text>
+  <button class = "project_all {{showAll?'project_onlyStyle':''}}" bindtap="handleLogin">全部</button>
+  <button class = "project_folow {{!showAll?'project_onlyStyle':''}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleLogin">关注</button>
+  <!-- <text class = "project_folow" bindtap='handleLogin'>关注</text> -->
 </view>
+<view style="position: relative;">
+  <view class="list_item" wx:for="{{patList}}" data-id="{{item.id}}" data-type="{{item.type}}" bindtap='goAchievementDel'>
+  <view class = "head_con">
+    <view class = "headImg_con">
+      <image src="{{item.public_logo}}" class = "headLogo"></image>
+    </view>
+    <view class = "name_con">
+      <view class = "jigou_name">{{item.public_name}}</view>
+      <view class = "jigou_time">
+        <text class="time">{{item.date}}</text>
+        <text class = "pv_word">阅读量 {{item.pageView}}</text>
+      </view>
+    </view>
+    <view class = "follow_con" wx:if="{{isFollow}}">
+    <button class = "btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleFollow">
+      <image src="../../resource/focus.png" class = "follow_img"></image>
+    </button>  
+    </view>
+    <view class = "follow_con isfollow" wx:else>
+      已关注
+    </view>
+  </view>
+    <image class="item_img" src="{{item.cover}}" mode='widthFix'/>
+    <view class="title_type_view" wx:if="{{item.type=='成果发布'}}">
+      <view class="text_title">
+        {{item.title}}
+        <image class="text_type" src="../../resource/cgfb.png"></image>
+      </view>
+    </view>
+    <text class="text_detail" wx:if="{{item.type=='成果发布'}}">{{item.brief}}</text>
+  </view>
+</view>
+<view class='footer' wx:if="{{refresh}}">上拉加载更多</view>
+<view class='footer' wx:else>没有更多数据了</view>
+<view style = "height:40rpx;margin-bottom: 70rpx"></view>

@@ -73,7 +73,7 @@ function drowRelation(canvas, width, height) {
   });
   canvas.setChart(chart);
   wx.request({
-    url: 'https://api.piionee.com/piionee/transfer/industry/getCompanyRelation',
+    url: app.globalData.serverUrl +'piionee/transfer/industry/getCompanyRelation',
     data: {
       id: app.globalData.id,
       all_graph:"是"

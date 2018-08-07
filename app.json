@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/first/first",
+    "pages/personal/personal",
     "pages/project/project",
     
     "pages/search/search",

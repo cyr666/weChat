@@ -39,7 +39,7 @@ Page({
       reg: reg
     })
     wx.request({
-      url: 'https://api.piionee.com/piionee/transfer/industry/getCompanyByQuery', //仅为示例，并非真实的接口地址
+      url: app.globalData.serverUrl +'piionee/transfer/industry/getCompanyByQuery', //仅为示例，并非真实的接口地址
       data: {
         query: query,
         rows: this.data.row

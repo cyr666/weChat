@@ -21,13 +21,13 @@ Page({
   },
   onLoad() {
     getApp().editTabBar(); 
-    wx.setStorageSync('classStyle', 1);
+    console.log(app.globalData.serverUrl)
     this.setData({
       classStyle: wx.getStorageSync('classStyle')
     });
     console.log(this.data.classStyle)
     wx.request({
-      url: 'https://api.piionee.com/piionee/transfer/industry/getHotWord', //仅为示例，并非真实的接口地址
+      url: app.globalData.serverUrl+'piionee/transfer/industry/getHotWord', //仅为示例，并非真实的接口地址
       data: {},
       header: {
         'content-type': 'application/json' // 默认值
@@ -38,7 +38,7 @@ Page({
   },
   sendAjax(){
     wx.request({
-      url: 'https://api.piionee.com/piionee/transfer/industry/getAchievementList', //仅为示例，并非真实的接口地址
+      url: app.globalData.serverUrl+'piionee/transfer/industry/getAchievementList', //仅为示例，并非真实的接口地址
       data: {
         rows: this.data.rows
       },

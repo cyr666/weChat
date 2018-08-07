@@ -1,0 +1,50 @@
+page{
+  background: #f4f4f4;
+}
+.instruction{
+  box-sizing: border-box;
+  padding-bottom: 40rpx;
+}
+modal{
+  overflow: hidden;
+}
+button{
+  float: left;
+  width: 48%;
+}
+.btns{
+  overflow: hidden;
+}
+.noBtn{
+  margin-right: 2%;
+}
+.yesBtn{
+  color: #008EFF;
+}
+.personal_con{
+  overflow: hidden;
+  height: 176rpx;
+  width:100%;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 32rpx 30rpx;
+  margin-top: 20rpx;
+}
+.avatarUrl_con{
+  float: left;
+  width: 112rpx;
+  height: 112rpx;
+  margin-right: 30rpx;
+  border-radius: 55rpx;
+}
+.avatarUrl_img{
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 55rpx;
+}
+.nickName{
+  float: left;
+  font-size: 40rpx;
+  color: #000;
+  margin-top: 28rpx;
+}
