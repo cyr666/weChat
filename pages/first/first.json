@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "科创时代小程序"
+  "navigationBarTitleText": "科创时代小程序",
+  "enablePullDownRefresh": false
 }

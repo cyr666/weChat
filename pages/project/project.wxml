@@ -20,9 +20,9 @@
       </view>
     </view>
     <view class = "follow_con" wx:if="{{isFollow}}">
-    <button class = "btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleFollow">
-      <image src="../../resource/focus.png" class = "follow_img"></image>
-    </button>  
+      <button class = "btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleFollow">
+        <image src="../../resource/focus.png" class = "follow_img"></image>
+      </button>  
     </view>
     <view class = "follow_con isfollow" wx:else>
       已关注

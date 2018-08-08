@@ -11,6 +11,8 @@ Page({
     rows: 10,
     patList:[],
     refresh:true,
+    refreshload: false,
+    isFollow: true,
     //Query:'',
     //companyArray:[],
     //delQuery:'',
@@ -101,6 +103,7 @@ Page({
         showChangeCss: true,
         showSearchInput: false
       })
+      
     } else {
       this.setData({
         showChangeCss: false,
@@ -133,5 +136,24 @@ Page({
       rows: this.data.rows + 10
     })
     this.sendAjax()
+  },
+  onPullDownRefresh(){
+    wx.stopPullDownRefresh();
+    if (this.data.refreshload) {
+      return
+    }
+    this.setData({
+      refreshload: true
+    })
+  },
+  handleFollow(e) {
+    console.log(e)
+    // if (!app.globalData.is_user) {
+    //   if (e.detail.userInfo) {
+    //     app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
+    //     app.globalData.nickName = e.detail.userInfo.nickName
+    //   }
+    //   this.handleNewUserLogin()
+    // }
   },
 })

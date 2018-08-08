@@ -208,15 +208,18 @@ Page({
     });
   },
   handlesameCom(res){
+    
     if (res.data.companyArray.length>0){
       res.data.companyArray.map((val) => {
         let firstWord = val.name.slice(0, 1);
         val.firstWord = firstWord
       })
-      wx: wx.setStorageSync('companyArray', res.data.companyArray)
+      wx.setStorageSync('companyArray', res.data.companyArray)
       this.setData({
         companyArray: res.data.companyArray
       })
+    }else{
+      wx.setStorageSync('companyArray', "")
     }
   },
   // 点击查看更多表格

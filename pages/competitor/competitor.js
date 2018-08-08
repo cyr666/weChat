@@ -15,6 +15,7 @@ Page({
   onLoad: function (options) {
     if (options.companyArray){
       const sharecompanyArray = JSON.parse(options.companyArray);
+      console.log(sharecompanyArray)
       this.setData({
         companyArray: sharecompanyArray
       })

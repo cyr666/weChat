@@ -2,7 +2,7 @@ var app = getApp();
 Page({
   data:{
     hidden: true,
-    avatarUrl:'',
+    avatarUrl:'../../resource/darkLogo.png',
     nickName:''
   },
   onLoad() {

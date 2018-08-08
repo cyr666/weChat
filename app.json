@@ -21,6 +21,7 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#008EFF",
     "navigationBarTextStyle":"#fff",
-    "navigationStyle":"default"
+    "navigationStyle":"default",
+    "backgroundColor":"#fff"
   }
 }

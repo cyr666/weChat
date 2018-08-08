@@ -1,17 +1,55 @@
 <import src="../tabbar/tabbar.wxml"/>
 <template is="tabbar" data="{{tabbar}}"/>
-<!-- 引导用户登录小程序 -->
-<modal hidden="{{hidden}}"  confirm-text="" cancel-text=""  bindconfirm="confirm"  catchtouchmove='true'>
-  <view class = "instruction">您尚未登录科创时代小程序,是否登录？</view>
-  <view class = "btns">
-    <button class = "noBtn">否</button>
-    <button class = "yesBtn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleLogin" >是</button>
-  </view>
-</modal>
 <!-- 用户信息 -->
 <view class = "personal_con">
   <view class = "avatarUrl_con">
    <image src="{{avatarUrl}}" class = "avatarUrl_img"></image>
   </view>
-  <view class = "nickName">{{nickName}}</view>
+  <view class = "nickName" wx:if="{{nickName}}">{{nickName}}</view>
+  <view class = "unlisted" wx:else> 
+    <view class = "btn_con">
+      <button class = "log_word" bindtap='handle' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleLogin">登录</button>
+    </view>
+    <view class = "unlisted_bot">登录后即可收藏或关注</view>
+  </view>
+</view>
+
+<!-- 关于我的 公司 信息 -->
+
+<view class = "first_con">
+  <view class = "list_item">
+    <image src="../../resource/share (6).png" class = "icon"></image>
+    <text class = "icon_title">我的收藏</text>
+    <image src="../../resource/share (5).png" class = "jiantou"></image>
+  </view>
+  <view class = "list_item" style="border: none">
+    <image src="../../resource/share (4).png" class = "icon"></image>
+    <text class = "icon_title">我的关注</text>
+    <image src="../../resource/share (5).png" class = "jiantou"></image>
+  </view>
+</view>
+<view class = "first_con">
+  <view class = "list_item">
+    <image src="../../resource/share (3).png" class = "icon"></image>
+    <text class = "icon_title">关于我们</text>
+    <image src="../../resource/share (5).png" class = "jiantou"></image>
+  </view>
+  <view class = "list_item">
+    <image src="../../resource/share (2).png" class = "icon"></image>
+    <text class = "icon_title">科创时代功能介绍</text>
+    <image src="../../resource/share (5).png" class = "jiantou"></image>
+  </view>
+  <view class = "list_item" style="border: none">
+    <image src="../../resource/share (7).png" class = "icon"></image>
+    <text class = "icon_title">意见反馈</text>
+    <image src="../../resource/share (5).png" class = "jiantou"></image>
+  </view>
+</view>
+<view class = "first_con">
+  <view class = "list_item" style="border: none">
+    <image src="../../resource/share (1).png" class = "icon"></image>
+    <text class = "icon_title">分享</text>
+    <image src="../../resource/share (5).png" class = "jiantou"></image>
+    <text class = "share_title">分享小程序，获系统试用特权</text>
+  </view>
 </view>
