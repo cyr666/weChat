@@ -1,0 +1,54 @@
+page{
+  background: #F4F4F4;
+}
+.shareImg{
+  width: 384rpx;
+  height: 288rpx;
+  margin: 265rpx 0 0 183rpx;
+}
+.share_word{
+  font-size: 38rpx;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  margin-top: 40rpx;
+}
+.share_letter{
+  font-size: 32rpx;
+  color: #888888;
+  text-align: center;
+  margin-top: 30rpx;
+}
+.share_btn{
+  width: 360rpx;
+  height: 70rpx;
+  background: #008EFF;
+  font-size: 32rpx;
+  color: #fff;
+  border-radius:10rpx;
+  margin: 80rpx 0 0 195rpx;
+}
+.shareBtn_img{
+  float: left;
+  width: 34rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  margin: 17rpx 5rpx 0 126rpx;
+}
+.shareBtn_word{
+  float: left;
+  margin: 12rpx 0 0 10rpx;
+}
+.phone_con{
+  margin-top: 30rpx;
+  background: none;
+  border: 1px solid #008EFF;
+}
+.phone_img{
+  width: 28rpx;
+  height: 28rpx;
+  margin: 21rpx 0 0 52rpx;
+}
+.phone_word{
+  color:#008EFF
+}

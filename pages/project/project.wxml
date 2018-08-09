@@ -30,8 +30,7 @@
   </view>
     <image class="item_img" src="{{item.cover}}" mode='widthFix'/>
     <view class="title_type_view" wx:if="{{item.type=='成果发布'}}">
-      <view class="text_title">
-        {{item.title}}
+      <view class="text_title">{{item.title}}
         <image class="text_type" src="../../resource/cgfb.png"></image>
       </view>
     </view>

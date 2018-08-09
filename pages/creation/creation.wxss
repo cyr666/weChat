@@ -1,0 +1,132 @@
+page{
+  background: #F4F4F4;
+}
+.logo_area{
+  width: 750rpx;
+  height: 500rpx;
+  background: #fff;
+}
+.com_logo{
+  width: 154rpx;
+  height: 154rpx;
+  margin: 80rpx 0 0 298rpx;
+}
+.com_name{
+  font-weight: bold;
+  font-size:28rpx;
+  color:rgba(0,0,0,1);
+  text-align: center;
+  margin-top: 20rpx;
+}
+.com_text{
+  box-sizing: border-box;
+  padding: 0 40rpx;
+  font-size:28rpx;
+  color:#353535;
+  text-indent: 2em;
+  margin-top: 20rpx;
+}
+/* 功能具体介绍 */
+.bigTitle_con{
+  width: 100%;
+  height: 27px;
+  text-align: center;
+  margin-top: 40px;
+}
+.lineLeft,.lineRight{
+  float: left;
+  width: 120rpx;
+  height: 2px;
+}
+.lineLeft{
+  margin-left: 88rpx;
+}
+.bigTitle_word{
+  position: relative;
+  float: left;
+  top: -10px;
+  width: 290rpx;
+  height: 23px;
+  font-size: 28rpx;
+  line-height: 27px;
+  margin: 0 23rpx;  
+}
+.bg2_img{
+  width: 289rpx;
+  height: 55rpx;
+  margin-top: -3px;
+}
+.bigTitle_letter{
+  position: absolute;
+  top: -1rpx; 
+  left: 33rpx;
+  font-size: 28rpx;
+  color: #fff;
+  line-height: 23px;
+}
+.first_con{
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  margin: 16px 0 15px 0;
+  width: 100%;
+  height: 60px;
+}
+.first_img{
+  float: left;
+  width: 55px;
+  height: 55px;
+}
+.firstWord_con{
+  width: 567rpx;
+  float: left;
+  height: 65px;
+
+}
+.first_top{
+  font-size: 38rpx;
+  color: #353535;
+}
+.first_bottom{
+  margin-top: 3px;
+  font-size: 28rpx;
+  color: #888888;
+}
+.first_img_con{
+  width: 691rpx;
+  height: 565rpx;
+  margin: 5px 30rpx 69rpx 30rpx;
+  box-shadow:0px 0px  5px 3px #ccc;
+}
+.first_bigimg{
+  width: 691rpx;
+  height: 282.5px;
+}
+.first_two_img{
+  width: 690rpx;
+  height: 272px;
+}
+.first_three_con{
+  width: 700rpx;
+  height: 563px;
+}
+.first_three_img{
+  width: 100%;
+  height: 563px;
+}
+.first_four_con{
+  width: 690rpx;
+  height: 472px;
+}
+.first_four_img{
+  width: 690rpx;
+  height: 472px;
+}
+.bottom{
+  box-sizing: border-box;
+  padding-right: 30rpx;
+  font-size: 22rpx;
+  color: #999999;
+  width: 100%;
+  text-align: right;
+  margin: 30rpx 0;
+}

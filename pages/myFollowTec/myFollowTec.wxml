@@ -1,0 +1,21 @@
+<view class = "collect_box">
+  <view class = "collect_item" wx:if="{{isCollect}}">
+    <view class = "item_top">
+      <view class = "collectImg_con">
+        <image src="../../resource/darkLogo.png" class = "collectImg"></image>
+      </view>
+      <view class = "collect_title_con">新型抗肿瘤病毒的长效融合蛋白药物
+        <image src="../../resource/cgfb.png" class = "collect_type"></image>
+      </view>
+    </view> 
+    <view class = "collectItem_bottom">
+      <text class = "">清华成果与知识产权</text>
+      <text class = "collect_time">2018/7/27</text>
+    </view>
+    <text class = "collect_item_right"></text>
+  </view>
+  <view class = "noCollect_con" wx:if="{{!isCollect}}">
+    <image src="../../resource/nofollow.png" class = "noCollect"></image>
+    <view class = "noCollect_title">暂无收藏</view>
+  </view>
+</view>

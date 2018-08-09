@@ -1,0 +1,32 @@
+page{
+  background: #F4F4F4;
+}
+.first_con{
+
+}
+.list_item{
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  height: 88rpx;
+  background: #fff;
+  margin-top: 20rpx;
+}
+.icon,.icon_title{
+  float: left;
+  margin-top: 23rpx;
+}
+.icon_title{
+  font-size: 30rpx;
+  color: #353535;
+}
+.icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.jiantou{
+  float: right;
+  width: 16rpx;
+  height: 26rpx;
+  margin-top: 30rpx;
+}

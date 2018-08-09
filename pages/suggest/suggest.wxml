@@ -1,0 +1,4 @@
+<view class="section">
+  <textarea bindinput="bindTextAreaBlur"  placeholder="您的意见或者建议，将是我们强大的动力，我们力求做到最好" class="textarea" value='{{text}}'/>
+  <view class = "submit {{isText?'submitStyle':''}}">提交</view>
+</view>

@@ -1,0 +1,31 @@
+page{
+  box-sizing: border-box;
+  padding: 30rpx;
+  background: #F4F4F4;
+}
+.textarea{
+  box-sizing: border-box;
+  padding: 30rpx;
+  background: #fff;
+  width: 690rpx;
+  height: 450rpx;
+  border-radius:10rpx;
+  border:1px solid rgba(220,220,220,1);
+  font-size: 28rpx;
+  color: #999999;
+}
+.submit{
+  width:690rpx;
+  height:94rpx;
+  background:rgba(0,142,255,0.4);
+  border-radius:10rpx;
+  border:2rpx solid rgba(5,5,5,0.08);
+  font-size: 36rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 94rpx;
+  margin-top: 40rpx;
+}
+.submitStyle{
+  background:rgba(0,142,255,1);
+}

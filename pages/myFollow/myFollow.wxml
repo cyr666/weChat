@@ -1,0 +1,12 @@
+<view class = "first_con">
+  <view class = "list_item" bindtap='myFollowTec'>
+    <image src="http://p7b85tdui.bkt.clouddn.com/myFollow1.png" class = "icon"></image>
+    <text class = "icon_title">科研机构</text>
+    <image src="http://p7b85tdui.bkt.clouddn.com/share5.png" class = "jiantou"></image>
+  </view>
+  <view class = "list_item" bindtap='myFollowFirstNew'>
+    <image src="http://p7b85tdui.bkt.clouddn.com/myFollow2.png" class = "icon"></image>
+    <text class = "icon_title">头条平台</text>
+    <image src="http://p7b85tdui.bkt.clouddn.com/share5.png" class = "jiantou"></image>
+  </view>
+</view>

@@ -1,0 +1,64 @@
+<view class = "aboutus_box">
+  <view class = "logo_area">
+    <image src="http://p7b85tdui.bkt.clouddn.com/com_logo.png" class = "com_logo"></image>
+    <view class = "com_name">北京青核桃科技有限公司</view>
+  </view>
+  <view class ="content_box">
+    <view class = "content_title">
+       致力于成为全球领先的科技运营商，基于覆盖全球技术成果的信息获取和处理能力，融合人工智能、大数据技术的 分析评估能力，数据驱动的科技洞察能力，成为产、学、研、 政、军、金协同创新的连接者、推动者、价值实现者和创造者。
+    </view>
+    <view class = "content_icon">
+      <image src="http://p7b85tdui.bkt.clouddn.com/company_title.png" class = "icon_img"></image>
+    </view>
+    <view class = "first_content">
+      <view class = "first_top">
+        <image src="http://p7b85tdui.bkt.clouddn.com/1@2x.png" class = "first_top_img"></image>
+        <view class ="first_top_right">
+          <view class = "first_title">科技大数据</view>
+          <view class = "first_text">掌握全球技术创新态势，制定天时地利人和的技术布局与规划</view>
+        </view>
+      </view>
+      <view class = "first_bottom">
+        <view >全球科技: 看国际技术创新态势</view>
+        <view style='margin-bottom: 10rpx;'>国内科技: 看各省市技术创新态势</view>
+      </view>
+    </view>
+    <view class = "first_content">
+      <view class = "first_top">
+        <image src="http://p7b85tdui.bkt.clouddn.com/2@2x.png" class = "first_top_img"></image>
+        <view class ="first_top_right">
+          <view class = "first_title">产业技术</view>
+          <view class = "first_text">以国际技术创新态势为基础，结合本地区产业布局，发展适合当地的产业，做到知己知彼，因地制宜</view>
+        </view>
+      </view>
+      <view class = "first_bottom">
+        <view >产业地图: 看园区产业发展布局</view>
+        <view style='margin-bottom: 10rpx;'>创新主体: 看各行各业企业科技发展态势</view>
+      </view>
+    </view>
+    <view class = "first_content">
+      <view class = "first_top">
+        <image src="http://p7b85tdui.bkt.clouddn.com/3@2x.png" class = "first_top_img"></image>
+        <view class ="first_top_right">
+          <view class = "first_title">科研资源</view>
+          <view class = "first_text">提供强硬的科研资源帮助各地将蓝图落到实处</view>
+        </view>
+      </view>
+      <view class = "first_bottom">
+        <view >发现: 发现最新科技成果及最活跃科研资源</view>
+        <view style='margin-bottom: 10rpx;'>科研机构&人才: 汇集全国各行业优秀科研机构及科研人才</view>
+      </view>
+    </view>
+    <view class = "line"></view>
+  </view>
+  <view class = "content_bottom">
+    <view class = "phone_con">
+      <image src="http://p7b85tdui.bkt.clouddn.com/phone.png" class = "phone_img"></image>
+      <view class = "phone_title">咨询电话: 010-88450901</view>
+    </view>
+    <view class = "phone_con">
+      <image src="http://p7b85tdui.bkt.clouddn.com/mail.png" class = "phone_img"></image>
+      <view class = "phone_title">商务合作: business@piionee.com</view>
+    </view>
+  </view>
+</view>

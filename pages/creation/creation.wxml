@@ -1,0 +1,61 @@
+<view class = "creation_box">
+  <view class = "logo_area">
+    <image src="http://p7b85tdui.bkt.clouddn.com/logo.png" class = "com_logo"></image>
+    <view class = "com_name">科创时代小程序</view>
+    <view class = "com_text"> 科创时代小程序是北京青核桃科技有限公司下项目之一，提供搜索功能，展示公司的技术实力、科研能力并且深度挖掘公司的行业布局</view>
+  </view>
+  <view >
+  <view class = "bigTitle_con">
+    <image src="http://p7b85tdui.bkt.clouddn.com/Path@2x.png" class = "lineLeft"></image>
+    <view class = "bigTitle_word">
+      <image src="http://p7b85tdui.bkt.clouddn.com/bg2.png" class = "bg2_img"></image>
+      <text class = "bigTitle_letter">科创时代功能说明</text>
+    </view>
+    <image src="http://p7b85tdui.bkt.clouddn.com/Path@2x.png" class = "lineRight"></image> 
+  </view>
+  <view class = "first_con">
+    <image src="http://p7b85tdui.bkt.clouddn.com/11@2x.png" class="first_img"></image>
+    <view class = "firstWord_con">
+      <view class = "first_top">公司技术实力</view>
+      <view class = "first_bottom">查看公司技术实力，多维度量化数据</view>
+    </view>
+  </view>
+  <view class = "first_img_con">
+    <image src="http://p7b85tdui.bkt.clouddn.com/key.jpg" class = "first_bigimg"></image>
+  </view>
+  <view class = "first_con">
+    <image src="http://p7b85tdui.bkt.clouddn.com/22@2x.png" class="first_img"></image>
+    <view class = "firstWord_con">
+      <view class = "first_top">公司所属行业领域</view>
+      <view class = "first_bottom">查看公司所属行业领域， 1380 个细分行业，公司业务类别更清晰</view>
+    </view>
+  </view>
+  <view class = "first_img_con">
+    <image src="http://p7b85tdui.bkt.clouddn.com/area.jpg" class = "first_bigimg first_two_img"></image>
+  </view>
+  <view class = "first_con">
+    <image src="http://p7b85tdui.bkt.clouddn.com/33@2x.png" class="first_img"></image>
+    <view class = "firstWord_con">
+      <view class = "first_top">公司技术研发重点</view>
+      <view class = "first_bottom">精准获知公司技术布局、研发重点和技术产业化方向</view>
+    </view>
+  </view>
+  <view class = "first_img_con first_three_con">
+    <image src="http://p7b85tdui.bkt.clouddn.com/trend.jpg" class = "first_bigimg first_three_img"></image>
+  </view>
+  <view class = "first_con">
+    <image src="http://p7b85tdui.bkt.clouddn.com/44@2x.png" class="first_img"></image>
+    <view class = "firstWord_con">
+      <view class = "first_top">技术创新团队</view>
+      <view class = "first_bottom">查看公司技术创新团队，深度挖掘公司技术创新潜力</view>
+    </view>
+  </view>
+  <view class = "first_img_con first_four_con">
+    <image src="http://p7b85tdui.bkt.clouddn.com/achievement.jpg" class = "first_bigimg first_four_img"></image>
+  </view>
+  <view class = "bottom">
+    专属客服7*24小时服务：010-88450901
+  </view>
+  <view style="height: 10px"></view>
+</view>
+</view>

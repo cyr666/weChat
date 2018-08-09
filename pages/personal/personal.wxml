@@ -17,39 +17,39 @@
 <!-- 关于我的 公司 信息 -->
 
 <view class = "first_con">
-  <view class = "list_item">
-    <image src="../../resource/share (6).png" class = "icon"></image>
+  <view class = "list_item" bindtap='myCollect'>
+    <image src="http://p7b85tdui.bkt.clouddn.com/share6.png" class = "icon"></image>
     <text class = "icon_title">我的收藏</text>
-    <image src="../../resource/share (5).png" class = "jiantou"></image>
+    <image src="http://p7b85tdui.bkt.clouddn.com/share5.png" class = "jiantou"></image>
   </view>
-  <view class = "list_item" style="border: none">
-    <image src="../../resource/share (4).png" class = "icon"></image>
+  <view class = "list_item" style="border: none" bindtap='myFollow'>
+    <image src="http://p7b85tdui.bkt.clouddn.com/share4.png" class = "icon"></image>
     <text class = "icon_title">我的关注</text>
-    <image src="../../resource/share (5).png" class = "jiantou"></image>
+    <image src="http://p7b85tdui.bkt.clouddn.com/share5.png" class = "jiantou"></image>
   </view>
 </view>
 <view class = "first_con">
-  <view class = "list_item">
-    <image src="../../resource/share (3).png" class = "icon"></image>
+  <view class = "list_item" bindtap='aboutus'>
+    <image src="http://p7b85tdui.bkt.clouddn.com/share3.png" class = "icon"></image>
     <text class = "icon_title">关于我们</text>
-    <image src="../../resource/share (5).png" class = "jiantou"></image>
+    <image src="http://p7b85tdui.bkt.clouddn.com/share5.png" class = "jiantou"></image>
   </view>
-  <view class = "list_item">
-    <image src="../../resource/share (2).png" class = "icon"></image>
+  <view class = "list_item" bindtap='creation'>
+    <image src="http://p7b85tdui.bkt.clouddn.com/share2.png" class = "icon"></image>
     <text class = "icon_title">科创时代功能介绍</text>
-    <image src="../../resource/share (5).png" class = "jiantou"></image>
+    <image src="http://p7b85tdui.bkt.clouddn.com/share5.png" class = "jiantou"></image>
   </view>
-  <view class = "list_item" style="border: none">
-    <image src="../../resource/share (7).png" class = "icon"></image>
+  <view class = "list_item" style="border: none" bindtap='suggest'>
+    <image src="http://p7b85tdui.bkt.clouddn.com/share7.png" class = "icon"></image>
     <text class = "icon_title">意见反馈</text>
-    <image src="../../resource/share (5).png" class = "jiantou"></image>
+    <image src="http://p7b85tdui.bkt.clouddn.com/share5.png" class = "jiantou"></image>
   </view>
 </view>
 <view class = "first_con">
-  <view class = "list_item" style="border: none">
-    <image src="../../resource/share (1).png" class = "icon"></image>
+  <view class = "list_item" style="border: none" bindtap='shareXcx'>
+    <image src="http://p7b85tdui.bkt.clouddn.com/share1.png" class = "icon"></image>
     <text class = "icon_title">分享</text>
-    <image src="../../resource/share (5).png" class = "jiantou"></image>
+    <image src="http://p7b85tdui.bkt.clouddn.com/share5.png" class = "jiantou"></image>
     <text class = "share_title">分享小程序，获系统试用特权</text>
   </view>
 </view>

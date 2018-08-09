@@ -41,4 +41,38 @@ Page({
     // app.handleLogin();
   },
   // 触发用户登录授权 end 
+  // 点击进入我的收藏
+  myCollect(){
+    wx.navigateTo({
+      url: '../collect/collect',
+    })
+  },
+  // 点击进入我的关注
+  myFollow(){
+    wx.navigateTo({
+      url: '../myFollow/myFollow',
+    })
+  },
+  // 点击进入关于我们
+  aboutus(){
+    wx.navigateTo({
+      url: '../aboutus/aboutus',
+    })
+  },
+  // 点击进入科创时代功能介绍
+  creation(){
+    wx.navigateTo({
+      url: '../creation/creation',
+    })
+  },
+  suggest(){
+    wx.navigateTo({
+      url: '../suggest/suggest',
+    })
+  },
+  shareXcx(){
+    wx.navigateTo({
+      url: '../shareXcx/shareXcx',
+    })
+  }
 })

@@ -2,6 +2,14 @@
   "pages":[
     "pages/first/first",
     "pages/personal/personal",
+    "pages/shareXcx/shareXcx",
+    "pages/suggest/suggest",
+    "pages/creation/creation",
+    "pages/myFollowFirstNew/myFollowFirstNew",
+    "pages/myFollow/myFollow",
+    "pages/myFollowTec/myFollowTec",
+    "pages/aboutus/aboutus",
+    "pages/collect/collect",
     "pages/project/project",
     
     "pages/search/search",

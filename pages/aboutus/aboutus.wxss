@@ -1,0 +1,97 @@
+.logo_area{
+  width: 750rpx;
+  height: 354rpx;
+  background: #F4F4F4;
+}
+.com_logo{
+  width: 154rpx;
+  height: 154rpx;
+  margin: 80rpx 0 0 298rpx;
+}
+.com_name{
+  font-size:28rpx;
+  color:rgba(0,0,0,1);
+  text-align: center;
+  margin-top: 20rpx;
+}
+.content_box{
+  width: 750rpx;
+}
+.content_title{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 40rpx;
+  font-size: 28rpx;
+  color: #353535;
+  text-indent: 2em;
+}
+.content_icon{
+  width: 100%;
+  height: 49rpx;
+  margin: 20rpx 0 60rpx 0;
+}
+.icon_img{
+  width: 549rpx;
+  height: 49rpx;
+  margin-left: 101rpx;
+}
+.first_content{
+  box-sizing: border-box;
+  padding: 0 40rpx 0 30rpx;
+  margin-bottom: 60rpx;
+}
+.first_top{
+  overflow: hidden
+}
+.first_top .first_top_img{
+  float: left;
+  width: 81rpx;
+  height: 81rpx;
+  margin-right: 20rpx;
+}
+.first_top_right{
+  width: 579rpx;
+  float: left;
+}
+.first_title{
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #353535;
+}
+.first_text{
+  font-size: 24rpx;
+  color: #888888;
+  margin-top: 10rpx;
+}
+.first_bottom{
+  margin: 30rpx 0 0 101rpx;  
+}
+.first_bottom view{
+  font-size: 28rpx;
+  color: #353535;
+}
+.line{
+  height: 1px;
+  background: #e5e5e5;
+  margin: 0 40rpx 0 30rpx;
+}
+.content_bottom{
+  box-sizing: border-box;
+  padding: 0 0 0 40rpx;
+  margin-top: 40rpx;
+}
+.phone_con{
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.phone_img{
+  float: left;
+  width: 28rpx;
+  height: 28rpx;
+  margin: 4rpx 20rpx 0 0;
+}
+.phone_title{
+  float: left;
+  font-size: 28rpx;
+  color: #353535;
+}
