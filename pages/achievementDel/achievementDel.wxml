@@ -11,14 +11,22 @@
         <text class = "pv_word">阅读量 {{pageView}}</text>
       </view>
     </view>
+    <view class = "follow_con" wx:if="{{!item.focus}}">
+      <button class = "btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleFollow"  data-id="{{item.public_id}}" data-type="{{item.type}}" data-index="{{index}}">
+        <image src="../../resource/focus.png" class = "follow_img"></image>
+      </button>  
+    </view>
+    <view class = "follow_con isfollow" wx:else>
+      已关注
+    </view>
   </view>
   <view class = "achievement_box" >
     <view class = "achievement_title">{{title}}</view>
     <view class = "pv_con">
-      <!-- <view class = "pv_left">
+      <view class = "pv_left">
         <image src = "../../resource/collect_blue.png" class = "collect_icon"></image>
         <text class = "collect_word">收藏</text>
-      </view> -->
+      </view>
       <!-- <view class = "pv_right">
         <text class = "pvRight_word">阅读量 {{pageView}}</text>
       </view> -->

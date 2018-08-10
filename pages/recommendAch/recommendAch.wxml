@@ -1,0 +1,32 @@
+<import src="../wxParse/wxParse.wxml"/>
+<view class = "head_con">
+    <view class = "headImg_con">
+      <image src="{{schoolLogo}}" class = "headLogo"></image>
+    </view>
+    <view class = "name_con">
+      <view class = "jigou_name">{{name}}</view>
+      <view class = "jigou_time">
+        <text class="time">{{date}}</text>
+      </view>
+    </view>
+  </view>
+<view>
+  <view class="list_item" wx:for="{{subTitles}}">
+    <image class="patent_sel_logo" src="../../resource/titleBg.png"></image>
+    <text class="order" wx:if="{{item.rank<10}}">0{{item.rank}}</text>
+    <text class="order" wx:else>{{item.rank-1}}</text>
+    <text class = "letter">成果推荐</text>
+    <text class="text_title">{{item.title}}</text>
+    <template is="wxParse" wx:if="{{index==0}}" data="{{wxParseData:subTitle0.nodes}}"/>
+    <template is="wxParse" wx:if="{{index==1}}" data="{{wxParseData:subTitle1.nodes}}"/>
+    <template is="wxParse" wx:if="{{index==2}}" data="{{wxParseData:subTitle2.nodes}}"/>
+    <template is="wxParse" wx:if="{{index==3}}" data="{{wxParseData:subTitle3.nodes}}"/>
+    <template is="wxParse" wx:if="{{index==4}}" data="{{wxParseData:subTitle4.nodes}}"/>
+    <template is="wxParse" wx:if="{{index==5}}" data="{{wxParseData:subTitle5.nodes}}"/>
+    <template is="wxParse" wx:if="{{index==6}}" data="{{wxParseData:subTitle6.nodes}}"/>
+    <template is="wxParse" wx:if="{{index==7}}" data="{{wxParseData:subTitle7.nodes}}"/>
+    <template is="wxParse" wx:if="{{index==8}}" data="{{wxParseData:subTitle8.nodes}}"/>
+    <template is="wxParse" wx:if="{{index==9}}" data="{{wxParseData:subTitle9.nodes}}"/>
+    <template is="wxParse" wx:if="{{index==10}}" data="{{wxParseData:subTitle10.nodes}}"/>
+  </view>
+</view>

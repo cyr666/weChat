@@ -28,6 +28,7 @@ Page({
   },
   handleGetachievementSucc(res){
     if (res.data.status==0){
+      console.log(res)
       let that = this;
       let subTitle = Array.from(res.data.subTitles);
       subTitle.forEach((val, ind) => {

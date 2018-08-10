@@ -9,7 +9,7 @@ Page({
     hotWord: ["奇虎", "腾讯", "百度", "阿里巴巴", "联想", "新东方", "猫眼"],
     wordList:[],
     rows: 10,
-    patList:[],
+    newsList:[],
     refresh:true,
     refreshload: false,
     isFollow: true,
@@ -36,20 +36,35 @@ Page({
       },
       success: this.handleGetHotWordSucc.bind(this)
     });
-    this.sendAjax();
+    this.sendAjaxAll();
   },
-  sendAjax(){
+  // 发送请求 (全部 关注) start
+  sendAjaxAll() {
     wx.request({
-      url: app.globalData.serverUrl+'piionee/transfer/industry/getAchievementList', //仅为示例，并非真实的接口地址
+      url: app.globalData.serverUrl + 'piionee/industry/smallApp/newsList',
       data: {
+        user_id: app.globalData.user_id,
+        type: 0,
         rows: this.data.rows
       },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: this.handleSchoolInfo.bind(this)
+      success: this.handleFirstTecNew.bind(this)
     })
   },
+  handleFirstTecNew(res) {
+    console.log(res)
+    if (res.data.status == 0) {
+      this.setData({
+        newsList: res.data.newsList,
+      })
+    }
+    if (res.data.newsList.length == res.data.numFound) {
+      this.setData({
+        refresh: false
+      })
+    }
+    wx.hideLoading();
+  },
+  // 发送请求 (全部 关注) end
   handleGetHotWordSucc(res) {
     if (res.statusCode == 200) {
       this.setData({
@@ -57,20 +72,6 @@ Page({
         wordList: res.data.wordList
       })
     }
-  },
-  handleSchoolInfo(res){
-    console.log(res);
-    if(res.data.status == 0){
-      this.setData({
-        patList: res.data.patList
-      })
-    }
-    if (res.data.patList.length == res.data.numFound) {
-      this.setData({
-        refresh: false
-      })
-    }
-    wx.hideLoading();
   },
   handleSearchSucc(res) {
     let that = this;
@@ -117,14 +118,19 @@ Page({
     }
   },
   goAchievementDel(e){
-    let id = e.currentTarget.dataset.id
+    let id = e.currentTarget.dataset.id;
+    console.log(e.currentTarget.dataset.type)
     if (e.currentTarget.dataset.type=="成果发布"){
       wx.navigateTo({
         url: '../achievementDel/achievementDel?id='+id,
       })
-    }else{
+    } else if (e.currentTarget.dataset.type == "专利精选"){
       wx.navigateTo({
         url: '../patentSel/patentSel?id=' + id,
+      })
+    }else{
+      wx.navigateTo({
+        url: '../recommendAch/recommendAch?id=' + id,
       })
     }
   },
@@ -135,7 +141,7 @@ Page({
     this.setData({
       rows: this.data.rows + 10
     })
-    this.sendAjax()
+    this.sendAjaxAll()
   },
   onPullDownRefresh(){
     wx.stopPullDownRefresh();
@@ -146,14 +152,75 @@ Page({
       refreshload: true
     })
   },
+  // 触发用户登录授权 start
+  handleLogin(e) {
+    if (!app.globalData.is_user) {
+      if (e.detail.userInfo) {
+        app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
+        app.globalData.nickName = e.detail.userInfo.nickName
+      }
+      this.handleNewUserLogin()
+    }
+    // app.handleLogin();
+    this.setData({
+      showAll: !this.data.showAll
+    })
+    this.sendAjaxAll();
+  },
   handleFollow(e) {
-    console.log(e)
-    // if (!app.globalData.is_user) {
-    //   if (e.detail.userInfo) {
-    //     app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
-    //     app.globalData.nickName = e.detail.userInfo.nickName
-    //   }
-    //   this.handleNewUserLogin()
-    // }
+    if (!app.globalData.is_user) {
+      if (e.detail.userInfo) {
+        app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
+        app.globalData.nickName = e.detail.userInfo.nickName
+      }
+      this.handleNewUserLogin()
+    } else {
+      let index = e.currentTarget.dataset.index
+      this.setData({
+        newId: e.currentTarget.dataset.id,
+      })
+      this.followAjax(index);
+    }
+  },
+  /*处理用户关注start */
+  followAjax(index) {
+    wx.request({
+      url: app.globalData.serverUrl + 'piionee/industry/smallApp/addFocus',
+      data: {
+        user_id: app.globalData.user_id,
+        id: this.data.newId,
+        type: 2
+      },
+      success: (res) => {
+        console.log(res)
+        if (res.data.is_success) {
+          let changeNewlist = this.data.newsList;
+          changeNewlist[index].focus = true;
+          console.log(changeNewlist)
+          this.setData({
+            newsList: changeNewlist
+          })
+        }
+      }
+    })
+  },
+  /*处理用户关注end */
+
+
+  // 触发用户登录授权 end
+  // 新用户登录 start
+  handleNewUserLogin() {
+    console.log(app.globalData.openid)
+    wx.request({
+      url: app.globalData.serverUrl + 'piionee/industry/smallApp/sign',
+      data: {
+        account: app.globalData.openid,
+        nickName: app.globalData.nickName,
+        cover: app.globalData.avatarUrl
+      },
+      success: (res) => {
+        console.log(res)
+      }
+    })
   },
 })

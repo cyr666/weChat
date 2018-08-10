@@ -1,6 +1,9 @@
 {
   "pages":[
+    
     "pages/first/first",
+    "pages/recommendAch/recommendAch",
+    "pages/firstTecNew/firstTecNew",
     "pages/personal/personal",
     "pages/shareXcx/shareXcx",
     "pages/suggest/suggest",

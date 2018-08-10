@@ -185,8 +185,8 @@ page{
 }
 /*************************/
 .list_item{
-  width: 670rpx;
-  padding: 40rpx;
+  width: 687rpx;
+  padding: 40rpx 30rpx;
   background: #fff;
   margin-bottom: 20rpx;
 }
@@ -226,7 +226,7 @@ page{
   margin-left: 30rpx;
 }
 .item_img{
-  width: 670rpx;
+  width: 687rpx;
   height: 280rpx;
   display: block;
   margin-top: 30rpx;
@@ -321,4 +321,24 @@ button::after{
   background: #000;
   color: #fff;
   /* z-index: 222 */
+}
+/* 提到技术 */
+.involveTec_con{
+  overflow: hidden;
+  margin-top: 16rpx;
+}
+.tec_img{
+  width: 108rpx;
+  height: 47rpx;
+  float: left;
+}
+.tecWord{
+  font-size: 30rpx;
+  color: #008EFF;
+  width: 550rpx;
+  float: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 8rpx 0 0 10rpx;
 }

@@ -7,7 +7,7 @@
   <!-- <text class = "project_folow" bindtap='handleLogin'>关注</text> -->
 </view>
 <view style="position: relative;">
-  <view class="list_item" wx:for="{{patList}}" data-id="{{item.id}}" data-type="{{item.type}}" bindtap='goAchievementDel'>
+  <view class="list_item" wx:for="{{patList}}">
   <view class = "head_con">
     <view class = "headImg_con">
       <image src="{{item.public_logo}}" class = "headLogo"></image>
@@ -19,8 +19,8 @@
         <text class = "pv_word">阅读量 {{item.pageView}}</text>
       </view>
     </view>
-    <view class = "follow_con" wx:if="{{isFollow}}">
-      <button class = "btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleFollow">
+    <view class = "follow_con" wx:if="{{!item.focus}}">
+      <button class = "btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleFollow"  data-id="{{item.public_id}}" data-type="{{item.type}}" data-index="{{index}}">
         <image src="../../resource/focus.png" class = "follow_img"></image>
       </button>  
     </view>
@@ -28,13 +28,14 @@
       已关注
     </view>
   </view>
-    <image class="item_img" src="{{item.cover}}" mode='widthFix'/>
-    <view class="title_type_view" wx:if="{{item.type=='成果发布'}}">
+    <image class="item_img" src="{{item.cover}}" mode='widthFix'  data-id="{{item.id}}" data-type="{{item.type}}" bindtap='goAchievementDel'/>
+    <view class="title_type_view" wx:if="{{item.type=='成果发布'}}" data-id="{{item.id}}" data-type="{{item.type}}" bindtap='goAchievementDel'>
       <view class="text_title">{{item.title}}
         <image class="text_type" src="../../resource/cgfb.png"></image>
       </view>
+      <text class="text_detail" wx:if="{{item.type=='成果发布'}}">{{item.brief}}</text>
     </view>
-    <text class="text_detail" wx:if="{{item.type=='成果发布'}}">{{item.brief}}</text>
+    
   </view>
 </view>
 <view class='footer' wx:if="{{refresh}}">上拉加载更多</view>

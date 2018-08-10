@@ -28,6 +28,7 @@ App({
                 if (that.globalData.is_user){
                   that.globalData.avatarUrl = res.data.cover;
                   that.globalData.nickName = res.data.nickName;
+                  that.globalData.user_id = res.data.user_id;
                 }
               }
             })
@@ -53,7 +54,7 @@ App({
   },
   globalData: {
     id: "1",
-    serverUrl: 'https://api.piionee.com/', //'https://apit.piionee.com/', 
+    serverUrl: 'https://apit.piionee.com/', //'https://api.piionee.com/',
     userInfo: null,
     tabbar: {
       color: "#9A9A9A",
@@ -69,7 +70,7 @@ App({
           selected: true
         },
         {
-          pagePath: "",
+          pagePath: "/pages/firstTecNew/firstTecNew",
           text: "科技头条",
           iconPath: "../../resource/tab2_1.png",
           selectedIconPath: "../../resource/tab2_2.png",
@@ -95,6 +96,7 @@ App({
     openid:'',
     avatarUrl:'',
     nickName:'',
-    is_user: ''
+    is_user: '',
+    user_id:''
   }
 })
