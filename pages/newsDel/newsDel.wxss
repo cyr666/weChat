@@ -1,0 +1,233 @@
+/* pages/achievementDel/achievementDel.wxss */
+@import "../wxParse/wxParse.wxss";
+page{
+  width: 100%;
+  height: 100%;
+  background: #F4F4F4
+}
+.head_con{
+  box-sizing: border-box;
+  padding: 42rpx 30rpx 0 30rpx;
+  width: 100%;
+  height: 155rpx;
+  border-bottom: 1px solid #EEEEEE;
+  overflow: hidden;
+  background: #fff;
+}
+.headImg_con,.name_con{
+  float: left;
+  overflow: hidden;
+}
+.headImg_con{
+  width: 67rpx;
+  height: 68rpx;
+  margin-right: 20rpx;
+  margin-top: 4rpx;
+}
+.headLogo{
+  width: 67rpx;
+  height: 67rpx;
+}
+.jigou_name{
+  font-size: 30rpx;
+  color: #333333;
+}
+.jigou_time{
+  font-size: 24rpx;
+  color: #B2B2B2;
+}
+.pv_word{
+  display: inline-block;
+  margin-left: 30rpx;
+}
+/* 关注样式 */
+button{
+  display: inline-block;
+  border: none;
+  font-size: 28rpx;
+  line-height: 88rpx;
+  color: #353535;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  border-radius: 0px;
+}
+.follow_con{
+  width: 124rpx;
+  height: 56rpx;
+  float: right;
+  overflow:hidden;
+}
+.follow_img{
+  width: 124rpx;
+  height: 56rpx;
+}
+.isfollow{
+  border: 1px solid #CECECE;
+  font-size: 26rpx;
+  color: #B2B2B2;
+  text-align: center;
+  line-height: 56rpx;
+  border-radius:4rpx;
+}
+.btn{
+  height: 60rpx;
+}
+/* 新闻具体样式 */
+.news_con{
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  background: #fff;
+}
+.news_title{
+  font-size: 40rpx;
+  color: #232323;
+  font-weight: bold;
+  margin-top: 46rpx;
+}
+.news_del{
+  box-sizing: border-box;
+  padding: 40rpx 30rpx;
+  font-size: 32rpx;
+  color: #353535;
+  line-height: 56rpx;
+  background: #fff;
+}
+/* 相关企业 */
+.chan{
+  margin-top: 10px;
+  box-sizing: border-box;
+  height: 45px;
+  width: 100%;
+  background: #fff;
+  font-size: 32rpx;
+  border-bottom: 1px solid #E5E5E5;
+  overflow: hidden;
+}
+.chan_word{
+  float: left;
+  margin-top: 14px;
+  box-sizing: border-box;
+  padding-left: 29rpx;
+  border-left: 3px solid #008EFF;
+  font-size: 32rpx;
+  color: #000;
+}
+.chan_right{
+  float: right;
+  overflow: hidden;
+  height: 45px;
+}
+.checkMore{
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 26rpx;
+  color: #008EFF;
+  line-height: 45px;
+}
+.right_jiantou{
+  width: 16rpx;
+  height: 26rpx;
+  margin: 10rpx 30rpx 0 0;
+}
+.list_con{
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  background: #fff;
+}
+.list_item{
+  box-sizing: border-box;
+  padding: 40rpx 0rpx;
+  background: #fff;
+  border-bottom: 1px solid #E5E5E5;
+  /* margin-bottom: 15px; */
+  /* border-radius: 5px; */
+}
+.list_header{
+  overflow: hidden;
+}
+.logo_con{
+  float: left;
+  width: 85%;
+  font-size: 34rpx;
+}
+.list_symbol{
+  float: left;
+  /* display: inline-block; */
+  /* margin-right: 20rpx; */
+  width: 40rpx;
+  height: 40rpx;
+  font-size: 24rpx;  
+  line-height: 40rpx;
+  text-align: center;
+  background: pink; 
+  color: #fff;
+}
+.list_fen{
+  float: right;
+  font-size: 24rpx;
+  color: #757575;
+}
+.fen{
+  font-size: 36rpx;
+  color: #F96060;
+}
+.chan_con{
+  font-size: 28rpx;
+  color: #888;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.chan_title{
+  float: left;
+  box-sizing: border-box;
+  padding: 7rpx 10rpx;
+  background: #CCE8FF;
+  color: #008EFF;
+  margin-right: 20rpx;
+  /* width: 144rpx; */
+}
+.chanItem_con{
+  float: left;
+  width: 75%; 
+}
+.chan_item{
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 6rpx 10rpx;
+  border-radius:4rpx;
+  color: #888888;
+  font-size: 26rpx;
+  position: relative;
+}
+.symbol{
+  width:6rpx;
+  height:6rpx;
+  border-radius: 3rpx;
+  background:rgba(136,136,136,1);
+  position: absolute;
+  right: -5rpx;
+  top: 22rpx;
+}
+.com_logo{
+  float: left;
+  width: 38rpx;
+  height: 38rpx;
+  margin-top:5rpx;
+}
+.item_name{
+  float: left;
+  font-size: 34rpx;
+  color: #000;
+  width: 500rpx;
+  margin-left: 10rpx;
+}
+.school_name{
+  width: 620rpx;
+}
+.schoolLogo_con{
+  width: 100%;
+}
+.styleOnly{
+  border: none
+}

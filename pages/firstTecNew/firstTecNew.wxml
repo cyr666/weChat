@@ -35,11 +35,11 @@
         <image class="text_type" src="../../resource/cgfb.png"></image>
       </view> -->
     </view>
-    <text class="text_detail"  data-id="{{item.id}}" data-type="{{item.type}}" bindtap='goAchievementDel'>【{{item.title}}】{{item.brief}}</text>
-    <image class="item_img" src="{{item.cover}}" mode='widthFix' data-id="{{item.id}}" data-type="{{item.type}}" bindtap='goAchievementDel' wx:if="{{item.cover}}"/>
-    <view class = "involveTec_con">
+    <text class="text_detail"  data-id="{{item.id}}"data-tech="{{item.tech}}" bindtap='goAchievementDel'>【{{item.title}}】{{item.brief}}</text>
+    <image class="item_img" src="{{item.cover}}" mode='widthFix' data-id="{{item.id}}" data-tech="{{item.tech}}" bindtap='goAchievementDel' wx:if="{{item.cover}}"/>
+    <view class = "involveTec_con" data-tech="{{item.tech}}" bindtap='handleClickSkill'>
       <image src="../../resource/tec.png" class = "tec_img"></image>
-      <text class = "tecWord">在流体和固体颗粒存在下进行的装置和过程</text>
+      <text class = "tecWord">{{item.tech}}</text>
     </view>
   </view>
 </view>

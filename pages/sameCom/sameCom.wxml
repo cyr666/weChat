@@ -1,0 +1,26 @@
+<view class = "list_con">
+    <view class = "list_item {{index==1?'styleOnly':''}}" wx:for="{{companyArray}}" bindtap='handleCompantDel' data-index="{{item.id}}" data-name="{{item.name}}">
+      <view class = "list_header">
+        <view class = "logo_con">
+          <text class = "list_symbol" style="background:{{colorList[item.i]}}" wx:if="{{!item.logo}}">{{item.firstWord}}</text>
+          <image src="{{item.logo}}" class = "com_logo" wx:else></image>
+          <text class = "item_name">{{item.name}}</text>  
+        </view>
+        <view class = "list_fen">
+          <text class = "fen">{{item.score}}</text>分
+        </view>
+      </view>
+      <view class = "chan_con" wx:if="{{item.industry.length>0}}">
+        <text class = "chan_title">产业领域</text>  
+        <view class = "chanItem_con">
+          <text class = "chan_item" wx:for="{{item.industry}}" wx:for-item="obj">{{obj}}<text class = "symbol" wx:if="{{index<item.industry.length-1}}"></text></text>
+        </view>
+      </view>
+      <view class = "chan_con" wx:if="{{item.keyword.length>0}}">
+        <text class = "chan_title">技术领域</text>  
+        <view class = "chanItem_con">
+          <text class = "chan_item" wx:for="{{item.keyword}}"  wx:for-item="obj">{{obj}}<text class = "symbol" wx:if="{{index<item.keyword.length-1}}"></text></text>
+        </view>
+      </view>
+    </view>
+  </view>

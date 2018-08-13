@@ -1,0 +1,88 @@
+<import src="../wxParse/wxParse.wxml"/>
+<view class = "bigBox">
+  <view class = "head_con">
+    <view class = "headImg_con">
+      <image src="{{logo}}" class = "headLogo"></image>
+    </view>
+    <view class = "name_con">
+      <view class = "jigou_name">{{name}}</view>
+      <view class = "jigou_time">
+        <text class="time">{{date}}</text>
+        <text class = "pv_word">阅读量 {{pageView}}</text>
+      </view>
+    </view>
+    <view class = "follow_con" wx:if="{{!item.focus}}">
+      <button class = "btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleFollow"  data-id="{{item.public_id}}" data-type="{{item.type}}" data-index="{{index}}">
+        <image src="../../resource/focus.png" class = "follow_img"></image>
+      </button>  
+    </view>
+    <view class = "follow_con isfollow" wx:else>
+      已关注
+    </view>
+  </view>
+  <view class = "news_con">
+    <view class = "news_title">{{title}}</view>
+  </view>
+  <view class = "news_del">
+    <template is="wxParse"  data="{{wxParseData:subTitle.nodes}}"/>
+  </view>
+  <!-- 相关企业 -->
+  <view class = "chan" id="list1" data-rol="list1" bindtap='handleComteam'>
+    <text class = "chan_word">相关企业</text>
+    <view class = "chan_right" >
+      <text class = "checkMore">查看更多</text>
+      <image src = "../../resource/right_blue.png" class = "right_jiantou"></image>
+    </view>
+  </view>
+   <view class = "list_con">
+    <view class = "list_item {{index==1?'styleOnly':''}}" wx:for="{{companyArray}}" bindtap='handleCompantDel' data-index="{{item.id}}" data-name="{{item.name}}">
+      <view class = "list_header">
+        <view class = "logo_con">
+          <text class = "list_symbol" style="background:{{colorList[item.i]}}" wx:if="{{!item.logo}}">{{item.firstWord}}</text>
+          <image src="{{item.logo}}" class = "com_logo" wx:else></image>
+          <text class = "item_name">{{item.name}}</text>  
+        </view>
+        <view class = "list_fen">
+          <text class = "fen">{{item.score}}</text>分
+        </view>
+      </view>
+      <view class = "chan_con" wx:if="{{item.industry.length>0}}">
+        <text class = "chan_title">产业领域</text>  
+        <view class = "chanItem_con">
+          <text class = "chan_item" wx:for="{{item.industry}}" wx:for-item="obj">{{obj}}<text class = "symbol" wx:if="{{index<item.industry.length-1}}"></text></text>
+        </view>
+      </view>
+      <view class = "chan_con" wx:if="{{item.keyword.length>0}}">
+        <text class = "chan_title">技术领域</text>  
+        <view class = "chanItem_con">
+          <text class = "chan_item" wx:for="{{item.keyword}}"  wx:for-item="obj">{{obj}}<text class = "symbol" wx:if="{{index<item.keyword.length-1}}"></text></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 相关机构 -->
+  <view class = "chan" id="list1" data-rol="list1" bindtap='handleComteam'>
+    <text class = "chan_word">相关机构</text>
+    <view class = "chan_right" >
+      <text class = "checkMore">查看更多</text>
+      <image src = "../../resource/right_blue.png" class = "right_jiantou"></image>
+    </view>
+  </view>
+   <view class = "list_con">
+    <view class = "list_item {{index==1?'styleOnly':''}}" wx:for="{{companyArray}}" bindtap='handleCompantDel' data-index="{{item.id}}" data-name="{{item.name}}">
+      <view class = "list_header">
+        <view class = "logo_con schoolLogo_con">
+          <text class = "list_symbol" style="background:{{colorList[item.i]}}" wx:if="{{!item.logo}}">{{item.firstWord}}</text>
+          <image src="{{item.logo}}" class = "com_logo" wx:else></image>
+          <text class = "item_name school_name">{{item.name}}</text>  
+        </view>
+      </view>
+      <view class = "chan_con" wx:if="{{item.keyword.length>0}}">
+        <text class = "chan_title">技术领域</text>  
+        <view class = "chanItem_con">
+          <text class = "chan_item" wx:for="{{item.keyword}}"  wx:for-item="obj">{{obj}}<text class = "symbol" wx:if="{{index<item.keyword.length-1}}"></text></text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

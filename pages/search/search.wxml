@@ -5,19 +5,19 @@
 <view class = "hotSearch_con">
   <view class = "hotSearch_word">热门搜索</view>
   <view class = "hotSearch_text">
-    <text class = "hotSearchText" bindtap='goComlist' wx:for="{{wordList}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap='goComDel'>{{item.name}}</text>
+    <text class = "hotSearchText" wx:for="{{wordList}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap='goComDel'>{{item.name}}</text>
   </view>
 </view>
 <view class = "searchHistory_con">
   <view class = "searchHistory_head">最近搜索</view>
   <view class = "searchHistory_item_con">
-    <view class = "searchHistory_item">
-      <text class = "com_name">北京北方微电子基地设备工艺研究中心有限责任...</text>
-      <image src="../../resource/close.png" class = "close"></image>
+    <view class = "searchHistory_item" wx:for="{{historySearch}}" data-companyid="{{item.company_id}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap='handleHistory'>
+      <text class = "com_name">{{item.name}}</text>
+      <image src="../../resource/close.png" class = "close" catchtap='deleteSearch' data-id="{{item.id}}"></image>
     </view>
   </view>
 </view>
-<view class = "delete_con">
+<view class = "delete_con" catchtap='deleteSearch'>
  <image src="../../resource/delete.png" class = "deleteImg"></image>
  <text class = "delete_letter">清空最近搜索记录</text>
 </view>

@@ -49,7 +49,19 @@ Page({
     wx.hideLoading();
   },
   // 发送请求 (全部 关注) end
-
+  goAchievementDel(e) {
+    let id = e.currentTarget.dataset.id;
+    let tech = e.currentTarget.dataset.tech;
+    wx.navigateTo({
+      url: '../newsDel/newsDel?id=' + id + '&tech=' + tech,
+    })
+  },
+  handleClickSkill(e) {
+    let tech = e.currentTarget.dataset.tech;
+    wx.navigateTo({
+      url: '../skill/skill?&tech=' + tech,
+    })
+  },
   // 触发用户登录授权 start
   handleLogin(e) {
     if (!app.globalData.is_user) {

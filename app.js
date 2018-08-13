@@ -97,6 +97,8 @@ App({
     avatarUrl:'',
     nickName:'',
     is_user: '',
-    user_id:''
+    user_id:'',
+    news_id:'',
+    tech:""
   }
 })

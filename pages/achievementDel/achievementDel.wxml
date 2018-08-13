@@ -23,10 +23,10 @@
   <view class = "achievement_box" >
     <view class = "achievement_title">{{title}}</view>
     <view class = "pv_con">
-      <view class = "pv_left">
+      <button class = "pv_left">
         <image src = "../../resource/collect_blue.png" class = "collect_icon"></image>
         <text class = "collect_word">收藏</text>
-      </view>
+      </button>
       <!-- <view class = "pv_right">
         <text class = "pvRight_word">阅读量 {{pageView}}</text>
       </view> -->

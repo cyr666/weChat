@@ -42,6 +42,7 @@ Page({
       url: app.globalData.serverUrl +'piionee/transfer/industry/getCompanyByQuery', //仅为示例，并非真实的接口地址
       data: {
         query: query,
+        user_id: app.globalData.user_id,
         rows: this.data.row
       },
       method: 'GET',
@@ -113,5 +114,5 @@ Page({
       title: '做最专业的技术调查工具',
       path: path
     }
-  }
+  },
 })

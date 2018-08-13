@@ -119,20 +119,16 @@ Page({
   },
   goAchievementDel(e){
     let id = e.currentTarget.dataset.id;
-    console.log(e.currentTarget.dataset.type)
-    if (e.currentTarget.dataset.type=="成果发布"){
-      wx.navigateTo({
-        url: '../achievementDel/achievementDel?id='+id,
-      })
-    } else if (e.currentTarget.dataset.type == "专利精选"){
-      wx.navigateTo({
-        url: '../patentSel/patentSel?id=' + id,
-      })
-    }else{
-      wx.navigateTo({
-        url: '../recommendAch/recommendAch?id=' + id,
-      })
-    }
+    let tech = e.currentTarget.dataset.tech;
+    wx.navigateTo({
+      url: '../newsDel/newsDel?id=' + id + '&tech=' + tech,
+    })
+  },
+  handleClickSkill(e){
+    let tech = e.currentTarget.dataset.tech;
+    wx.navigateTo({
+      url: '../skill/skill?&tech=' + tech,
+    })
   },
   onReachBottom() {
     wx.showLoading({

@@ -1,7 +1,14 @@
 {
   "pages":[
-    
     "pages/first/first",
+    "pages/sameInstitution/sameInstitution",
+    "pages/sameCom/sameCom",
+    
+    "pages/skill/skill",
+    "pages/newsDel/newsDel",
+    
+    "pages/search/search",
+    "pages/index/index",
     "pages/recommendAch/recommendAch",
     "pages/firstTecNew/firstTecNew",
     "pages/personal/personal",
@@ -15,8 +22,8 @@
     "pages/collect/collect",
     "pages/project/project",
     
-    "pages/search/search",
-    "pages/index/index",
+    
+   
     "pages/detail/detail",
     "pages/achievement/achievement",
     "pages/achievementDel/achievementDel",
