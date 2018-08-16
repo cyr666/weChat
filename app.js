@@ -1,7 +1,8 @@
 //app.js
 App({
   onLaunch: function () {
-    this.handleLogin()
+    this.handleLogin();
+    this.handleDeviceType()
   },
   handleLogin(){
     var that = this;
@@ -37,6 +38,17 @@ App({
       }
     });
   },
+  handleDeviceType(){
+    let that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res)
+        if (res.model == 'iPhone X') {
+          that.globalData.tabbar.isIphoneX=true
+        }
+      }
+    })　
+  },
   editTabBar: function () {
     var tabbar = this.globalData.tabbar,
       currentPages = getCurrentPages(),
@@ -61,6 +73,7 @@ App({
       selectedColor: "#008EFF",
       backgroundColor: "#FAFAFA",
       borderStyle: "",
+      isIphoneX: false,
       list: [
         {
           pagePath: "/pages/first/first",
@@ -99,6 +112,7 @@ App({
     is_user: '',
     user_id:'',
     news_id:'',
-    tech:""
+    tech:"",
+    
   }
 })

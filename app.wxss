@@ -14,7 +14,9 @@
     height: 98rpx; 
     background: #FAFAFA;
 }
- 
+ .tabbar_boxChange{
+   padding-bottom: 68rpx;
+ }
 .tabbar_nav{
     display: flex;
     flex-direction: column;
