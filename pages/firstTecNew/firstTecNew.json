@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "科技头条"
+  "navigationBarTitleText": "科技头条",
+  "enablePullDownRefresh": true
 }

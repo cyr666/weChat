@@ -25,7 +25,7 @@
 }
  
 .tabbar_icon{
-    width: 35rpx;
-    height: 35rpx;
-    margin-bottom: 13rpx;  
+    width: 54rpx;
+    height: 55rpx;
+    margin-bottom: 5rpx;  
   }

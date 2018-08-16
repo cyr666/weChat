@@ -1,4 +1,9 @@
 <view class="section">
   <textarea bindinput="bindTextAreaBlur"  placeholder="您的意见或者建议，将是我们强大的动力，我们力求做到最好" class="textarea" value='{{text}}'/>
-  <view class = "submit {{isText?'submitStyle':''}}">提交</view>
+  <view class = "submit {{isText?'submitStyle':''}}" bindtap='handleSubmit'>提交</view>
+</view>
+<!-- <modal hidden="{{hidden}}" title="提交成功" confirm-text="确定"  bindconfirm="confirm" no-cancel="true" catchtouchmove='true'>
+</modal> -->
+<view class = "modal">
+  <image src="../../resource/correct.png"></image>
 </view>

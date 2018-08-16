@@ -32,12 +32,12 @@
         </view>
       </view>
       <view class = "follow_con positionBtn" wx:if="{{!item.focus}}">
-        <button class = "btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleFollow" data-index="{{index}}" data-id="{{item.public_id}}">
+        <button class = "btn" lang="zh_CN" bindtap="handleFollow" data-index="{{index}}" data-id="{{item.public_id}}">
           <image src="../../resource/focus.png" class = "follow_img"></image>
         </button>  
       </view>
-      <view class = "follow_con isfollow" wx:else>
-        已关注
+      <view class = "follow_con isfollow" wx:else bindtap="handleDeleteFollow" data-index="{{index}}" data-id="{{item.public_id}}">
+        取消关注
       </view>
     </view >
     <view class="title_type_view">
@@ -45,12 +45,14 @@
         <image class="text_type" src="../../resource/cgfb.png"></image>
       </view> -->
     </view>
-    <text class="text_detail"  data-id="{{item.id}}" data-tech="{{item.tech}}" bindtap='goAchievementDel'>【{{item.title}}】{{item.brief}}</text>
-    <image class="item_img" src="{{item.cover}}" mode='widthFix' data-id="{{item.id}}" data-tech="{{item.tech}}"  bindtap='goAchievementDel' wx:if="{{item.cover}}"/>
-    <view class = "involveTec_con" bindtap='handleClickSkill' data-tech="{{item.tech}}">
+    <text class="text_detail"  data-index="{{index}}" data-id="{{item.id}}" data-tech="{{item.tech}}" bindtap='goAchievementDel'>【{{item.title}}】{{item.brief}}<text style="color:#008EFF">全文</text></text>
+    <image class="item_img" src="{{item.cover}}" mode='widthFix' data-index="{{index}}" data-id="{{item.id}}" data-tech="{{item.tech}}"  bindtap='goAchievementDel' wx:if="{{item.cover}}"/>
+    <!-- 提到技术 start -->
+    <!-- <view class = "involveTec_con" bindtap='handleClickSkill' data-tech="{{item.tech}}" wx:if="{{item.tech}}">
       <image src="../../resource/tec.png" class = "tec_img"></image>
       <text class = "tecWord">{{item.tech}}</text>
-    </view>
+    </view> -->
+    <!-- 提到技术 end -->
   </view>
 </view>
 <view class='footer' wx:if="{{refresh}}">上拉加载更多</view>
@@ -59,3 +61,7 @@
 
 <import src="../tabbar/tabbar.wxml"/>
 <template is="tabbar" data="{{tabbar}}"/>
+
+<modal hidden="{{hidden}}" title="提示" confirm-text="确定"  bindconfirm="confirm" no-cancel="{{nocancel}}" cancel-text="取消" bindcancel="cancel"catchtouchmove='true'>
+    您暂未登录科创时代小程序，请您到我的里面进行登录！
+</modal>

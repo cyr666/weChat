@@ -133,3 +133,41 @@
 .bold{
   font-weight: bold;
 }
+/* 关注样式 */
+button{
+  display: inline-block;
+  border: none;
+  font-size: 28rpx;
+  color: #353535;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  border-radius: 0px;
+}
+.follow_con{
+  width: 124rpx;
+  height: 56rpx;
+  float: right;
+  overflow:hidden;
+}
+.follow_img{
+  width: 124rpx;
+  height: 56rpx;
+}
+.isfollow{
+  border: 1px solid #CECECE;
+  font-size: 26rpx;
+  color: #B2B2B2;
+  text-align: center;
+  line-height: 56rpx;
+  border-radius:4rpx;
+}
+.btn{
+  height: 60rpx;
+}
+button::after{
+  border:none;
+}
+.button-hover{
+  background:#fff; 
+}

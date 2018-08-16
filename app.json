@@ -1,8 +1,12 @@
 {
   "pages":[
     "pages/first/first",
+    "pages/myFollowFirstNew/myFollowFirstNew",
+    "pages/myFollowTec/myFollowTec",
+    
     "pages/sameInstitution/sameInstitution",
     "pages/sameCom/sameCom",
+    
     
     "pages/skill/skill",
     "pages/newsDel/newsDel",
@@ -12,12 +16,13 @@
     "pages/recommendAch/recommendAch",
     "pages/firstTecNew/firstTecNew",
     "pages/personal/personal",
-    "pages/shareXcx/shareXcx",
+    
     "pages/suggest/suggest",
+    "pages/shareXcx/shareXcx",
     "pages/creation/creation",
-    "pages/myFollowFirstNew/myFollowFirstNew",
+   
     "pages/myFollow/myFollow",
-    "pages/myFollowTec/myFollowTec",
+    
     "pages/aboutus/aboutus",
     "pages/collect/collect",
     "pages/project/project",
@@ -36,10 +41,11 @@
     "pages/logs/logs"
   ],
   "window":{
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#008EFF",
     "navigationBarTextStyle":"#fff",
     "navigationStyle":"default",
     "backgroundColor":"#fff"
+    
   }
 }

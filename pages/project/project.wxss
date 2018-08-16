@@ -7,7 +7,10 @@ page{
   background: #fff;
   border-bottom: 1px solid #E5E5E5;
   text-align: center;
-  
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  z-index: 101;
 }
 .project_top text{
   display: inline-block;
@@ -43,6 +46,13 @@ button::after{
   border-bottom: 4rpx solid #008EFF
 }
 /* 列表样式 start*/
+.newsList_box{
+  /* position: relative; */
+  margin-top: 96rpx;
+}
+.newsList_boxChange{
+  margin-top:0
+}
 .list_item{
   width: 670rpx;
   padding: 40rpx;
@@ -135,4 +145,19 @@ button::after{
   font-size:22rpx;
   color:rgba(136,136,136,1);
   text-align: center;
+}
+/* 暂无收藏 */
+.noCollect_con{
+  width: 334rpx;
+  text-align: center;
+  margin: 378rpx 220rpx;
+}
+.noCollect{
+  width: 334rpx;
+  height: 240rpx;
+}
+.noCollect_title{
+  font-size: 30rpx;
+  color: #AFBAC6;
+  margin-top: 30rpx;
 }

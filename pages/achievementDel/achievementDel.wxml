@@ -11,21 +11,25 @@
         <text class = "pv_word">阅读量 {{pageView}}</text>
       </view>
     </view>
-    <view class = "follow_con" wx:if="{{!item.focus}}">
-      <button class = "btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleFollow"  data-id="{{item.public_id}}" data-type="{{item.type}}" data-index="{{index}}">
+    <view class = "follow_con" wx:if="{{!focus}}">
+      <button class = "btn" lang="zh_CN" bindtap="handleFollow"  data-id="{{public.id}}" data-type="{{item.type}}" data-index="{{index}}">
         <image src="../../resource/focus.png" class = "follow_img"></image>
       </button>  
     </view>
-    <view class = "follow_con isfollow" wx:else>
-      已关注
+    <view class = "follow_con isfollow" wx:else wx:else bindtap="handleDeleteFollow" data-index="{{index}}" data-id="{{public_id}}">
+      取消关注
     </view>
   </view>
   <view class = "achievement_box" >
     <view class = "achievement_title">{{title}}</view>
     <view class = "pv_con">
-      <button class = "pv_left">
+      <button class = "pv_left" wx:if="{{!collected}}" bindtap="handleCollect">
         <image src = "../../resource/collect_blue.png" class = "collect_icon"></image>
         <text class = "collect_word">收藏</text>
+      </button>
+      <button class = "pv_left" bindtap="handleDeleCollect" wx:else>
+        <image src = "../../resource/collect_gray.png" class = "collect_icon"></image>
+        <text class = "collect_word" style="color:#B2B2B2">取消收藏</text>
       </button>
       <!-- <view class = "pv_right">
         <text class = "pvRight_word">阅读量 {{pageView}}</text>
@@ -54,3 +58,6 @@
   </view>
   <view style="height: 40rpx"></view>
 </view>
+<modal hidden="{{hidden}}" title="提示" confirm-text="确定"  bindconfirm="confirm" no-cancel="{{nocancel}}" cancel-text="取消" bindcancel="cancel" catchtouchmove='true'>
+    您暂未登录科创时代小程序，请您到我的里面进行登录！
+</modal>

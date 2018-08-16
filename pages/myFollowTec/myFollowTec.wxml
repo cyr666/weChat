@@ -1,21 +1,24 @@
 <view class = "collect_box">
-  <view class = "collect_item" wx:if="{{isCollect}}">
+  <view class = "collect_item" wx:if="{{patPublicArray.length>0}}" wx:for="{{patPublicArray}}" bindtap='goAchList' data-id="{{item.id}}">
     <view class = "item_top">
       <view class = "collectImg_con">
-        <image src="../../resource/darkLogo.png" class = "collectImg"></image>
+        <image src="../../resource/darkLogo.png" class = "collectImg" wx:if="{{!item.logo}}"></image>
+        <image src="{{item.logo}}" class = "collectImg" wx:else></image>
       </view>
-      <view class = "collect_title_con">新型抗肿瘤病毒的长效融合蛋白药物
-        <image src="../../resource/cgfb.png" class = "collect_type"></image>
+      <view class = "collect_title_con">
+        <view>{{item.name}}</view>
+        <view class = "collect_title_bot">
+          <text>【{{item.article.type}}】</text>
+          <text>{{item.article.title}}</text>
+        </view> 
       </view>
     </view> 
-    <view class = "collectItem_bottom">
-      <text class = "">清华成果与知识产权</text>
-      <text class = "collect_time">2018/7/27</text>
+    <view class = "right_box" wx:if="{{!item.article.read}}">
+      <text class = "collect_item_right"></text>
     </view>
-    <text class = "collect_item_right"></text>
   </view>
-  <view class = "noCollect_con" wx:if="{{!isCollect}}">
+  <view class = "noCollect_con" wx:if="{{patPublicArray.length==0}}">
     <image src="../../resource/nofollow.png" class = "noCollect"></image>
-    <view class = "noCollect_title">暂无收藏</view>
+    <view class = "noCollect_title">暂无关注</view>
   </view>
 </view>

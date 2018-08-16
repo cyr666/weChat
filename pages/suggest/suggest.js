@@ -1,3 +1,4 @@
+var app = getApp()
 Page({
 
   /**
@@ -5,7 +6,8 @@ Page({
    */
   data: {
     text:"",
-    isText: false
+    isText: false,
+    hidden: true
   },
 
   /**
@@ -27,6 +29,28 @@ Page({
         isText: false
       })
     }
+  },
+  // 提交意见
+  handleSubmit(){
+    wx.request({
+      url: app.globalData.serverUrl + 'piionee/industry/smallApp/suggestion',
+      data:{
+        user_id: app.globalData.user_id,
+        text: this.data.text
+      },
+      success:(res)=>{
+        if(res.data.is_success){
+          this.setData({
+            hidden: false
+          })
+        }
+      }
+    })
+  },
+  confirm(){
+    this.setData({
+      hidden: true
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

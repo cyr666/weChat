@@ -4,10 +4,10 @@
   </view>
   <view class = "share_word">分享小程序给好友</view>
   <view class = "share_letter">即可获得青核桃系统试用特权哦！</view>
-  <view class = "share_btn">
+  <button class = "share_btn" open-type="share">
     <image src="http://p7b85tdui.bkt.clouddn.com/shareimage2.png" class = "shareBtn_img"></image>
     <text class = "shareBtn_word">分享</text>
-  </view>
+  </button>
   <view class = "share_btn phone_con">
     <image src="http://p7b85tdui.bkt.clouddn.com/shareimage3.png" class = "shareBtn_img phone_img"></image>
     <text class = "shareBtn_word phone_word">010-88450901</text>

@@ -16,9 +16,15 @@ Page({
     
   },
   onLoad(option) {
-    console.log(option)
+    let btnFocus = true;
+    if (options.focus == 'true') {
+      btnFocus = true
+    } else {
+      btnFocus = false;
+    }
     this.setData({
-      schoolId: option.id
+      schoolId: option.id,
+      focus: btnFocus
     })
     app.globalData.schoolId = option.id
     wx.request({  /* 获取专利精选信息 */

@@ -4,12 +4,12 @@ Page({
     companyArray: [],
     institutionArray: [],
     colorList: ['#05AAFF', '#008EFF', '#7152E5', '#9C5BF4', '#F96060', '#FAA420', '#FFD500', '#78CD49', '#05AAFF', '#008EFF'],
+    tech:''
   },
   onLoad(options){
-    app.globalData.news_id = options.id;
     app.globalData.tech = options.tech;
     this.setData({
-      news_id: options.id
+      tech: options.tech,
     })
     this.getoneTechRelated()
   },
@@ -17,7 +17,7 @@ Page({
     wx.request({
       url: app.globalData.serverUrl + 'piionee/industry/smallApp/oneTechRelated', //仅为示例，并非真实的接口地址
       data: {
-        tech: '水利工程' //this.data.news_id
+        tech: this.data.tech
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -31,8 +31,15 @@ Page({
       let firstWord = val.name.slice(0, 1);
       val.firstWord = firstWord;
     })
+    res.data.institutionArray.forEach((val) => {
+      let firstWord = val.name.slice(0, 1);
+      val.firstWord = firstWord;
+    })
     if (res.data.companyArray.length > 2) {
       res.data.companyArray.length = 2
+    }
+    if (res.data.institutionArray.length > 2) {
+      res.data.institutionArray.length = 2
     }
     if (res.data.status == 0) {
       this.setData({
@@ -43,12 +50,12 @@ Page({
   },
   clickMoreSameCom(){
     wx.navigateTo({
-      url: '../sameCom/sameCom',
+      url: '../sameCom/sameCom?tech='+app.globalData.tech,
     })
   },
   clickMoreSameIns(){
     wx.navigateTo({
-      url: '../sameInstitution/sameInstitution',
+      url: '../sameInstitution/sameInstitution?tech=' + app.globalData.tech,
     })
   },
   handleCompantDel(e) {

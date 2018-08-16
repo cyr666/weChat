@@ -11,13 +11,13 @@
         <text class = "pv_word">阅读量 {{pageView}}</text>
       </view>
     </view>
-    <view class = "follow_con" wx:if="{{!item.focus}}">
-      <button class = "btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleFollow"  data-id="{{item.public_id}}" data-type="{{item.type}}" data-index="{{index}}">
+    <view class = "follow_con" wx:if="{{!focus}}">
+      <button class = "btn" lang="zh_CN" bindtap="handleFollow"  data-id="{{public_id}}" data-type="{{item.type}}" data-index="{{index}}">
         <image src="../../resource/focus.png" class = "follow_img"></image>
       </button>  
     </view>
-    <view class = "follow_con isfollow" wx:else>
-      已关注
+    <view class = "follow_con isfollow" wx:else bindtap="handleDeleteFollow" data-index="{{index}}" data-id="{{public_id}}">
+      取消关注
     </view>
   </view>
   <view class = "news_con">
@@ -27,7 +27,7 @@
     <template is="wxParse"  data="{{wxParseData:subTitle.nodes}}"/>
   </view>
   <!-- 相关企业 -->
-  <view class = "chan" id="list1" data-rol="list1" bindtap='handleComteam'>
+  <!-- <view class = "chan" id="list1" data-rol="list1" bindtap='clickMoreSameCom' wx:if="{{companyArray.length>0}}" >
     <text class = "chan_word">相关企业</text>
     <view class = "chan_right" >
       <text class = "checkMore">查看更多</text>
@@ -38,7 +38,7 @@
     <view class = "list_item {{index==1?'styleOnly':''}}" wx:for="{{companyArray}}" bindtap='handleCompantDel' data-index="{{item.id}}" data-name="{{item.name}}">
       <view class = "list_header">
         <view class = "logo_con">
-          <text class = "list_symbol" style="background:{{colorList[item.i]}}" wx:if="{{!item.logo}}">{{item.firstWord}}</text>
+          <text class = "list_symbol" style="background:{{colorList[0]}}" wx:if="{{!item.logo}}">{{item.firstWord}}</text>
           <image src="{{item.logo}}" class = "com_logo" wx:else></image>
           <text class = "item_name">{{item.name}}</text>  
         </view>
@@ -59,9 +59,9 @@
         </view>
       </view>
     </view>
-  </view>
+  </view> -->
   <!-- 相关机构 -->
-  <view class = "chan" id="list1" data-rol="list1" bindtap='handleComteam'>
+  <!-- <view class = "chan" id="list1" data-rol="list1" bindtap='clickMoreSameIns' wx:if="{{institutionArray.length>0}}">
     <text class = "chan_word">相关机构</text>
     <view class = "chan_right" >
       <text class = "checkMore">查看更多</text>
@@ -69,20 +69,23 @@
     </view>
   </view>
    <view class = "list_con">
-    <view class = "list_item {{index==1?'styleOnly':''}}" wx:for="{{companyArray}}" bindtap='handleCompantDel' data-index="{{item.id}}" data-name="{{item.name}}">
+    <view class = "list_item {{index==1?'styleOnly':''}}" wx:for="{{institutionArray}}" bindtap='handleCompantDel' data-index="{{item.id}}" data-name="{{item.name}}">
       <view class = "list_header">
         <view class = "logo_con schoolLogo_con">
-          <text class = "list_symbol" style="background:{{colorList[item.i]}}" wx:if="{{!item.logo}}">{{item.firstWord}}</text>
+          <text class = "list_symbol" style="background:{{colorList[0]}}" wx:if="{{!item.logo}}">{{item.firstWord}}</text>
           <image src="{{item.logo}}" class = "com_logo" wx:else></image>
           <text class = "item_name school_name">{{item.name}}</text>  
         </view>
       </view>
-      <view class = "chan_con" wx:if="{{item.keyword.length>0}}">
+      <view class = "chan_con" wx:if="{{item.F_term.length>0}}">
         <text class = "chan_title">技术领域</text>  
         <view class = "chanItem_con">
-          <text class = "chan_item" wx:for="{{item.keyword}}"  wx:for-item="obj">{{obj}}<text class = "symbol" wx:if="{{index<item.keyword.length-1}}"></text></text>
+          <text class = "chan_item" wx:for="{{item.F_term}}"  wx:for-item="obj">{{obj}}<text class = "symbol" wx:if="{{index<item.F_term.length-1}}"></text></text>
         </view>
       </view>
     </view>
-  </view>
+  </view> -->
 </view>
+<modal hidden="{{hidden}}" title="提示" confirm-text="确定"  bindconfirm="confirm" no-cancel="{{nocancel}}" cancel-text="取消" bindcancel="cancel" catchtouchmove='true'>
+    您暂未登录科创时代小程序，请您到我的里面进行登录！
+</modal>

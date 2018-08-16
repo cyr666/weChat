@@ -7,11 +7,56 @@ Page({
     isFollow: true,
     showAll: true,
     projectId:'',
-    projectType:1
+    projectType:1,
+    followProject:true,
+    myFollowProId:'',
+    hidden: true,
+    nocancel: false,
   },
-  onLoad(){
+  onLoad(option){
+    console.log(option)
+    if (option.followProject){
+      this.setData({
+        followProject: false,
+        myFollowProId: option.id,
+      })
+      this.myFollowProject()
+    }else{
+      this.setData({
+        followProject: true
+      })
+      this.sendAjaxAll();
+    }
     getApp().editTabBar(); 
-    this.sendAjaxAll();
+  },
+//从关注页进来的请求
+myFollowProject(){
+  wx.request({
+    url: app.globalData.serverUrl + 'piionee/industry/smallApp/getListByPublic', //仅为示例，并非真实的接口地址
+    data: {
+      rows: this.data.rows,
+      id: this.data.myFollowProId,
+      type: 1
+    },
+    header: {
+      'content-type': 'application/json' // 默认值
+    },
+    success: this.handleListByPublic.bind(this)
+  })
+},
+  handleListByPublic(res){
+    console.log(res)
+    if (res.data.status == 0) {
+      this.setData({
+        patList: res.data.list
+      })
+    }
+    if (res.data.list.length == res.data.numFound) {
+      this.setData({
+        refresh: false
+      })
+    }
+    wx.hideLoading();
   },
 // 获取列表数据的接口 start
   sendAjaxAll() {
@@ -63,10 +108,29 @@ Page({
     this.setData({
       rows: this.data.rows + 10
     })
-    if (this.data.showAll){
-      this.sendAjaxAll();
+    if (this.data.followProject){
+      if (this.data.showAll){
+        this.sendAjaxAll();
+      }else{
+        this.sendAjaxFollow();
+      } 
     }else{
-      this.sendAjaxFollow();
+      this.myFollowProject()
+    }
+  },
+  onPullDownRefresh() {
+    wx.stopPullDownRefresh();
+    this.setData({
+      rows: this.data.rows + 10
+    })
+    if (this.data.followProject) {
+      if (this.data.showAll) {
+        this.sendAjaxAll();
+      } else {
+        this.sendAjaxFollow();
+      }
+    } else {
+      this.myFollowProject()
     }
   },
   // 获取列表数据的接口 end
@@ -92,11 +156,9 @@ Page({
   },
   handleFollow(e){
     if(!app.globalData.is_user){
-      if (e.detail.userInfo) {
-        app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
-        app.globalData.nickName = e.detail.userInfo.nickName
-      }
-      this.handleNewUserLogin()
+      this.setData({
+        hidden: false
+      })
     }else{
       let index = e.currentTarget.dataset.index
       this.setData({
@@ -105,6 +167,19 @@ Page({
       })
       this.followAjax(index);
     }
+  },
+  confirm() {
+    this.setData({
+      hidden: true
+    })
+    wx.navigateTo({
+      url: '../personal/personal',
+    })
+  },
+  cancel(){
+    this.setData({
+      hidden: true
+    })
   },
   // 触发用户登录授权 end
   /*处理用户关注start */
@@ -129,6 +204,28 @@ Page({
      })
    },
   /*处理用户关注end */
+
+  /*取消关注*/
+  handleDeleteFollow(e) {
+    let index = e.currentTarget.dataset.index
+    wx.request({
+      url: app.globalData.serverUrl + 'piionee/industry/smallApp/deleteFocus',
+      data: {
+        id: e.currentTarget.dataset.id,
+        user_id: app.globalData.user_id,
+        type: 1
+      },
+      success: (res) => {
+        if (res.data.is_success) {
+          let arr = this.data.patList
+          arr[index].focus = false
+          this.setData({
+            patList: arr
+          })
+        }
+      }
+    })
+  },
   // 新用户登录 start
     handleNewUserLogin(){
       console.log(app.globalData.openid)
@@ -147,18 +244,20 @@ Page({
     //点击进入专利 成果详情页
   goAchievementDel(e) {
     let id = e.currentTarget.dataset.id;
+    let index = e.currentTarget.dataset.index;
+    let focus = this.data.patList[index].focus;
     console.log(e.currentTarget.dataset.type)
     if (e.currentTarget.dataset.type == "成果发布") {
       wx.navigateTo({
-        url: '../achievementDel/achievementDel?id=' + id,
+        url: '../achievementDel/achievementDel?id=' + id +'&focus='+focus,
       })
     } else if (e.currentTarget.dataset.type == "专利精选") {
       wx.navigateTo({
-        url: '../patentSel/patentSel?id=' + id,
+        url: '../patentSel/patentSel?id=' + id + '&focus=' + focus,
       })
     } else {
       wx.navigateTo({
-        url: '../recommendAch/recommendAch?id=' + id,
+        url: '../recommendAch/recommendAch?id=' + id + '&focus=' + focus,
       })
     }
   },

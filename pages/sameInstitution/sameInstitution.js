@@ -4,12 +4,12 @@ Page({
     companyArray: [],
     institutionArray: [],
     colorList: ['#05AAFF', '#008EFF', '#7152E5', '#9C5BF4', '#F96060', '#FAA420', '#FFD500', '#78CD49', '#05AAFF', '#008EFF'],
+    tech:''
   },
   onLoad(options) {
-    app.globalData.news_id = options.id;
     app.globalData.tech = options.tech;
     this.setData({
-      news_id: options.id
+      tech: options.tech,
     })
     this.getoneTechRelated()
   },
@@ -27,13 +27,14 @@ Page({
   },
   handleGetoneTechRelated(res) {
     console.log(res)
-    res.data.companyArray.forEach((val) => {
+    var i = 0;
+    res.data.institutionArray.forEach((val) => {
       let firstWord = val.name.slice(0, 1);
       val.firstWord = firstWord;
+      val.i = i++ % 8;
     })
     if (res.data.status == 0) {
       this.setData({
-        companyArray: res.data.companyArray,
         institutionArray: res.data.institutionArray
       })
     }

@@ -60,6 +60,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+    return {
+      title: '做最专业的技术调查工具',
+      path: '/pages/first/first',
+    }
   }
 })

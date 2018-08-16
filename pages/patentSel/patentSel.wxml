@@ -6,16 +6,24 @@
   <!--<image class="focus" src="{{topDate.focus}}"></image>
 </view> -->
 <view class = "head_con">
-    <view class = "headImg_con">
-      <image src="{{schoolLogo}}" class = "headLogo"></image>
-    </view>
-    <view class = "name_con">
-      <view class = "jigou_name">{{name}}</view>
-      <view class = "jigou_time">
-        <text class="time">{{date}}</text>
-      </view>
+  <view class = "headImg_con">
+    <image src="{{schoolLogo}}" class = "headLogo"></image>
+  </view>
+  <view class = "name_con">
+    <view class = "jigou_name">{{name}}</view>
+    <view class = "jigou_time">
+      <text class="time">{{date}}</text>
     </view>
   </view>
+  <view class = "follow_con" wx:if="{{!focus}}">
+    <button class = "btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleFollow"  data-id="{{item.public_id}}" data-type="{{item.type}}" data-index="{{index}}">
+      <image src="../../resource/focus.png" class = "follow_img"></image>
+    </button>  
+  </view>
+  <view class = "follow_con isfollow" wx:else>
+    已关注
+  </view>
+</view>
 <view class="content_title">
   <template is="wxParse" data="{{wxParseData:subTitle.nodes}}"/>
 </view>

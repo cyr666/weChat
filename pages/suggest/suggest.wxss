@@ -29,3 +29,8 @@ page{
 .submitStyle{
   background:rgba(0,142,255,1);
 }
+
+/* //弹框 */
+.modal{
+  width: 
+}

@@ -4,16 +4,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    newsPublicArray: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    let focusArr = JSON.parse(wx.getStorageSync('focusArr'))
+    this.setData({
+      newsPublicArray: focusArr.newsPublicArray
+    })
+    console.log(this.data.newsPublicArray)
   },
-
+  goAchList(e){
+    let id = e.currentTarget.dataset.id;
+    let followProject = false
+    wx.navigateTo({
+      url: '../firstTecNew/firstTecNew?id=' + id + '&type=2' + '&followProject=' + followProject,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

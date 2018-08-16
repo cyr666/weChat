@@ -1,19 +1,19 @@
 <view class = "collect_box">
-  <view class = "collect_item" wx:if="{{isCollect}}">
+  <view class = "collect_item" wx:for = "{{collectArr}}" wx:if="{{collectArr.length>0}}" data-id="{{item.id}}" data-type="{{item.type}}" data-focus= '{{item.public_focus}}' data-collect="true" bindtap="goAchievementDel" >
     <view class = "item_top">
       <view class = "collectImg_con">
-        <image src="../../resource/darkLogo.png" class = "collectImg"></image>
+        <image src="{{item.public_logo}}" class = "collectImg"></image>
       </view>
-      <view class = "collect_title_con">新型抗肿瘤病毒的长效融合蛋白药物
+      <view class = "collect_title_con">{{item.title}}
         <image src="../../resource/cgfb.png" class = "collect_type"></image>
       </view>
     </view> 
     <view class = "collectItem_bottom">
-      <text class = "">清华成果与知识产权</text>
-      <text class = "collect_time">2018/7/27</text>
+      <text class = "">{{item.public_name}}</text>
+      <text class = "collect_time">{{item.date}}</text>
     </view>
   </view>
-  <view class = "noCollect_con" wx:if="{{!isCollect}}">
+  <view class = "noCollect_con" wx:if="{{collectArr.length==0}}">
     <image src="../../resource/nofollow.png" class = "noCollect"></image>
     <view class = "noCollect_title">暂无收藏</view>
   </view>

@@ -1,5 +1,7 @@
 page{
   background: #f4f4f4;
+  width: 750rpx;
+  overflow-x: hidden;
 }
 .project_top{
   width: 100%;
@@ -7,6 +9,8 @@ page{
   background: #fff;
   border-bottom: 1px solid #E5E5E5;
   text-align: center;
+  position: fixed;
+  top: 0;
   
 }
 .project_top text{
@@ -44,11 +48,21 @@ button::after{
 }
 
 /*************************/
+.newsList_box{
+  /* position: relative; */
+  width: 100%;
+  overflow-x: hidden;
+  margin-top: 96rpx;
+}
+.newsList_boxChange{
+  margin-top:0
+}
 .list_item{
-  width: 687rpx;
+  width: 100%;
   padding: 40rpx 30rpx;
   background: #fff;
   margin-bottom: 20rpx;
+  box-sizing: border-box;
 }
 .list_item_top{
   /* overflow: hidden; */
@@ -111,9 +125,10 @@ button::after{
 .text_detail{
   clear: left;
   display: block;
-  font-size: 26rpx;
-  color: #808080;
+  font-size: 30rpx;
+  color: #353535;
   text-align: justify;
+  line-height: 48rpx
 }
 .footer{
   font-size:22rpx;
@@ -202,4 +217,19 @@ button::after{
   text-overflow: ellipsis;
   overflow: hidden;
   margin: 8rpx 0 0 10rpx;
+}
+/* 暂无收藏 */
+.noCollect_con{
+  width: 334rpx;
+  text-align: center;
+  margin: 378rpx 220rpx;
+}
+.noCollect{
+  width: 334rpx;
+  height: 240rpx;
+}
+.noCollect_title{
+  font-size: 30rpx;
+  color: #AFBAC6;
+  margin-top: 30rpx;
 }

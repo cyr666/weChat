@@ -26,6 +26,7 @@ view{
     padding: 0;
     word-break: normal; 
     text-align: justify;
+    text-indent: 2em;
 }
 /*//标题 */
 .wxParse-div{margin: 0;padding: 0;}
@@ -211,4 +212,7 @@ view{
 }
 .wxParse-figure {
   overflow: hidden;
+}
+.wxParse-p{
+  text-indent: 2em;
 }

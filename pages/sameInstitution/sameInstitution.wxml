@@ -1,5 +1,5 @@
 <view class = "list_con">
-    <view class = "list_item {{index==1?'styleOnly':''}}" wx:for="{{companyArray}}" bindtap='handleCompantDel' data-index="{{item.id}}" data-name="{{item.name}}">
+    <view class = "list_item {{index==1?'styleOnly':''}}" wx:for="{{institutionArray}}"  data-index="{{item.id}}" data-name="{{item.name}}">
       <view class = "list_header">
         <view class = "logo_con">
           <text class = "list_symbol" style="background:{{colorList[item.i]}}" wx:if="{{!item.logo}}">{{item.firstWord}}</text>

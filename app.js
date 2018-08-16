@@ -78,7 +78,7 @@ App({
         },
         {
           pagePath: "/pages/project/project",
-          text: "项目",
+          text: "科技项目",
           iconPath: "../../resource/tab3_1.png",
           selectedIconPath: "../../resource/tab3_2.png",
           selected: false

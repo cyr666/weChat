@@ -5,12 +5,13 @@ page{
 }
 .collect_item{
   box-sizing: border-box;
-  padding: 40rpx;
+  padding: 40rpx 30rpx 40rpx 40rpx;
   background: #fff;
   border-radius:10rpx;
   overflow: hidden;
   margin-bottom: 20rpx;
   position: relative;
+  display: flex;
 }
 .item_top{
   overflow: hidden;
@@ -36,6 +37,11 @@ page{
   height: 38rpx;
   vertical-align: middle;
   margin-top: -6rpx;
+}
+.collect_title_bot{
+  font-size: 28rpx;
+  color: #888888;
+  margin-top: 12rpx;
 }
 .collectItem_bottom{
   clear: both;
@@ -63,13 +69,16 @@ page{
   color: #AFBAC6;
   margin-top: 30rpx;
 }
+.right_box{
+  display: flex;
+  float: right;
+  align-items: center;
+  justify-content: center;
+}
 .collect_item_right{
   display: inline-block;
   width:12rpx;
   height:12rpx;
   background:rgba(249,96,96,1);
   border-radius: 6rpx;
-  position: absolute;
-  right: 30rpx;
-  top: 110rpx; 
 }

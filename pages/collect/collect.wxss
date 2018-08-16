@@ -1,6 +1,6 @@
 page{
   box-sizing: border-box;
-  padding: 30rpx;
+  padding: 20rpx;
   background: #F4F4F4;
 }
 .collect_item{
@@ -19,6 +19,8 @@ page{
   width: 98rpx;
   height: 98rpx;
   margin-right: 30rpx;
+  border: 1px solid #ececec;
+  border-radius: 49rpx;
 }
 .collectImg{
   width: 98rpx;
@@ -29,6 +31,7 @@ page{
   float: left;
   font-size:36rpx;
   color:rgba(51,51,51,1);
+  line-height:46rpx;
 }
 .collect_type{
   width: 108rpx;
@@ -38,7 +41,7 @@ page{
 }
 .collectItem_bottom{
   clear: both;
-  margin-top: 30rpx;
+  margin-top: 20rpx;
   width: 100%;
   font-size:24rpx;
   color:rgba(178,178,178,1);
