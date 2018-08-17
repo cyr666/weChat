@@ -40,6 +40,7 @@ Page({
     // 触发用户登录授权 start
   handleLogin(e){
     let that = this;
+    
     wx.login({
       success: function (res) {
         wx.request({
@@ -59,6 +60,11 @@ Page({
               },
               success: (res) => {
                 // app.globalData.is_user = res.data.is_user;
+                wx.getUserInfo({
+                  success:(res)=>{
+                    console.log(res)
+                  }
+                })
                 console.log(res)
                 if (!res.data.is_user){
                   wx.request({
