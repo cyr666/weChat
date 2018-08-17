@@ -4,6 +4,7 @@ Page({
     patPublicArray:[],
   },
   onLoad: function (options) {
+    console.log("科研机构")
     let focusArr = JSON.parse(wx.getStorageSync('focusArr'))
     this.setData({
       patPublicArray: focusArr.patPublicArray

@@ -23,11 +23,11 @@
           </view>
         </view>
         <view class = "follow_con positionBtn" wx:if="{{!item.focus}}">
-          <button class = "btn"  lang="zh_CN" bindtap="handleFollow" data-index="{{index}}" data-id="{{item.public_id}}">
+          <button class = "btn"  lang="zh_CN" bindtap="handleFollow" data-name="{{item.public_name}}" data-id="{{item.public_id}}">
             <image src="../../resource/focus.png" class = "follow_img"></image>
           </button>  
         </view>
-        <view class = "follow_con isfollow" wx:else bindtap="handleDeleteFollow" data-index="{{index}}" data-id="{{item.public_id}}">
+        <view class = "follow_con isfollow" wx:else bindtap="handleDeleteFollow" data-name="{{item.public_name}}" data-id="{{item.public_id}}">
           取消关注
         </view>
       </view >
@@ -36,8 +36,8 @@
           <image class="text_type" src="../../resource/cgfb.png"></image>
         </view> -->
       </view>
-      <text class="text_detail" data-index="{{index}}" data-id="{{item.id}}"data-tech="{{item.tech}}" bindtap='goAchievementDel'>【{{item.title}}】{{item.brief}}<text style="color:#008EFF">全文</text></text>
-      <image class="item_img" src="{{item.cover}}" mode='widthFix' data-index="{{index}}" data-id="{{item.id}}" data-tech="{{item.tech}}" bindtap='goAchievementDel' wx:if="{{item.cover}}"/>
+      <text class="text_detail" data-index="{{index}}" data-id="{{item.id}}"data-tech="{{item.tech}}" data-name="{{item.public_name}}" bindtap='goAchievementDel'>【{{item.title}}】{{item.brief}}<text style="color:#008EFF">全文</text></text>
+      <image class="item_img" src="{{item.cover}}" style="height:{{item.coverSize.h}}rpx;width:{{item.coverSize.w}}rpx" data-index="{{index}}" data-id="{{item.id}}" data-tech="{{item.tech}}" data-name="{{item.public_name}}" bindtap='goAchievementDel' wx:if="{{item.cover}}"/>
       <!-- <view class = "involveTec_con" data-tech="{{item.tech}}" bindtap='handleClickSkill'  wx:if="{{item.tech}}">
         <image src="../../resource/tec.png" class = "tec_img"></image>
         <text class = "tecWord">{{item.tech}}</text>

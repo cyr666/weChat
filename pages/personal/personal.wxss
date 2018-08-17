@@ -80,7 +80,7 @@ button::after{
 /* 公司信息 */
 .first_con{
   box-sizing: border-box;
-  padding: 0 30rpx;
+  padding: 0 0 0 30rpx;
   background: #fff;
   margin-top: 40rpx;
 }
@@ -103,7 +103,7 @@ button::after{
   float: right;
   width: 16rpx;
   height: 26rpx;
-  margin-top: 30rpx;
+  margin: 30rpx 30rpx 0 0;
 }
 .icon_title{
   font-size: 30rpx;

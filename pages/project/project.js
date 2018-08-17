@@ -30,20 +30,20 @@ Page({
     getApp().editTabBar(); 
   },
 //从关注页进来的请求
-myFollowProject(){
-  wx.request({
-    url: app.globalData.serverUrl + 'piionee/industry/smallApp/getListByPublic', //仅为示例，并非真实的接口地址
-    data: {
-      rows: this.data.rows,
-      id: this.data.myFollowProId,
-      type: 1
-    },
-    header: {
-      'content-type': 'application/json' // 默认值
-    },
-    success: this.handleListByPublic.bind(this)
-  })
-},
+  myFollowProject(){
+    wx.request({
+      url: app.globalData.serverUrl + 'piionee/industry/smallApp/getListByPublic', //仅为示例，并非真实的接口地址
+      data: {
+        rows: this.data.rows,
+        id: this.data.myFollowProId,
+        type: 1
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: this.handleListByPublic.bind(this)
+    })
+  },
   handleListByPublic(res){
     console.log(res)
     if (res.data.status == 0) {
@@ -160,12 +160,12 @@ myFollowProject(){
         hidden: false
       })
     }else{
-      let index = e.currentTarget.dataset.index
+      let name = e.currentTarget.dataset.name
       this.setData({
         projectId: e.currentTarget.dataset.id,
         projectType: e.currentTarget.dataset.type,
       })
-      this.followAjax(index);
+      this.followAjax(name);
     }
   },
   confirm() {
@@ -183,7 +183,7 @@ myFollowProject(){
   },
   // 触发用户登录授权 end
   /*处理用户关注start */
-   followAjax(index){
+   followAjax(name){
      wx.request({
        url: app.globalData.serverUrl +'piionee/industry/smallApp/addFocus',
        data:{
@@ -194,8 +194,11 @@ myFollowProject(){
        success:(res)=>{
          if (res.data.is_success){
             let changePatlist = this.data.patList;
-            changePatlist[index].focus = true;
-            console.log(changePatlist)
+            changePatlist.forEach((val)=>{
+              if(val.public_name==name){
+                val.focus=true
+              }
+            });
             this.setData({
               patList: changePatlist
             })
@@ -207,7 +210,7 @@ myFollowProject(){
 
   /*取消关注*/
   handleDeleteFollow(e) {
-    let index = e.currentTarget.dataset.index
+    let name = e.currentTarget.dataset.name
     wx.request({
       url: app.globalData.serverUrl + 'piionee/industry/smallApp/deleteFocus',
       data: {
@@ -218,13 +221,35 @@ myFollowProject(){
       success: (res) => {
         if (res.data.is_success) {
           let arr = this.data.patList
-          arr[index].focus = false
+          arr.forEach((val)=>{
+            if(val.public_name==name){
+              val.focus=false
+            }
+          })
           this.setData({
             patList: arr
+          })
+        };
+        if (!this.data.followProject) {
+          var pages = getCurrentPages();
+          var currPage = pages[pages.length - 1]; // 当前页面
+          var prevPage = pages[pages.length - 2]; // 上一级页面
+          let patArr = prevPage.data.patPublicArray;
+          patArr.forEach((val, i) => {
+            if (val.name == name) {
+              patArr.splice(i, 1)
+            }
+
+          })
+
+          prevPage.setData({
+            patPublicArray: patArr
           })
         }
       }
     })
+    
+    
   },
   // 新用户登录 start
     handleNewUserLogin(){
@@ -246,19 +271,28 @@ myFollowProject(){
     let id = e.currentTarget.dataset.id;
     let index = e.currentTarget.dataset.index;
     let focus = this.data.patList[index].focus;
+    let name = e.currentTarget.dataset.name
     console.log(e.currentTarget.dataset.type)
     if (e.currentTarget.dataset.type == "成果发布") {
       wx.navigateTo({
-        url: '../achievementDel/achievementDel?id=' + id +'&focus='+focus,
+        url: '../achievementDel/achievementDel?id=' + id + '&focus=' + focus + '&name=' + name,
       })
     } else if (e.currentTarget.dataset.type == "专利精选") {
       wx.navigateTo({
-        url: '../patentSel/patentSel?id=' + id + '&focus=' + focus,
+        url: '../patentSel/patentSel?id=' + id + '&focus=' + focus + '&name=' + name,
       })
     } else {
       wx.navigateTo({
-        url: '../recommendAch/recommendAch?id=' + id + '&focus=' + focus,
+        url: '../recommendAch/recommendAch?id=' + id + '&focus=' + focus + '&name=' + name,
       })
     }
   },
+  // 分享
+  onShareAppMessage() {
+    var path = '/pages/project/project';
+    return {
+      title: '做最专业的技术调查工具',
+      path: path
+    }
+  }
 })

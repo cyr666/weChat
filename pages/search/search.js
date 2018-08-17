@@ -41,7 +41,7 @@ Page({
     })
   },
   goComDel(e) {
-    const obj = JSON.stringify({ id: e.currentTarget.dataset.id, name: e.currentTarget.dataset.name })
+    const obj = JSON.stringify({ id: e.currentTarget.dataset.id, name: e.currentTarget.dataset.name, searchHistory: 'symbol' })
     wx.navigateTo({
       url: '../detail/detail?id=' + obj,
     })

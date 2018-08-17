@@ -20,16 +20,16 @@
         </view>
       </view>
       <view class = "follow_con" wx:if="{{!item.focus}}">
-        <button class = "btn" lang="zh_CN" bindtap="handleFollow"  data-id="{{item.public_id}}" data-type="{{item.type}}" data-index="{{index}}">
+        <button class = "btn" lang="zh_CN" bindtap="handleFollow"  data-id="{{item.public_id}}" data-type="{{item.type}}" data-name="{{item.public_name}}">
           <image src="../../resource/focus.png" class = "follow_img"></image>
         </button>  
       </view>
-      <view class = "follow_con isfollow" wx:else bindtap="handleDeleteFollow" data-index="{{index}}" data-id="{{item.public_id}}">
+      <view class = "follow_con isfollow" wx:else bindtap="handleDeleteFollow" data-name="{{item.public_name}}" data-id="{{item.public_id}}">
         取消关注
       </view>
     </view>
-    <image class="item_img" src="{{item.cover}}" mode='widthFix' data-index="{{index}}" data-id="{{item.id}}" data-type="{{item.type}}" bindtap='goAchievementDel'/>
-    <view class="title_type_view" wx:if="{{item.type=='成果发布'}}" data-index="{{index}}" data-id="{{item.id}}" data-type="{{item.type}}" bindtap='goAchievementDel'>
+    <image class="item_img" src="{{item.cover}}" mode='widthFix' data-index="{{index}}" data-id="{{item.id}}" data-type="{{item.type}}"  data-name="{{item.public_name}}" bindtap='goAchievementDel'/>
+    <view class="title_type_view" wx:if="{{item.type=='成果发布'}}" data-index="{{index}}" data-id="{{item.id}}" data-type="{{item.type}}" data-name="{{item.public_name}}" bindtap='goAchievementDel'>
       <view class="text_title">{{item.title}}
         <image class="text_type" src="../../resource/cgfb.png"></image>
       </view>

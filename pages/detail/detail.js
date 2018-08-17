@@ -53,6 +53,7 @@ Page({
     initValue: "",
     ft:"",
     showTab: true,
+    userId: '',
     /* chart data end */
   },
   onLoad(option){
@@ -69,12 +70,21 @@ Page({
       this.setData({
         comId: obj.id
       })
+      if (obj.searchHistory){
+        this.setData({
+          userId: app.globalData.user_id
+        })
+      }else{
+        this.setData({
+          userId: ''
+        })
+      }
     }
     wx.request({
       url: app.globalData.serverUrl+'piionee/transfer/industry/getCompanyDetail', //仅为示例，并非真实的接口地址
       data: {
-        id: this.data.comId
-        // id:'54462'
+        id: this.data.comId,
+        user_id: this.data.userId
       },
       method: 'GET',
       header: {
@@ -308,15 +318,18 @@ Page({
     })
   },
   handleAchievementSucc(res) {
-    this.setData({
-      patentArray: res.data.patentArray,
-      patent_num: res.data.all_numFound
-    })
-    if (res.data.patentArray.length == res.data.numFound) {
+    if(res.data.status==0){
       this.setData({
-        refresh: false
+        patentArray: res.data.patentArray,
+        patent_num: res.data.all_numFound
       })
+      if (res.data.patentArray.length == res.data.numFound) {
+        this.setData({
+          refresh: false
+        })
+      }
     }
+ 
   },
   // canvas start
   canvas(){

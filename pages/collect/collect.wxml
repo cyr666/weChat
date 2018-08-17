@@ -1,5 +1,5 @@
 <view class = "collect_box">
-  <view class = "collect_item" wx:for = "{{collectArr}}" wx:if="{{collectArr.length>0}}" data-id="{{item.id}}" data-type="{{item.type}}" data-focus= '{{item.public_focus}}' data-collect="true" bindtap="goAchievementDel" >
+  <view class = "collect_item" wx:for = "{{collectArr}}" wx:if="{{collectArr.length>0}}" data-id="{{item.id}}" data-type="{{item.type}}" data-focus= '{{item.public_focus}}' data-collect="true" bindtap="goAchievementDel" data-title="{{item.title}}" >
     <view class = "item_top">
       <view class = "collectImg_con">
         <image src="{{item.public_logo}}" class = "collectImg"></image>

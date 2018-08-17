@@ -6,7 +6,7 @@ page{
   box-sizing: border-box;
   padding-top: 10px;
   position: relative;
-  height:100rpx;
+  height:112rpx;
   background:rgba(255,255,255,1);
 }
 .index_input{
@@ -14,8 +14,8 @@ page{
   padding: 0 10px;
   display: block;
   background: #fff;
-  margin: 0px 120rpx 0px 30rpx;
-  height: 31px;
+  margin: 0px 130rpx 0px 30rpx;
+  height: 68rpx;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -27,7 +27,7 @@ page{
   top: 10px;
   right: 30rpx;
   width: 120rpx;
-  height: 31px;
+  height: 68rpx;
   font-size: 32rpx;
   text-align: center;
   color: #fff;

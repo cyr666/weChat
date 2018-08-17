@@ -6,7 +6,8 @@
         <image src="{{item.logo}}" class = "collectImg" wx:else></image>
       </view>
       <view class = "collect_title_con">
-        <view>{{item.name}}</view>
+        <view class = "collect_name">{{item.name}}</view>
+        <view class = "collect_date">{{item.article.date}}</view>
         <view class = "collect_title_bot">
           <text>【{{item.article.type}}】</text>
           <text>{{item.article.title}}</text>

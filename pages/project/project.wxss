@@ -25,12 +25,13 @@ button{
   display: inline-block;
   border: none;
   font-size: 28rpx;
-  line-height: 88rpx;
   color: #353535;
   padding: 0;
   margin: 0;
   background: #fff;
   border-radius: 0px;
+  height: 95rpx;
+  line-height: 96rpx;
 }
 .project_onlyStyle{
   color: #008EFF!important;
@@ -70,14 +71,14 @@ button::after{
   overflow: hidden;
 }
 .headImg_con{
-  width: 67rpx;
-  height: 68rpx;
+  width: 72rpx;
+  height: 72rpx;
   margin-right: 20rpx;
   margin-top: 4rpx;
 }
 .headLogo{
-  width: 67rpx;
-  height: 67rpx;
+  width: 72rpx;
+  height: 72rpx;
 }
 .jigou_name{
   font-size: 30rpx;

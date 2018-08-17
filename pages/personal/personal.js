@@ -8,7 +8,6 @@ Page({
   onLoad() {
     let that = this;
     getApp().editTabBar();
-    console.log(app.globalData.avatarUrl)
     if (app.globalData.avatarUrl && app.globalData.nickName){
       that.setData({
         avatarUrl: app.globalData.avatarUrl,
@@ -40,7 +39,7 @@ Page({
   },
     // 触发用户登录授权 start
   handleLogin(e){
-    console.log(e)
+    let that = this;
     wx.login({
       success: function (res) {
         wx.request({
@@ -52,22 +51,37 @@ Page({
             grant_type: 'authorization_code'
           },
           success: (res) => {
-            console.log(res)
             app.globalData.openid = res.data.openid
             wx.request({
-              url: app.globalData.serverUrl + 'piionee/industry/smallApp/sign',
+              url: app.globalData.serverUrl + 'piionee/industry/smallApp/beforeSign',
               data: {
                 account: res.data.openid,
-                nickName: e.detail.userInfo.nickName,
-                cover: e.detail.userInfo.avatarUrl
               },
               success: (res) => {
                 // app.globalData.is_user = res.data.is_user;
                 console.log(res)
-                if (res.data.is_success) {
-                  app.globalData.avatarUrl = res.data.cover;
-                  app.globalData.nickName = res.data.nickName;
-                  app.globalData.user_id = res.data.user_id;
+                if (!res.data.is_user){
+                  wx.request({
+                    url: app.globalData.serverUrl + 'piionee/industry/smallApp/sign',
+                    data:{
+                      account: app.globalData.openid,
+                      nickName: e.detail.userInfo.nickName,
+                      cover: e.detail.userInfo.avatarUrl
+                    },
+                    success:(res)=>{
+                      console.log(res)
+                      if (res.data.is_success){
+                        app.globalData.is_user=true,
+                        app.globalData.user_id = res.data.user_id
+                        app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
+                        app.globalData.nickName = e.detail.userInfo.nickName
+                        that.setData({
+                          avatarUrl: app.globalData.avatarUrl,
+                          nickName: app.globalData.nickName
+                        })
+                      }
+                    }
+                  })
                 }
               }
             })
@@ -78,29 +92,6 @@ Page({
     this.setData({
       hidden: true
     })
-    if (!app.globalData.is_user) {
-      if (e.detail.userInfo) {
-        app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
-        app.globalData.nickName = e.detail.userInfo.nickName
-        this.setData({
-          avatarUrl: app.globalData.avatarUrl,
-          nickName: app.globalData.nickName
-        })
-      }
-      // this.handleNewUserLogin()
-    }
-    // console.log(e.detail.errMsg)
-    // console.log(e.detail.userInfo)
-    // console.log(e.detail.rawData)
-    // if (e.detail.userInfo){
-    //   app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
-    //   app.globalData.nickName = e.detail.userInfo.nickName
-    //   this.setData({
-    //     avatarUrl: app.globalData.avatarUrl,
-    //     nickName: app.globalData.nickName
-    //   })
-    // }
-    // app.handleLogin();
   },
   // 触发用户登录授权 end 
   // 点击进入我的收藏

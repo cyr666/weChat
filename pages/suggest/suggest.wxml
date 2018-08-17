@@ -4,6 +4,9 @@
 </view>
 <!-- <modal hidden="{{hidden}}" title="提交成功" confirm-text="确定"  bindconfirm="confirm" no-cancel="true" catchtouchmove='true'>
 </modal> -->
-<view class = "modal">
-  <image src="../../resource/correct.png"></image>
+<view class = "modal" wx:if="{{hidden}}">
+  <image src="../../resource/correct.png" class = "correct_icon"></image>
+  <view class = "correct_word">已提交</view>
 </view>
+
+<view class = "phone_con">咨询电话：010-88450901</view>

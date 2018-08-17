@@ -19,8 +19,6 @@ page{
   width: 98rpx;
   height: 98rpx;
   margin-right: 30rpx;
-  border: 1px solid #ececec;
-  border-radius: 49rpx;
 }
 .collectImg{
   width: 98rpx;

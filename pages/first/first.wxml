@@ -8,16 +8,16 @@
     热搜 |<text class = "hot_word" bindtap='goComlist' wx:for="{{wordList}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap='goComDel'>{{item.name}}</text>
   </view>
 </view>  
- <view class = "header_con2" wx:else>
+ <view class = "header_con2" animation="{{animationData}}">
   <view class = "input_con">
-    <input class = "{{showChangeCss?'changeInp':'search_inp'}}" placeholder='请输入公司名' name="Query" bindinput="getComInput" bindconfirm="confirm" bindfocus='focus'></input>
-    <image src="../../resource/search.png" class = "{{showChangeCss?'changeIcon':'search_icon'}} "placeholder-class="phcolor"></image>
+    <input class = "changeInp" placeholder='请输入公司名' name="Query" bindinput="getComInput" bindconfirm="confirm" bindfocus='focus'></input>
+    <image src="../../resource/search.png" class = "changeIcon" placeholder-class="phcolor"></image>
   </view>
 </view>
 <view class = "technologyImg_con">
   <image src = "../../resource/title@2x.png" class = "technology_img"></image>
 </view>
-<view  style="position: relative;top:-6rpx;">
+<view  style="position: relative;top:-8rpx;">
   <!-- <view class = "loadMore" wx:if="{{refreshload}}">正在刷新...</view> -->
   <view class="list_item" wx:for="{{newsList}}">
     <view class = "head_con">
@@ -32,11 +32,11 @@
         </view>
       </view>
       <view class = "follow_con positionBtn" wx:if="{{!item.focus}}">
-        <button class = "btn" lang="zh_CN" bindtap="handleFollow" data-index="{{index}}" data-id="{{item.public_id}}">
+        <button class = "btn" lang="zh_CN" bindtap="handleFollow" data-name="{{item.public_name}}" data-id="{{item.public_id}}">
           <image src="../../resource/focus.png" class = "follow_img"></image>
         </button>  
       </view>
-      <view class = "follow_con isfollow" wx:else bindtap="handleDeleteFollow" data-index="{{index}}" data-id="{{item.public_id}}">
+      <view class = "follow_con isfollow" wx:else bindtap="handleDeleteFollow" data-name="{{item.public_name}}" data-id="{{item.public_id}}">
         取消关注
       </view>
     </view >
@@ -46,7 +46,7 @@
       </view> -->
     </view>
     <text class="text_detail"  data-index="{{index}}" data-id="{{item.id}}" data-tech="{{item.tech}}" bindtap='goAchievementDel'>【{{item.title}}】{{item.brief}}<text style="color:#008EFF">全文</text></text>
-    <image class="item_img" src="{{item.cover}}" mode='widthFix' data-index="{{index}}" data-id="{{item.id}}" data-tech="{{item.tech}}"  bindtap='goAchievementDel' wx:if="{{item.cover}}"/>
+    <image class="item_img" src="{{item.cover}}" style="height:{{item.coverSize.h}}rpx;width:{{item.coverSize.w}}rpx" data-index="{{index}}" data-id="{{item.id}}" data-tech="{{item.tech}}"  bindtap='goAchievementDel' wx:if="{{item.cover}}"/>
     <!-- 提到技术 start -->
     <!-- <view class = "involveTec_con" bindtap='handleClickSkill' data-tech="{{item.tech}}" wx:if="{{item.tech}}">
       <image src="../../resource/tec.png" class = "tec_img"></image>

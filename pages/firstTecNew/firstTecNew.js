@@ -42,8 +42,12 @@ Page({
     })
   },
   handleListByPublic(res) {
-    console.log(res)
     if (res.data.status == 0) {
+      res.data.list.forEach((val) => {
+        if (val.coverSize.w > 687) {
+          val.coverSize.w = 687
+        }
+      })
       this.setData({
         newsList: res.data.list
       })
@@ -79,8 +83,12 @@ Page({
     })
   },
   handleFirstTecNew(res){
-    console.log(res)
     if (res.data.status == 0) {
+      res.data.newsList.forEach((val) => {
+        if (val.coverSize.w > 687) {
+          val.coverSize.w = 687
+        }
+      })
       this.setData({
         newsList: res.data.newsList,
       })
@@ -98,8 +106,9 @@ Page({
     let tech = e.currentTarget.dataset.tech;
     let index = e.currentTarget.dataset.index;
     let focus = this.data.newsList[index].focus;
+    let name = e.currentTarget.dataset.name;
     wx.navigateTo({
-      url: '../newsDel/newsDel?id=' + id + '&tech=' + tech + '&focus=' + focus,
+      url: '../newsDel/newsDel?id=' + id + '&tech=' + tech + '&focus=' + focus + '&name=' + name,
     })
   },
   handleClickSkill(e) {
@@ -133,11 +142,11 @@ Page({
         hidden: false
       })
     }else{
-      let index = e.currentTarget.dataset.index
+      let name = e.currentTarget.dataset.name
       this.setData({
         newId: e.currentTarget.dataset.id,
       })
-      this.followAjax(index);
+      this.followAjax(name);
     }
   },
   confirm(){
@@ -154,7 +163,7 @@ Page({
     })
   },
   /*处理用户关注start */
-  followAjax(index) {
+  followAjax(name) {
     wx.request({
       url: app.globalData.serverUrl + 'piionee/industry/smallApp/addFocus',
       data: {
@@ -166,7 +175,11 @@ Page({
         console.log(res)
         if (res.data.is_success) {
           let changeNewlist = this.data.newsList;
-          changeNewlist[index].focus = true;
+          changeNewlist.forEach((val)=>{
+            if(val.public_name == name){
+              val.focus = true
+            }
+          })
           console.log(changeNewlist)
           this.setData({
             newsList: changeNewlist
@@ -178,7 +191,7 @@ Page({
   /*处理用户关注end */
   /*取消关注*/
   handleDeleteFollow(e) {
-    let index = e.currentTarget.dataset.index
+    let name = e.currentTarget.dataset.name
     wx.request({
       url: app.globalData.serverUrl + 'piionee/industry/smallApp/deleteFocus',
       data: {
@@ -189,9 +202,29 @@ Page({
       success: (res) => {
         if (res.data.is_success) {
           let arr = this.data.newsList
-          arr[index].focus = false
+          arr.forEach((val) => {
+            if (val.public_name == name) {
+              val.focus = false
+            }
+          })
           this.setData({
             newsList: arr
+          })
+        }
+        if (!this.data.followProject) {
+          var pages = getCurrentPages();
+          var currPage = pages[pages.length - 1]; // 当前页面
+          var prevPage = pages[pages.length - 2]; // 上一级页面
+          let patArr = prevPage.data.newsPublicArray;
+          patArr.forEach((val, i) => {
+            if (val.name == name) {
+              patArr.splice(i, 1)
+            }
+
+          })
+
+          prevPage.setData({
+            newsPublicArray: patArr
           })
         }
       }
@@ -249,4 +282,12 @@ Page({
       this.myFollowProject()
     }
   },
+  // 分享
+  onShareAppMessage() {
+    var path = '/pages/firstTecNew/firstTecNew';
+    return {
+      title: '做最专业的技术调查工具',
+      path: path
+    }
+  }
 })

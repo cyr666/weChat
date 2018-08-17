@@ -31,6 +31,18 @@ page{
   float: left;
   font-size:36rpx;
   color:rgba(51,51,51,1);
+  position: relative;
+}
+.collect_date{
+  font-size:24rpx;
+  color:#B2B2B2;
+  line-height:24rpx;
+  position: absolute;
+  right: 0;
+  top: 10rpx;
+}
+.collect_name{
+  width: 70%;
 }
 .collect_title_bot{
   font-size: 28rpx;

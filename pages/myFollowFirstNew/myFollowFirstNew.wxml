@@ -7,12 +7,11 @@
         <image src="{{item.logo}}" class = "collectImg" wx:else></image>
       </view>
       <view class = "collect_title_con">
-        <view>
-          <view>{{item.name}}</view>
+          <view class = "collect_name">{{item.name}}</view>
+          <view class = "collect_date">{{item.article.date}}</view>
           <view class = "collect_title_bot">
             {{item.article.title}}
           </view> 
-        </view>
       </view>
     </view> 
     <view class = "right_box" wx:if="{{!item.article.read}}">

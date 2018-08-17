@@ -31,8 +31,8 @@
   margin: 20rpx 0 60rpx 0;
 }
 .icon_img{
-  width: 549rpx;
-  height: 49rpx;
+  width: 548rpx;
+  height: 57rpx;
   margin-left: 101rpx;
 }
 .first_content{

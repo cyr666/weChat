@@ -8,7 +8,7 @@
   <view class = "nickName" wx:if="{{nickName}}">{{nickName}}</view>
   <view class = "unlisted" wx:else> 
     <view class = "btn_con">
-      <button class = "log_word" bindtap='handle' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleLogin">登录</button>
+      <button class = "log_word" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleLogin">登录</button>
     </view>
     <view class = "unlisted_bot">登录后即可收藏或关注</view>
   </view>

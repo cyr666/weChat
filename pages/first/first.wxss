@@ -62,9 +62,10 @@ page{
   position: fixed;
   top: 0px;
   width: 100%;
-  height: 160rpx;
+  height: 108rpx;
   background: #008EFF;
   z-index: 2;
+  opacity: 0;
 }
 .logo_title{
   width: 100%;
@@ -76,14 +77,9 @@ page{
 }
 .input_con{
   position: relative;
-  height: 84rpx;
+  height: 68rpx;
 }
-.changeInp{
-  position: absolute; 
-  height: 84rpx;
-  top: 10px;
-  left: 30rpx;
-}
+
 .change_com_con{
   position: absolute;
   top: 60px;
@@ -102,10 +98,10 @@ page{
   box-sizing: border-box;
   padding: 0 10rpx 0 60rpx;
   position: absolute; 
-  top: 40rpx;
+  top: 10rpx;
   left: 30rpx;
   width: 690rpx;
-  height: 44px;
+  height: 68rpx;
   background: #fff;
   border-radius:5px; 
   text-align: left;
@@ -118,10 +114,10 @@ page{
 }
 .changeIcon{
   position: absolute;
-  left: 43rpx;
-  top: 68rpx;
-  width:35rpx;
-  height: 35rpx;
+  left: 50rpx;
+  top: 33rpx;
+  width:28rpx;
+  height: 28rpx;
   z-index: 2
 }
 .search_com_con,.change_com_con{
@@ -154,14 +150,14 @@ page{
   overflow: hidden;
 }
 .headImg_con{
-  width: 67rpx;
-  height: 68rpx;
+  width: 72rpx;
+  height: 72rpx;
   margin-right: 20rpx;
   margin-top: 4rpx;
 }
 .headLogo{
-  width: 67rpx;
-  height: 67rpx;
+  width: 72rpx;
+  height: 72rpx;
 }
 .jigou_name{
   font-size: 30rpx;
@@ -206,6 +202,8 @@ page{
   color: #353535;
   line-height:48rpx;
   text-align: justify;
+  word-wrap: break-word;
+  word-break: normal;
 }
 .footer{
   font-size:22rpx;

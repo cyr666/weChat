@@ -15,8 +15,24 @@ Page({
     collectId:'',
     hidden: true,
     nocancel: false,
+    projectTitle:'',
+    projectName:''
   },
   onLoad: function (options) {
+    if(options.title){
+      this.setData({
+        projectTitle: options.title
+      })
+    }else{
+      this.setData({
+        projectTitle: ''
+      })
+    }
+    if (options.name){
+      this.setData({
+        projectName: options.name
+      })
+    }
     let btnFocus = true;
     app.globalData.schoolId = options.id;
     if (options.focus == 'true') {
@@ -38,7 +54,8 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: this.handleGetachievementSucc.bind(this)
-    })
+    });
+    this.handleChangeRead()
   },
   handleGetachievementSucc(res){
     if (res.data.status==0){
@@ -60,6 +77,24 @@ Page({
       })
     }else{
 
+    }
+  },
+  // 改变我的关注里面读与未读的状态
+  handleChangeRead() {
+    var pages = getCurrentPages();
+    var currPage = pages[pages.length - 1]; // 当前页面
+    var prevPage = pages[pages.length - 3]; // 上一级页面
+    if (prevPage.data.patPublicArray) {
+      let arr = prevPage.data.patPublicArray;
+      arr.forEach((val, i) => {
+        if (val.name == this.data.projectName) {
+          val.article.read = true
+        }
+      })
+      prevPage.setData({
+        patPublicArray: arr
+      })
+      console.log(prevPage.data.patPublicArray)
     }
   },
   // 触发用户登录授权 start
@@ -126,8 +161,24 @@ Page({
       success:(res)=>{
         if(res.data.is_success){
           this.setData({
-            collected: false
+            collected: false 
           })
+          if(this.data.projectTitle){
+            var pages = getCurrentPages();
+            var currPage = pages[pages.length - 1]; // 当前页面
+            var prevPage = pages[pages.length - 2]; // 上一级页面
+            let patArr = prevPage.data.collectArr;
+            patArr.forEach((val, i) => {
+              if (val.title == this.data.projectTitle) {
+                patArr.splice(i, 1)
+              }
+
+            })
+
+            prevPage.setData({
+              collectArr: patArr
+            })
+          }
         }
       }
     })

@@ -5,14 +5,15 @@ page{
 }
 .textarea{
   box-sizing: border-box;
-  padding: 30rpx;
+  padding: 20rpx 30rpx 0 30rpx;
   background: #fff;
   width: 690rpx;
   height: 450rpx;
   border-radius:10rpx;
   border:1px solid rgba(220,220,220,1);
   font-size: 28rpx;
-  color: #999999;
+  color: #000;
+  line-height: 40rpx;
 }
 .submit{
   width:690rpx;
@@ -32,5 +33,29 @@ page{
 
 /* //弹框 */
 .modal{
-  width: 
+  position: absolute;
+  top: 40%;
+  left: 34%;
+  width: 240rpx;
+  height: 240rpx;
+  background:rgba(17,17,17,0.7);
+  border-radius:10px;
+}
+.correct_icon{
+  width: 99rpx;
+  height: 71rpx;
+  margin: 60rpx 0 0 70rpx;
+}
+.correct_word{
+  font-size: 26rpx;
+  color: #fff;
+  margin: 32rpx 0 0 81rpx;
+}
+.phone_con{
+  font-size:22rpx;
+  color:#999999;
+  line-height:30px;
+  position: absolute;
+  right: 30rpx;
+  bottom: 40rpx;
 }

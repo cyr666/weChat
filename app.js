@@ -66,7 +66,7 @@ App({
   },
   globalData: {
     id: "1",
-    serverUrl: 'https://apit.piionee.com/', //'https://api.piionee.com/',
+    serverUrl: 'https://api.piionee.com/', //'https://apit.piionee.com/',
     userInfo: null,
     tabbar: {
       color: "#9A9A9A",

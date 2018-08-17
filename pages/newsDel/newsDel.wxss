@@ -76,7 +76,7 @@ button{
 /* 新闻具体样式 */
 .news_con{
   box-sizing: border-box;
-  padding: 0 30rpx;
+  padding: 0 25rpx;
   background: #fff;
 }
 .news_title{

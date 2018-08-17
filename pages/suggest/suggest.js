@@ -7,7 +7,7 @@ Page({
   data: {
     text:"",
     isText: false,
-    hidden: true
+    hidden: false
   },
 
   /**
@@ -41,9 +41,14 @@ Page({
       success:(res)=>{
         if(res.data.is_success){
           this.setData({
-            hidden: false
+            hidden: true
           })
         }
+        setTimeout(()=>{
+          this.setData({
+            hidden: false
+          })
+        },2000)
       }
     })
   },

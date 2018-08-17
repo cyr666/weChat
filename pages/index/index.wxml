@@ -10,7 +10,7 @@
     <input class = "index_input" name="searchQuery" bindinput="userNameInput" value="{{value}}"/>
     <view class = "search_btn" bindtap='handleSearch'>搜索</view>
   </view>
-  <view class = "search_result">共搜索到<text class = "num">{{companyNum}}</text>家公司
+  <view class = "search_result"><image src="../../resource/icon@2x.png" class="comIcon"/>共搜索到<text class = "num">{{companyNum}}</text>家公司
   </view>
   <view class = "list_con">
     <view class = "list_item" wx:for="{{companyList}}" bindtap='handleCompantDel' data-index="{{item.id}}" data-name="{{item.name}}">

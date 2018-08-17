@@ -18,6 +18,7 @@ Page({
     public_id:'',
     hidden: true,
     nocancel: false,
+    newsName:''
   },
   onLoad: function (options) {
     console.log(options)
@@ -33,6 +34,7 @@ Page({
       news_id: options.id,
       focus: btnFocus,
       tech: options.tech,
+      newsName: options.name
     })
     wx.request({
       url: app.globalData.serverUrl + 'piionee/industry/smallApp/newsDetail', //仅为示例，并非真实的接口地址
@@ -45,7 +47,8 @@ Page({
       },
       success: this.handleGetachievementSucc.bind(this)
     });
-    this.getoneTechRelated()
+    this.getoneTechRelated();
+    this.handleChangeRead()
   },
   handleGetachievementSucc(res) {
     if (res.data.status == 0) {
@@ -101,6 +104,24 @@ Page({
         companyArray: res.data.companyArray,
         institutionArray: res.data.institutionArray
       })
+    }
+  },
+  // 改变我的关注里面读与未读的状态
+  handleChangeRead(){
+    var pages = getCurrentPages();
+    var currPage = pages[pages.length - 1]; // 当前页面
+    var prevPage = pages[pages.length - 3]; // 上一级页面
+    if (prevPage.data.newsPublicArray){
+      let arr = prevPage.data.newsPublicArray;
+      arr.forEach((val,i)=>{
+        if(val.name==this.data.newsName){
+          val.article.read=true
+        }
+      })
+     prevPage.setData({
+       newsPublicArray:arr
+     })
+      console.log(prevPage.data.newsPublicArray)
     }
   },
   // 触发用户登录授权 start

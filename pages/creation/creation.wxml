@@ -2,7 +2,7 @@
   <view class = "logo_area">
     <image src="http://p7b85tdui.bkt.clouddn.com/logo.png" class = "com_logo"></image>
     <view class = "com_name">科创时代小程序</view>
-    <view class = "com_text"> 科创时代小程序是北京青核桃科技有限公司下项目之一，提供搜索功能，展示公司的技术实力、科研能力并且深度挖掘公司的行业布局</view>
+    <view class = "com_text"> 科创时代小程序是北京青核桃科技有限公司下项目之一，提供搜索功能，展示公司的技术实力、科研能力并且深度挖掘公司的行业布局。</view>
   </view>
   <view >
   <view class = "bigTitle_con">
