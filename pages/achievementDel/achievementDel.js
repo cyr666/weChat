@@ -91,6 +91,7 @@ Page({
           val.article.read = true
         }
       })
+      wx.setStorageSync('patPublicArray', JSON.stringify(arr))
       prevPage.setData({
         patPublicArray: arr
       })
@@ -122,7 +123,8 @@ Page({
         public_id: e.currentTarget.dataset.id,
       })
       let public_id = this.data.public_id
-      this.followAjax(public_id, 1);
+      let name = this.data.name
+      this.followAjax(public_id, 1,name);
     }
   },
   confirm() {
@@ -146,7 +148,7 @@ Page({
       })
     } else {
       let collectId = this.data.collectId
-      this.followAjax(collectId,3);
+      this.followAjax(collectId,3,'');
     }
   },
   //取消收藏
@@ -174,7 +176,7 @@ Page({
               }
 
             })
-
+            wx.setStorageSync('collectArr', JSON.stringify(patArr))
             prevPage.setData({
               collectArr: patArr
             })
@@ -184,7 +186,7 @@ Page({
     })
   },
   /*处理用户关注 收藏start */
-  followAjax(id,type) {
+  followAjax(id,type,name) {
     let that = this;
     wx.request({
       url: app.globalData.serverUrl + 'piionee/industry/smallApp/addFocus',
@@ -209,7 +211,23 @@ Page({
             that.setData({
               collected: false
             })
-          }  
+          } 
+          var pages = getCurrentPages();
+          var currPage = pages[pages.length - 1]; // 当前页面
+          var prevPage = pages[pages.length - 2]; // 上一级页面
+          console.log(prevPage)
+          if (prevPage.data.patList) {
+            let arr = prevPage.data.patList;
+            arr.forEach((val) => {
+              if (val.public_name == name) {
+                val.focus = true
+              }
+            })
+            prevPage.setData({
+              patList: arr
+            })
+            console.log(prevPage.data.patList)
+          } 
         }
       }
     })
@@ -218,6 +236,7 @@ Page({
   /*取消关注*/
   handleDeleteFollow(e) {
     let index = e.currentTarget.dataset.index
+    console.log(e)
     wx.request({
       url: app.globalData.serverUrl + 'piionee/industry/smallApp/deleteFocus',
       data: {

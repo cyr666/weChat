@@ -137,13 +137,12 @@ Page({
 
   // 触发用户登录授权 start
   handleLogin(e){
-    if (!app.globalData.is_user) {
-      if (e.detail.userInfo) {
-        app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
-        app.globalData.nickName = e.detail.userInfo.nickName
-      }
-      this.handleNewUserLogin()
-    }
+    // if (!app.globalData.is_user) {
+    //   if (e.detail.userInfo) {
+    //     app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
+    //     app.globalData.nickName = e.detail.userInfo.nickName
+    //   }
+    // }
     // app.handleLogin();
     this.setData({
       showAll: !this.data.showAll
@@ -252,20 +251,20 @@ Page({
     
   },
   // 新用户登录 start
-    handleNewUserLogin(){
-      console.log(app.globalData.openid)
-      wx.request({
-        url: app.globalData.serverUrl + 'piionee/industry/smallApp/sign',
-        data:{
-          account: app.globalData.openid,
-          nickName: app.globalData.nickName,
-          cover: app.globalData.avatarUrl
-        },
-        success:(res)=>{
-          console.log(res)
-        }
-      })
-    },
+    // handleNewUserLogin(){
+    //   console.log(app.globalData.openid)
+    //   wx.request({
+    //     url: app.globalData.serverUrl + 'piionee/industry/smallApp/sign',
+    //     data:{
+    //       account: app.globalData.openid,
+    //       nickName: app.globalData.nickName,
+    //       cover: app.globalData.avatarUrl
+    //     },
+    //     success:(res)=>{
+    //       console.log(res)
+    //     }
+    //   })
+    // },
     //点击进入专利 成果详情页
   goAchievementDel(e) {
     let id = e.currentTarget.dataset.id;

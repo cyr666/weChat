@@ -32,7 +32,8 @@ Page({
       success:(res)=>{
         if(res.data.status == 0){
           wx.setStorageSync('collectArr', JSON.stringify(res.data.collected))
-          wx.setStorageSync('focusArr', JSON.stringify(res.data.focus))
+          wx.setStorageSync('newsPublicArray', JSON.stringify(res.data.focus.newsPublicArray))
+          wx.setStorageSync('patPublicArray', JSON.stringify(res.data.focus.patPublicArray))
         }
       }
     })
@@ -40,64 +41,57 @@ Page({
     // 触发用户登录授权 start
   handleLogin(e){
     let that = this;
-    
+    console.log(e)
     wx.login({
       success: function (res) {
-        wx.request({
-          url: 'https://api.weixin.qq.com/sns/jscode2session?',
-          data: {
-            appid: 'wx25cf560a19772537',
-            secret: '5c55c83aa224fe0facef793bb8916134',
-            js_code: res.code,
-            grant_type: 'authorization_code'
-          },
-          success: (res) => {
-            app.globalData.openid = res.data.openid
+        // console.log(res)
+        app.globalData.code = res.code
+        wx.getUserInfo({
+          withCredentials: true,
+          lang: '',
+          success: function(res) {
+            app.globalData.nickName = res.userInfo.nickName;
+            app.globalData.avatarUrl = res.userInfo.avatarUrl;
             wx.request({
               url: app.globalData.serverUrl + 'piionee/industry/smallApp/beforeSign',
               data: {
-                account: res.data.openid,
+                code: app.globalData.code,
               },
-              success: (res) => {
-                // app.globalData.is_user = res.data.is_user;
-                wx.getUserInfo({
-                  success:(res)=>{
-                    console.log(res)
-                  }
-                })
-                console.log(res)
-                if (!res.data.is_user){
-                  wx.request({
-                    url: app.globalData.serverUrl + 'piionee/industry/smallApp/sign',
-                    data:{
-                      account: app.globalData.openid,
-                      nickName: e.detail.userInfo.nickName,
-                      cover: e.detail.userInfo.avatarUrl
-                    },
-                    success:(res)=>{
-                      console.log(res)
-                      if (res.data.is_success){
-                        app.globalData.is_user=true,
-                        app.globalData.user_id = res.data.user_id
-                        app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
-                        app.globalData.nickName = e.detail.userInfo.nickName
-                        that.setData({
-                          avatarUrl: app.globalData.avatarUrl,
-                          nickName: app.globalData.nickName
-                        })
+              success:(res)=>{
+                if(res.data.status == 0){
+                  app.globalData.openid = res.data.openId;
+                  if (!res.data.is_user){
+                    wx.request({
+                      url: app.globalData.serverUrl + 'piionee/industry/smallApp/sign',
+                      data:{
+                        account: app.globalData.openid,
+                        nickName: app.globalData.nickName,
+                        cover: app.globalData.avatarUrl
+                      },
+                      success:(res)=>{
+                        if(res.data.status == 0){
+                          if (res.data.is_success){
+                            app.globalData.is_user = res.data.is_user;
+                            app.globalData.user_id = res.data.user_id;
+                            that.setData({
+                              avatarUrl: app.globalData.avatarUrl,
+                              nickName: app.globalData.nickName
+                            })
+                          }
+                        }
                       }
-                    }
-                  })
+                    })
+                  }
                 }
               }
             })
-          }
+          },
+          fail: function(res) {console.log(res)},
+          complete: function(res) {},
         })
+        
       }
     });
-    this.setData({
-      hidden: true
-    })
   },
   // 触发用户登录授权 end 
   // 点击进入我的收藏

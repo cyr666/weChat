@@ -12,11 +12,11 @@
       </view>
     </view>
     <view class = "follow_con" wx:if="{{!focus}}">
-      <button class = "btn" lang="zh_CN" bindtap="handleFollow"  data-id="{{public_id}}" data-type="{{item.type}}" data-index="{{index}}">
+      <button class = "btn" lang="zh_CN" bindtap="handleFollow"  data-id="{{public_id}}" data-type="{{item.type}}" data-index="{{index}}" data-name = "{{name}}">
         <image src="../../resource/focus.png" class = "follow_img"></image>
       </button>  
     </view>
-    <view class = "follow_con isfollow" wx:else bindtap="handleDeleteFollow" data-index="{{index}}" data-id="{{public_id}}">
+    <view class = "follow_con isfollow" wx:else bindtap="handleDeleteFollow" data-index="{{index}}" data-id="{{public_id}}" data-name = "{{name}}">
       取消关注
     </view>
   </view>

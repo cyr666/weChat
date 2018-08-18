@@ -5,9 +5,9 @@ Page({
   },
   onLoad: function (options) {
     console.log("科研机构")
-    let focusArr = JSON.parse(wx.getStorageSync('focusArr'))
+    let patPublicArray = JSON.parse(wx.getStorageSync('patPublicArray'))
     this.setData({
-      patPublicArray: focusArr.patPublicArray
+      patPublicArray: patPublicArray
     })
   },
   goAchList(e){

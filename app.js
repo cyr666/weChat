@@ -7,42 +7,30 @@ App({
   handleLogin(){
     var that = this;
     wx.login({
-      success: function (res) {
+      success:(res)=>{
+        that.globalData.code = res.code;
         wx.request({
-          url: 'https://api.weixin.qq.com/sns/jscode2session?',
-          data:{
-            appid:'wx25cf560a19772537',
-            secret: '5c55c83aa224fe0facef793bb8916134',
-            js_code: res.code,
-            grant_type: 'authorization_code'
+          url: that.globalData.serverUrl + 'piionee/industry/smallApp/beforeSign',
+          data: {
+            code: that.globalData.code,
           },
-          success:(res)=>{
-            that.globalData.openid = res.data.openid
-            wx.request({
-              url: that.globalData.serverUrl + 'piionee/industry/smallApp/beforeSign',
-              data:{
-                account: res.data.openid
-              },
-              success:(res)=>{
-                that.globalData.is_user = res.data.is_user;
-                console.log(res)
-                if (that.globalData.is_user){
-                  that.globalData.avatarUrl = res.data.cover;
-                  that.globalData.nickName = res.data.nickName;
-                  that.globalData.user_id = res.data.user_id;
-                }
-              }
-            })
+          success: (res) => {
+            if (res.data.status == 0 && res.data.is_user) {
+              that.globalData.user_id = res.data.user_id
+              that.globalData.avatarUrl = res.data.cover;
+              that.globalData.nickName = res.data.nickName;
+              that.globalData.is_user = true
+
+            }
           }
         })
       }
-    });
+    })
   },
   handleDeviceType(){
     let that = this;
     wx.getSystemInfo({
       success: function (res) {
-        console.log(res)
         if (res.model == 'iPhone X') {
           that.globalData.tabbar.isIphoneX=true
         }
@@ -113,6 +101,6 @@ App({
     user_id:'',
     news_id:'',
     tech:"",
-    
+    code:''
   }
 })

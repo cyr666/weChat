@@ -119,13 +119,12 @@ Page({
   },
   // 触发用户登录授权 start
   handleLogin(e) {
-    if (!app.globalData.is_user) {
-      if (e.detail.userInfo) {
-        app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
-        app.globalData.nickName = e.detail.userInfo.nickName
-      }
-      this.handleNewUserLogin()
-    }
+    // if (!app.globalData.is_user) {
+    //   if (e.detail.userInfo) {
+    //     app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
+    //     app.globalData.nickName = e.detail.userInfo.nickName
+    //   }
+    // }
     // app.handleLogin();
     this.setData({
       showAll: !this.data.showAll
@@ -164,6 +163,7 @@ Page({
   },
   /*处理用户关注start */
   followAjax(name) {
+    console.log(name)
     wx.request({
       url: app.globalData.serverUrl + 'piionee/industry/smallApp/addFocus',
       data: {
@@ -180,10 +180,23 @@ Page({
               val.focus = true
             }
           })
-          console.log(changeNewlist)
           this.setData({
             newsList: changeNewlist
           })
+          var pages = getCurrentPages();
+          var currPage = pages[pages.length - 1]; // 当前页面
+          var prevPage = pages[pages.length - 3]; // 上一级页面
+          if (prevPage.data.newsList){
+            let arr = prevPage.data.newsList;
+            arr.forEach((val)=>{
+              if(val.public_name == name){
+                val.focus = true
+              }
+            })
+            prevPage.setData({
+              newsList: arr
+            })
+          }
         }
       }
     })
@@ -211,10 +224,10 @@ Page({
             newsList: arr
           })
         }
+        var pages = getCurrentPages();
+        var currPage = pages[pages.length - 1]; // 当前页面
+        var prevPage = pages[pages.length - 2]; // 上一级页面
         if (!this.data.followProject) {
-          var pages = getCurrentPages();
-          var currPage = pages[pages.length - 1]; // 当前页面
-          var prevPage = pages[pages.length - 2]; // 上一级页面
           let patArr = prevPage.data.newsPublicArray;
           patArr.forEach((val, i) => {
             if (val.name == name) {
@@ -227,26 +240,24 @@ Page({
             newsPublicArray: patArr
           })
         }
+        if (prevPage.data.newsList) {
+          let arr = prevPage.data.newsList;
+          arr.forEach((val) => {
+            if (val.public_name == name) {
+              val.focus = false
+            }
+          })
+          prevPage.setData({
+            newsList: arr
+          })
+        }
       }
     })
   },
   
   // 触发用户登录授权 end
   // 新用户登录 start
-  handleNewUserLogin() {
-    console.log(app.globalData.openid)
-    wx.request({
-      url: app.globalData.serverUrl + 'piionee/industry/smallApp/sign',
-      data: {
-        account: app.globalData.openid,
-        nickName: app.globalData.nickName,
-        cover: app.globalData.avatarUrl
-      },
-      success: (res) => {
-        console.log(res)
-      }
-    })
-  },
+  
   /*下拉加载*/
   onReachBottom() {
     let that = this;

@@ -118,6 +118,7 @@ Page({
           val.article.read=true
         }
       })
+      wx.setStorageSync('newsPublicArray', JSON.stringify(arr))
      prevPage.setData({
        newsPublicArray:arr
      })
@@ -146,10 +147,11 @@ Page({
       })
     } else {
       let index = e.currentTarget.dataset.index
+      let name = e.currentTarget.dataset.name
       this.setData({
         public_id: e.currentTarget.dataset.id,
       })
-      this.followAjax(index);
+      this.followAjax(index,name);
     }
   },
   confirm() {
@@ -166,7 +168,9 @@ Page({
     })
   },
   /*处理用户关注start */
-  followAjax(index) {
+  followAjax(index,name) {
+    var name = name
+    console.log(name)
     wx.request({
       url: app.globalData.serverUrl + 'piionee/industry/smallApp/addFocus',
       data: {
@@ -180,6 +184,22 @@ Page({
           this.setData({
             focus: true
           })
+          var pages = getCurrentPages();
+          var currPage = pages[pages.length - 1]; // 当前页面
+          var prevPage = pages[pages.length - 2]; // 上一级页面
+          console.log(prevPage)
+          if (prevPage.data.newsList) {
+            let arr = prevPage.data.newsList;
+            arr.forEach((val) => {
+              if (val.public_name == name) {
+                val.focus = true
+              }
+            })
+            prevPage.setData({
+              newsList: arr
+            })
+            console.log(prevPage.data.newsList)
+          }
         }
       }
     })
@@ -188,6 +208,7 @@ Page({
   /*取消关注*/
   handleDeleteFollow(e) {
     let index = e.currentTarget.dataset.index
+    let name = e.currentTarget.dataset.name
     wx.request({
       url: app.globalData.serverUrl + 'piionee/industry/smallApp/deleteFocus',
       data: {
@@ -200,6 +221,20 @@ Page({
           this.setData({
             focus: false
           })
+          var pages = getCurrentPages();
+          var currPage = pages[pages.length - 1]; // 当前页面
+          var prevPage = pages[pages.length - 2]; // 上一级页面
+          if (prevPage.data.newsList) {
+            let arr = prevPage.data.newsList;
+            arr.forEach((val) => {
+              if (val.public_name == name) {
+                val.focus = false
+              }
+            })
+            prevPage.setData({
+              newsList: arr
+            })
+          }
         }
       }
     })

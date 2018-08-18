@@ -11,9 +11,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let focusArr = JSON.parse(wx.getStorageSync('focusArr'))
+    let newsPublicArray = JSON.parse(wx.getStorageSync('newsPublicArray'))
     this.setData({
-      newsPublicArray: focusArr.newsPublicArray
+      newsPublicArray: newsPublicArray
     })
     console.log(this.data.newsPublicArray)
   },
