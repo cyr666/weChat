@@ -166,6 +166,7 @@ function html2json(html, bindName) {
                     'face': 'font-family',
                     'size': 'font-size'
                 };
+              
                 if (!node.attr.style) node.attr.style = [];
                 if (!node.styleStr) node.styleStr = '';
                 for (var key in styleAttrs) {

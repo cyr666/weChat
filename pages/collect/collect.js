@@ -8,8 +8,6 @@ Page({
     this.setData({
       collectArr: JSON.parse(wx.getStorageSync('collectArr'))
     })
-    console.log(JSON.parse(wx.getStorageSync('collectArr')))
-    console.log(JSON.parse(wx.getStorageSync('focusArr')))
   },
   //点击进入专利 成果详情页
   goAchievementDel(e) {

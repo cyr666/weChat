@@ -55,7 +55,7 @@ Page({
       },
       success: this.handleGetachievementSucc.bind(this)
     });
-    this.handleChangeRead()
+    app.changeData('patPublicArray', this.data.projectName, 'name', 3, 'read', 'article', 1)
   },
   handleGetachievementSucc(res){
     if (res.data.status==0){
@@ -80,24 +80,24 @@ Page({
     }
   },
   // 改变我的关注里面读与未读的状态
-  handleChangeRead() {
-    var pages = getCurrentPages();
-    var currPage = pages[pages.length - 1]; // 当前页面
-    var prevPage = pages[pages.length - 3]; // 上一级页面
-    if (prevPage.data.patPublicArray) {
-      let arr = prevPage.data.patPublicArray;
-      arr.forEach((val, i) => {
-        if (val.name == this.data.projectName) {
-          val.article.read = true
-        }
-      })
-      wx.setStorageSync('patPublicArray', JSON.stringify(arr))
-      prevPage.setData({
-        patPublicArray: arr
-      })
-      console.log(prevPage.data.patPublicArray)
-    }
-  },
+  // handleChangeRead() { 
+  //   var pages = getCurrentPages();
+  //   var currPage = pages[pages.length - 1]; // 当前页面
+  //   var prevPage = pages[pages.length - 3]; // 上一级页面
+  //   if (prevPage.data.patPublicArray) {
+  //     let arr = prevPage.data.patPublicArray;
+  //     arr.forEach((val, i) => {
+  //       if (val.name == this.data.projectName) {
+  //         val.article.read = true
+  //       }
+  //     })
+  //     wx.setStorageSync('patPublicArray', JSON.stringify(arr))
+  //     prevPage.setData({
+  //       patPublicArray: arr
+  //     })
+  //     console.log(prevPage.data.patPublicArray)
+  //   }
+  // },
   // 触发用户登录授权 start
   handleLogin(e) {
     if (!app.globalData.is_user) {
@@ -123,7 +123,7 @@ Page({
         public_id: e.currentTarget.dataset.id,
       })
       let public_id = this.data.public_id
-      let name = this.data.name
+      let name = e.currentTarget.dataset.name
       this.followAjax(public_id, 1,name);
     }
   },
@@ -166,20 +166,7 @@ Page({
             collected: false 
           })
           if(this.data.projectTitle){
-            var pages = getCurrentPages();
-            var currPage = pages[pages.length - 1]; // 当前页面
-            var prevPage = pages[pages.length - 2]; // 上一级页面
-            let patArr = prevPage.data.collectArr;
-            patArr.forEach((val, i) => {
-              if (val.title == this.data.projectTitle) {
-                patArr.splice(i, 1)
-              }
-
-            })
-            wx.setStorageSync('collectArr', JSON.stringify(patArr))
-            prevPage.setData({
-              collectArr: patArr
-            })
+            app.changeData('collectArr', this.data.projectTitle, 'title', 2, '', '', '')
           }
         }
       }
@@ -212,22 +199,7 @@ Page({
               collected: false
             })
           } 
-          var pages = getCurrentPages();
-          var currPage = pages[pages.length - 1]; // 当前页面
-          var prevPage = pages[pages.length - 2]; // 上一级页面
-          console.log(prevPage)
-          if (prevPage.data.patList) {
-            let arr = prevPage.data.patList;
-            arr.forEach((val) => {
-              if (val.public_name == name) {
-                val.focus = true
-              }
-            })
-            prevPage.setData({
-              patList: arr
-            })
-            console.log(prevPage.data.patList)
-          } 
+          app.changeData('patList', name, 'public_name', 2, 'focus', '', 1)
         }
       }
     })
@@ -235,7 +207,8 @@ Page({
   /*处理用户关注end */
   /*取消关注*/
   handleDeleteFollow(e) {
-    let index = e.currentTarget.dataset.index
+    let index = e.currentTarget.dataset.index;
+    let name = e.currentTarget.dataset.name;
     console.log(e)
     wx.request({
       url: app.globalData.serverUrl + 'piionee/industry/smallApp/deleteFocus',
@@ -249,6 +222,7 @@ Page({
           this.setData({
             focus: false
           })
+          app.changeData('patList', name, 'public_name', 2, 'focus', '', 0)
         }
       }
     })

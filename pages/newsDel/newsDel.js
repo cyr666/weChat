@@ -48,7 +48,8 @@ Page({
       success: this.handleGetachievementSucc.bind(this)
     });
     this.getoneTechRelated();
-    this.handleChangeRead()
+    // this.handleChangeRead();
+    app.changeData('newsPublicArray', this.data.newsName,'name',3,'read','article',1)
   },
   handleGetachievementSucc(res) {
     if (res.data.status == 0) {
@@ -107,24 +108,25 @@ Page({
     }
   },
   // 改变我的关注里面读与未读的状态
-  handleChangeRead(){
-    var pages = getCurrentPages();
-    var currPage = pages[pages.length - 1]; // 当前页面
-    var prevPage = pages[pages.length - 3]; // 上一级页面
-    if (prevPage.data.newsPublicArray){
-      let arr = prevPage.data.newsPublicArray;
-      arr.forEach((val,i)=>{
-        if(val.name==this.data.newsName){
-          val.article.read=true
-        }
-      })
-      wx.setStorageSync('newsPublicArray', JSON.stringify(arr))
-     prevPage.setData({
-       newsPublicArray:arr
-     })
-      console.log(prevPage.data.newsPublicArray)
-    }
-  },
+  // handleChangeRead(){
+    
+  //   var pages = getCurrentPages();
+  //   var currPage = pages[pages.length - 1]; // 当前页面
+  //   var prevPage = pages[pages.length - 3]; // 上一级页面
+  //   if (prevPage.data.newsPublicArray){
+  //     let arr = prevPage.data.newsPublicArray;
+  //     arr.forEach((val,i)=>{
+  //       if(val.name==this.data.newsName){
+  //         val.article.read=true
+  //       }
+  //     })
+  //     wx.setStorageSync('newsPublicArray', JSON.stringify(arr))
+  //    prevPage.setData({
+  //      newsPublicArray:arr
+  //    })
+  //     // console.log(prevPage.data.newsPublicArray)
+  //   }
+  // },
   // 触发用户登录授权 start
   handleLogin(e) {
     if (!app.globalData.is_user) {
@@ -184,22 +186,7 @@ Page({
           this.setData({
             focus: true
           })
-          var pages = getCurrentPages();
-          var currPage = pages[pages.length - 1]; // 当前页面
-          var prevPage = pages[pages.length - 2]; // 上一级页面
-          console.log(prevPage)
-          if (prevPage.data.newsList) {
-            let arr = prevPage.data.newsList;
-            arr.forEach((val) => {
-              if (val.public_name == name) {
-                val.focus = true
-              }
-            })
-            prevPage.setData({
-              newsList: arr
-            })
-            console.log(prevPage.data.newsList)
-          }
+          app.changeData('newsList', name,'public_name',2,'focus','',1)
         }
       }
     })
@@ -221,20 +208,7 @@ Page({
           this.setData({
             focus: false
           })
-          var pages = getCurrentPages();
-          var currPage = pages[pages.length - 1]; // 当前页面
-          var prevPage = pages[pages.length - 2]; // 上一级页面
-          if (prevPage.data.newsList) {
-            let arr = prevPage.data.newsList;
-            arr.forEach((val) => {
-              if (val.public_name == name) {
-                val.focus = false
-              }
-            })
-            prevPage.setData({
-              newsList: arr
-            })
-          }
+          app.changeData('newsList', name, 'public_name', 2, 'focus', '', 0)
         }
       }
     })

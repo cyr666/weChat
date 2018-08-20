@@ -152,7 +152,7 @@ Page({
     let index = e.currentTarget.dataset.index;
     let focus = this.data.newsList[index].focus;
     wx.navigateTo({
-      url: '../newsDel/newsDel?id=' + id + '&tech=' + tech +'&focus='+focus,
+      url: '../newsDel/newsDel?id=' + id + '&tech=' + tech + '&focus=' + focus + '&name=' + '',
     })
   },
   handleClickSkill(e){

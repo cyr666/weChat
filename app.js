@@ -37,6 +37,41 @@ App({
       }
     })　
   },
+  // 路由回退时改变数据 variableName数组名字 tagName目标名字 valName数组每一项的名字 int几级路由
+  changeData(variableName,tagName,valName,int,focus,article,int2){
+    if(int2 == 1){
+      int2 = true
+    }else{
+      int2 = false
+    }
+    var pages = getCurrentPages();
+    var currPage = pages[pages.length - 1]; // 当前页面
+    var prevPage = pages[pages.length - int]; // 上一级页面
+    if (prevPage && prevPage.data && prevPage.data[variableName]) {
+      let arr = prevPage.data[variableName];
+      arr.forEach((val, i) => {
+        if (valName=='title'){
+          if (val[valName] == tagName) arr.splice(i, 1)  
+        }else{
+          if (val[valName] == tagName) {
+            
+            if (article) {
+              val[article][focus] = int2
+            } else {
+              val[focus] = int2
+            }
+          }
+        } 
+      })
+      if (variableName == 'newsPublicArray' || variableName == 'collectArr'){
+        wx.setStorageSync(variableName, JSON.stringify(arr))
+      }
+      
+      prevPage.setData({
+        [variableName]: arr
+      })
+    }
+  },
   editTabBar: function () {
     var tabbar = this.globalData.tabbar,
       currentPages = getCurrentPages(),
