@@ -160,8 +160,9 @@ page{
   height: 72rpx;
 }
 .jigou_name{
-  font-size: 30rpx;
+  font-size: 32rpx;
   color: #333333;
+  font-weight: bold;
 }
 .jigou_time{
   font-size: 24rpx;
@@ -259,9 +260,9 @@ button::after{
   border-bottom: 1px solid #eee;
 }
 .technology_img{
-  width: 388rpx;
-  height: 48rpx;
-  margin: 20rpx 0 0 181rpx;
+  width: 391rpx;
+  height: 31rpx;
+  margin: 28rpx 0 0 179rpx;
 }
 /* 下拉刷新 */
 .loadMore{

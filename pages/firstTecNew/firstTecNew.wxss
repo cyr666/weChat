@@ -89,8 +89,9 @@ button::after{
   height: 72rpx;
 }
 .jigou_name{
-  font-size: 30rpx;
+  font-size: 32rpx;
   color: #333333;
+  font-weight: bold;
 }
 .jigou_time{
   font-size: 24rpx;

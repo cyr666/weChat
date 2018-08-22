@@ -8,7 +8,7 @@
       <view class = "jigou_name">{{name}}</view>
       <view class = "jigou_time">
         <text class="time">{{date}}</text>
-        <text class = "pv_word">阅读量 {{pageView}}</text>
+        <text class = "pv_word">有{{pageView}}人阅读</text>
       </view>
     </view>
     <view class = "follow_con" wx:if="{{!focus}}">
@@ -27,7 +27,7 @@
     <template is="wxParse"  data="{{wxParseData:subTitle.nodes}}"/>
   </view>
   <!-- 相关企业 -->
-  <!-- <view class = "chan" id="list1" data-rol="list1" bindtap='clickMoreSameCom' wx:if="{{companyArray.length>0}}" >
+  <view class = "chan" id="list1" data-rol="list1" bindtap='clickMoreSameCom' wx:if="{{companyArray.length>0}}" >
     <text class = "chan_word">相关企业</text>
     <view class = "chan_right" >
       <text class = "checkMore">查看更多</text>
@@ -59,9 +59,9 @@
         </view>
       </view>
     </view>
-  </view> -->
+  </view>
   <!-- 相关机构 -->
-  <!-- <view class = "chan" id="list1" data-rol="list1" bindtap='clickMoreSameIns' wx:if="{{institutionArray.length>0}}">
+  <view class = "chan" id="list1" data-rol="list1" bindtap='clickMoreSameIns' wx:if="{{institutionArray.length>0}}">
     <text class = "chan_word">相关机构</text>
     <view class = "chan_right" >
       <text class = "checkMore">查看更多</text>
@@ -84,8 +84,9 @@
         </view>
       </view>
     </view>
-  </view> -->
+  </view>
 </view>
 <modal hidden="{{hidden}}" title="提示" confirm-text="确定"  bindconfirm="confirm" no-cancel="{{nocancel}}" cancel-text="取消" bindcancel="cancel" catchtouchmove='true'>
     您暂未登录科创时代小程序，请您到我的里面进行登录！
 </modal>
+<!-- <web-view src="https://mp.weixin.qq.com/s/lM0izCs23FEX1GywmMvTJw"></web-view> -->

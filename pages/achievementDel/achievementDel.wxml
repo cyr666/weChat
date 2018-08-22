@@ -8,7 +8,7 @@
       <view class = "jigou_name">{{public.name}}</view>
       <view class = "jigou_time">
         <text class="time">{{date}}</text>
-        <text class = "pv_word">阅读量 {{pageView}}</text>
+        <text class = "pv_word">有{{pageView}}人阅读量</text>
       </view>
     </view>
     <view class = "follow_con" wx:if="{{!focus}}">

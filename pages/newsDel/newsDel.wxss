@@ -181,20 +181,27 @@ button{
 .chan_title{
   float: left;
   box-sizing: border-box;
-  padding: 7rpx 10rpx;
+  /* padding: 7rpx 10rpx; */
+  width: 108rpx;
+  height: 38rpx;
+  text-align: center;
+  line-height: 38rpx;
   background: #CCE8FF;
   color: #008EFF;
-  margin-right: 20rpx;
+  /* margin-right: 10rpx; */
+  border-radius: 4rpx;
+  font-size: 22rpx;
   /* width: 144rpx; */
 }
 .chanItem_con{
   float: left;
   width: 75%; 
+  margin-top: -4rpx;
 }
 .chan_item{
   display: inline-block;
   box-sizing: border-box;
-  padding: 6rpx 10rpx;
+  padding: 6rpx 15rpx;
   border-radius:4rpx;
   color: #888888;
   font-size: 26rpx;
@@ -206,7 +213,7 @@ button{
   border-radius: 3rpx;
   background:rgba(136,136,136,1);
   position: absolute;
-  right: -5rpx;
+  right: -3rpx;
   top: 22rpx;
 }
 .com_logo{

@@ -16,7 +16,7 @@
         <view class = "jigou_name">{{item.public_name}}</view>
         <view class = "jigou_time">
           <text class="time">{{item.date}}</text>
-          <text class = "pv_word">阅读量 {{item.pageView}}</text>
+          <text class = "pv_word">有{{item.pageView}}人阅读量</text>
         </view>
       </view>
       <view class = "follow_con" wx:if="{{!item.focus}}">
