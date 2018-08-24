@@ -17,7 +17,7 @@ Page({
   },
   onLoad(option) {
     let btnFocus = true;
-    if (options.focus == 'true') {
+    if (option.focus == 'true') {
       btnFocus = true
     } else {
       btnFocus = false;

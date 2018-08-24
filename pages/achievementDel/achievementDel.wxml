@@ -36,7 +36,7 @@
       </view> -->
     </view>
     <view class = "text" wx:for="{{subTitles}}">
-      <view class = "title_bg_con">
+      <view class = "title_bg_con" wx:if="{{item.rank<11}}">
         <image class = "title_bg" src="../../resource/titleBg.png"></image>
         <text class = "num" wx:if="{{item.rank<10}}">0{{item.rank}}</text>
         <text class = "num" wx:if="{{item.rank>=10}}">{{item.rank}}</text>

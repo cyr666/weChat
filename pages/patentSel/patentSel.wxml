@@ -32,7 +32,7 @@
 <view>
   <view class="list_item" wx:for="{{subTitles}}" wx:if="{{item.rank>1}}">
     <image class="patent_sel_logo" src="../../resource/titleBg.png"></image>
-    <text class="order" wx:if="{{item.rank<10}}">0{{item.rank-1}}</text>
+    <text class="order" wx:if="{{item.rank<11}}">0{{item.rank-1}}</text>
     <text class="order" wx:else>{{item.rank-1}}</text>
     <text class = "letter">专利精选</text>
     <text class="text_title">{{item.title}}</text>
